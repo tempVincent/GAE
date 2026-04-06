@@ -24,6 +24,7 @@ var particlesList = { "d": Vector2(-10,0),
 @onready var infoarea = $"../CanvasLayer/BoxContainer"
 @onready var infotext = $"../CanvasLayer/BoxContainer/NinePatchRect/RichTextLabel"
 @onready var particles = $CPUParticles2D
+@onready var hpBar = $"../CanvasLayer/HBoxContainer/Control/TextureProgressBar"
 
 var is_walking = false
 var animation_speed = 4
@@ -72,6 +73,9 @@ func move(dir):
 	else:
 		if is_interactive(dir):
 			print("is interactive")
+		else:
+			hpBar.value -= 1
+			
 #endregion
 
 

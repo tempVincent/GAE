@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://wux0qknjusgo"]
+[gd_scene format=3 uid="uid://wux0qknjusgo"]
 
 [ext_resource type="Script" uid="uid://cw8w43f3h3ik3" path="res://Player/player_controller.gd" id="1_vtle1"]
 [ext_resource type="Texture2D" uid="uid://bo0djxtykacyn" path="res://ressourcesPacks/Characters/1/tile_0159.png" id="2_od3ui"]
@@ -55,38 +55,38 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=821235495]
 motion_mode = 1
 slide_on_ceiling = false
 script = ExtResource("1_vtle1")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=962249093]
 visible = false
 shape = SubResource("CapsuleShape2D_rejiv")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1279019226]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_dyidq")
 animation = &"down"
 
-[node name="Player Camera" type="Camera2D" parent="."]
+[node name="Player Camera" type="Camera2D" parent="." unique_id=1629770915]
 zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 
-[node name="RayCast2D" type="RayCast2D" parent="."]
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=221119996]
 collision_mask = 4
 collide_with_areas = true
 
-[node name="NotificationIcon" type="Sprite2D" parent="."]
+[node name="NotificationIcon" type="Sprite2D" parent="." unique_id=1587572312]
 visible = false
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("6_5htga")
 offset = Vector2(0, -42)
 script = ExtResource("7_p5o4e")
 
-[node name="Timer" type="Timer" parent="NotificationIcon"]
+[node name="Timer" type="Timer" parent="NotificationIcon" unique_id=1417785564]
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=519237211]
 visible = false
 rotation = 1.5708
 lifetime = 0.09
@@ -97,7 +97,7 @@ direction = Vector2(2.7, 2.065)
 spread = 54.09
 gravity = Vector2(0, 300)
 
-[node name="MovementTimer" type="Timer" parent="."]
+[node name="MovementTimer" type="Timer" parent="." unique_id=87359299]
 wait_time = 5.0
 autostart = true
 
