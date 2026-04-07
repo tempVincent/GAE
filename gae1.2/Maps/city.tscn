@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://clgm5rc7cd26j" path="res://ressourcesPacks/environment.png" id="1_pj2qn"]
 [ext_resource type="TileSet" uid="uid://bxe0tw4hx1jqk" path="res://Maps/Tilemaps/Obsticles.tres" id="2_t45pd"]
-[ext_resource type="TileSet" uid="uid://d056rv0jekksc" path="res://Maps/Tilemaps/Interactives.tres" id="3_p1lla"]
 [ext_resource type="PackedScene" uid="uid://wux0qknjusgo" path="res://Player/player.tscn" id="4_uewyx"]
 [ext_resource type="Texture2D" uid="uid://c27p4mch218jv" path="res://UI/tiles/Textbox.png" id="9_iwwak"]
 [ext_resource type="PackedScene" uid="uid://bu3aq5r1j6524" path="res://Player/Bot.tscn" id="9_q30uy"]
@@ -149,6 +148,51 @@ separation = Vector2i(1, 1)
 [sub_resource type="TileSet" id="TileSet_dyidq"]
 sources/0 = SubResource("TileSetAtlasSource_rejiv")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a4w04"]
+texture = ExtResource("1_pj2qn")
+separation = Vector2i(1, 1)
+2:6/0 = 0
+6:6/0 = 0
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:7/0 = 0
+5:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:0/0 = 0
+10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:0/0 = 0
+11:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uewyx"]
+physics_layer_0/collision_layer = 4
+sources/0 = SubResource("TileSetAtlasSource_a4w04")
+
 [sub_resource type="LabelSettings" id="LabelSettings_uewyx"]
 font_size = 20
 font_color = Color(0, 0, 0.027451, 1)
@@ -180,7 +224,7 @@ tile_set = ExtResource("2_t45pd")
 [node name="Interactives" type="TileMapLayer" parent="." unique_id=1535500801]
 scale = Vector2(1.00898, 1.15765)
 tile_map_data = PackedByteArray("AAAJAAAAAAABAAcAAAA=")
-tile_set = ExtResource("3_p1lla")
+tile_set = SubResource("TileSet_uewyx")
 
 [node name="Player" parent="." unique_id=1477837565 instance=ExtResource("4_uewyx")]
 position = Vector2(8, 8)
@@ -237,24 +281,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 8
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/BoxContainer" unique_id=2031708863]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-columns = 3
-
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CanvasLayer/BoxContainer/GridContainer" unique_id=1855273605]
-layout_mode = 2
-size_flags_vertical = 8
-stretch_mode = 1
-alignment_vertical = 2
-
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/BoxContainer/GridContainer/AspectRatioContainer" unique_id=514292607]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 8
-texture = ExtResource("9_iwwak")
-
 [node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer/BoxContainer" unique_id=2074401697]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
@@ -290,7 +316,6 @@ size_flags_vertical = 3
 text = "OK!"
 
 [node name="Bots" type="Node2D" parent="." unique_id=814341087]
-visible = false
 
 [node name="Path2D" type="Path2D" parent="Bots" unique_id=11872034]
 position = Vector2(-111.145, 136.315)
@@ -304,7 +329,6 @@ script = ExtResource("13_f8jga")
 texture = ExtResource("13_3xnxs")
 
 [node name="Bot" parent="." unique_id=1063210419 instance=ExtResource("9_q30uy")]
-visible = false
 position = Vector2(-62, 11)
 
 [connection signal="pressed" from="CanvasLayer/BoxContainer/Container/Button" to="CanvasLayer/BoxContainer" method="_on_button_pressed"]
