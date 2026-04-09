@@ -1,6 +1,5 @@
-[gd_scene load_steps=19 format=4 uid="uid://c4dojy4t6t0nt"]
+[gd_scene load_steps=20 format=4 uid="uid://c4dojy4t6t0nt"]
 
-[ext_resource type="Script" uid="uid://dft6dp6tuaikx" path="res://PlayerCharacter/PlayerController.gd" id="1_cutyl"]
 [ext_resource type="Texture2D" uid="uid://bsxorimt3i1np" path="res://PlayerCharacter/idle/idle-1.png" id="1_vp0n3"]
 [ext_resource type="Texture2D" uid="uid://bsyuqvng3lmvw" path="res://PlayerCharacter/idle/idle-2.png" id="2_cutyl"]
 [ext_resource type="Texture2D" uid="uid://b778bitkl8s3h" path="res://PlayerCharacter/idle/idle-3.png" id="3_wntfd"]
@@ -13,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://cltupvoqgw88w" path="res://PlayerCharacter/walk/walk-11.png" id="10_yj4td"]
 [ext_resource type="Texture2D" uid="uid://xu1h0evyq5x4" path="res://PlayerCharacter/walk/walk-12.png" id="11_2akls"]
 [ext_resource type="Texture2D" uid="uid://dlep5qh152uac" path="res://PlayerCharacter/walk/walk-13.png" id="12_6yl7q"]
-[ext_resource type="Texture2D" uid="uid://bfburgdou0eg6" path="res://grass.png" id="14_wntfd"]
+[ext_resource type="TileSet" uid="uid://hpttg2dtjbdu" path="res://PlayerCharacter/tilesetGame.tres" id="13_jnaee"]
+[ext_resource type="Texture2D" uid="uid://bfym4bwdpiim1" path="res://icon.svg" id="15_jnaee"]
+[ext_resource type="Script" uid="uid://bdqa65bcy4145" path="res://PlayerCharacter/PlayerCharacter2.gd" id="16_titdo"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ecuao"]
 animations = [{
@@ -68,25 +69,19 @@ animations = [{
 radius = 6.0
 height = 22.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnaee"]
-resource_name = "grass"
-texture = ExtResource("14_wntfd")
-texture_region_size = Vector2i(32, 32)
-0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jnaee"]
+friction = 0.2
+absorbent = true
 
-[sub_resource type="TileSet" id="TileSet_titdo"]
-tile_size = Vector2i(32, 32)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_jnaee")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jnaee"]
+size = Vector2(126.19, 126.225)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_cutyl")
+visible = false
+position = Vector2(0, -1028.31)
+motion_mode = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_ecuao")
@@ -96,10 +91,24 @@ animation = &"idle"
 position = Vector2(0.035, 2.995)
 shape = SubResource("CapsuleShape2D_wntfd")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-3, 1)
-zoom = Vector2(3, 3)
-
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAEAAAAAAAAAAAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAD7/wEAAAAAAAAAAAD6/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD4/wEAAAAAAAAAAAD3/wEAAAAAAAAAAAD2/wEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAGAAEAAAAAAAAAAAAHAAEAAAAAAAAAAAAIAAEAAAAAAAAAAAAJAAEAAAAAAAAAAAAKAAEAAAAAAAAAAAALAAEAAAAAAAAAAAA=")
-tile_set = SubResource("TileSet_titdo")
+tile_map_data = PackedByteArray("AAAAAAEAtQAEAAoAAAD//wEAtQAEAAoAAAD+/wEAtQAEAAoAAAD9/wEAtQAEAAoAAAD8/wEAtQAEAAoAAAD7/wEAtQAEAAoAAAD6/wEAtQAEAAoAAAD5/wEAtQAEAAoAAAD4/wEAtQAEAAoAAAD3/wEAtQAEAAoAAAD2/wEAtQAEAAoAAAABAAEAtQAEAAoAAAACAAEAtQAEAAoAAAADAAEAtQAEAAoAAAAEAAEAtQAEAAoAAAAFAAEAtQAEAAoAAAAGAAEAtQAEAAoAAAAHAAEAtQAEAAoAAAAIAAEAtQAEAAoAAAAJAAEAtQAEAAoAAAAKAAEAtQAEAAoAAAALAAEAtQAEAAoAAAD2//r/tQAEAAoAAAD3//r/tQAEAAoAAAD4//r/tQAEAAoAAAD5//r/tQAEAAoAAAD6//r/tQAEAAoAAAD7//r/tQAEAAoAAAD8//r/tQAEAAoAAAD9//r/tQAEAAoAAAD+//r/tQAEAAoAAAD///r/tQAEAAoAAAAAAPr/tQAEAAoAAAABAPr/tQAEAAoAAAACAPr/tQAEAAoAAAADAPr/tQAEAAoAAAAEAPr/tQAEAAoAAAAFAPr/tQAEAAoAAAAGAPr/tQAEAAoAAAAHAPr/tQAEAAoAAAAIAPr/tQAEAAoAAAAJAPr/tQAEAAoAAAAKAPr/tQAEAAoAAAALAPr/tQAEAAoAAAAMAPr/tQAEAAoAAAAMAAEAtQAEAAoAAAANAAEAtQAFAAcAAAANAAIAtQAEAAoAAAANAAMAtQAEAAoAAAANAAQAtQAEAAoAAAANAAUAtQAEAAoAAAANAAYAtQAEAAoAAAANAPr/tQACAAQAAAAOAPr/tQACAAMAAAA=")
+tile_set = ExtResource("13_jnaee")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+texture = ExtResource("15_jnaee")
+
+[node name="Rigid" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_jnaee")
+gravity_scale = 0.0
+script = ExtResource("16_titdo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rigid"]
+texture = ExtResource("15_jnaee")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rigid"]
+shape = SubResource("RectangleShape2D_jnaee")
+
+[node name="Camera2D" type="Camera2D" parent="Rigid"]
+position = Vector2(-3, 1)
+zoom = Vector2(0.5, 0.5)
