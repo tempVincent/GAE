@@ -14,6 +14,14 @@ config/name="Wild Jam April 2026"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
+
+[itch_uploader]
+
+itch_page_url="https://tempvinc.itch.io/gamename"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
