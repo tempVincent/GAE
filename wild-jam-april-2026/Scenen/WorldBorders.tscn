@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddtbi0r0c6m68"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_muuf1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_2h7ck"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_53gfr"]
+normal = Vector2(1, 0)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_maox2"]
+normal = Vector2(-1, 0)
+
+[node name="StaticBody2D" type="StaticBody2D"]
+physics_material_override = SubResource("PhysicsMaterial_muuf1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 45.27)
+shape = SubResource("WorldBoundaryShape2D_2h7ck")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-94.5, 0)
+shape = SubResource("WorldBoundaryShape2D_53gfr")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2(1060.47, 0)
+shape = SubResource("WorldBoundaryShape2D_maox2")
