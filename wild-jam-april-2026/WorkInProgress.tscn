@@ -1,52 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://brn222scas0yr"]
+[gd_scene load_steps=4 format=3 uid="uid://brn222scas0yr"]
 
-[ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_2h7ck"]
-[ext_resource type="Texture2D" uid="uid://chbmlc1aetye8" path="res://icon.svg" id="1_53gfr"]
-[ext_resource type="Texture2D" uid="uid://bytb8wa0ghsah" path="res://assets/Wallpaper.png" id="1_muuf1"]
+[ext_resource type="Texture2D" uid="uid://bltq3agbbuvr1" path="res://assets/pattern_05.png" id="1_muuf1"]
+[ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="2_maox2"]
 [ext_resource type="PackedScene" uid="uid://ddtbi0r0c6m68" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2h7ck"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_53gfr")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
-radius = 48.28
-height = 128.0
 
 [node name="WorkInProgress" type="Node2D"]
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 scale = Vector2(0.91, 0.91)
-repeat_size = Vector2(256, 128)
-repeat_times = 4
-
-[node name="ColorRect" type="ColorRect" parent="Parallax2D"]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
+repeat_size = Vector2(128, 64)
+repeat_times = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-position = Vector2(530.195, -165.41)
+position = Vector2(633.21, 380.31)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_muuf1")
 
-[node name="Silvester" type="CharacterBody2D" parent="."]
-visible = false
-script = ExtResource("1_2h7ck")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Silvester"]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(0.75, 1)
-sprite_frames = SubResource("SpriteFrames_2h7ck")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Silvester"]
-shape = SubResource("CapsuleShape2D_maox2")
+[node name="Silvester" parent="." instance=ExtResource("2_maox2")]
 
 [node name="WorldBorders" parent="." instance=ExtResource("3_maox2")]
 position = Vector2(0, 130.025)

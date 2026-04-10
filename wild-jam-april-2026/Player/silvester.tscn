@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d4kraustakfpo"]
+
+[ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
+[ext_resource type="Texture2D" uid="uid://chbmlc1aetye8" path="res://icon.svg" id="2_3dvcf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2h7ck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3dvcf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
+radius = 48.28
+height = 128.0
+
+[node name="Silvester" type="CharacterBody2D"]
+script = ExtResource("1_j052w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-4.76837e-07, 0)
+scale = Vector2(0.75, 1)
+sprite_frames = SubResource("SpriteFrames_2h7ck")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_maox2")
