@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc2nst4h5pfau"]
+
+[ext_resource type="Texture2D" uid="uid://bhvafdrd4rpkd" path="res://assets/Coffe Table.png" id="1_iyear"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
+size = Vector2(159.895, 109.38)
+
+[node name="Table" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_muuf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(3.8147e-06, -2.86102e-06)
+scale = Vector2(2.5, 1.71875)
+texture = ExtResource("1_iyear")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d01l6bvgil3ny"
-path="res://.godot/imported/Progress3.svg-3a1e590a1e953f0a9658d82bafc23ddc.ctex"
+uid="uid://uobk3l75tpdq"
+path="res://.godot/imported/CoffeMachine.png-fb5d93d2a01c397c273bbfa942ad0490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/itch_uploader/icons/Progress3.svg"
-dest_files=["res://.godot/imported/Progress3.svg-3a1e590a1e953f0a9658d82bafc23ddc.ctex"]
+source_file="res://assets/CoffeMachine.png"
+dest_files=["res://.godot/imported/CoffeMachine.png-fb5d93d2a01c397c273bbfa942ad0490.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=2.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

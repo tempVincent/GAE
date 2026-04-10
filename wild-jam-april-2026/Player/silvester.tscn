@@ -1,20 +1,158 @@
-[gd_scene format=3 uid="uid://mgy302kin7e3"]
+[gd_scene load_steps=19 format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://yhu06tb2ae8n" path="res://assets/player_tilesheet.png" id="2_j052w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
-radius = 48.28
-height = 128.0
+radius = 31.0
+height = 98.0
 
-[node name="Silvester" type="CharacterBody2D" unique_id=1635862186]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j052w"]
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3dvcf"]
+graph_offset = Vector2(-1016.08, 122.702)
+nodes/idle/node = SubResource("AnimationNodeAnimation_j052w")
+nodes/idle/position = Vector2(-180, 100)
+nodes/output/position = Vector2(-180, 360)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyj5e"]
+atlas = ExtResource("2_j052w")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vve37"]
+atlas = ExtResource("2_j052w")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w0jd1"]
+atlas = ExtResource("2_j052w")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm8a7"]
+atlas = ExtResource("2_j052w")
+region = Rect2(240, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6e7qe"]
+atlas = ExtResource("2_j052w")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j052w"]
+atlas = ExtResource("2_j052w")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3dvcf"]
+atlas = ExtResource("2_j052w")
+region = Rect2(80, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62e7u"]
+atlas = ExtResource("2_j052w")
+region = Rect2(160, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cys3l"]
+atlas = ExtResource("2_j052w")
+region = Rect2(560, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3xba"]
+atlas = ExtResource("2_j052w")
+region = Rect2(0, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xuh7"]
+atlas = ExtResource("2_j052w")
+region = Rect2(560, 110, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqx7y"]
+atlas = ExtResource("2_j052w")
+region = Rect2(80, 110, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_62e7u"]
+animations = [{
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_jyj5e")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_vve37")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_w0jd1")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_cm8a7")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_6e7qe")
+}],
+"loop": true,
+"name": &"idle2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_j052w")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_3dvcf")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_62e7u")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_cys3l")
+}, {
+"duration": 1.2,
+"texture": SubResource("AtlasTexture_j052w")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3xba")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xuh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqx7y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3xuh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3xba")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[node name="Silvester" type="CharacterBody2D"]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
 script = ExtResource("1_j052w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1905987193]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.025)
 shape = SubResource("CapsuleShape2D_maox2")
 
-[node name="PlayerTilesheet" type="Sprite2D" parent="." unique_id=634728675]
-position = Vector2(-1, 2)
+[node name="PlayerTilesheet" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_j052w")
 hframes = 9
 vframes = 3
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_3dvcf")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_62e7u")
+animation = &"idle2"
+frame_progress = 0.0788822

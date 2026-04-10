@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dcuhy310eaw00"]
+
+[ext_resource type="Texture2D" uid="uid://bpglk4ult0407" path="res://assets/Stuhl.png" id="1_dff3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
+size = Vector2(106.575, 163)
+
+[node name="Table" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_muuf1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(2.15, 0)
+scale = Vector2(2.292, 2.586)
+texture = ExtResource("1_dff3s")

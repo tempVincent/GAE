@@ -27,6 +27,13 @@ enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
 
 itch_page_url="https://tempvinc.itch.io/gamename"
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Objects"
+2d_physics/layer_3="Funiture"
+2d_physics/layer_5="Background Funiture"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
