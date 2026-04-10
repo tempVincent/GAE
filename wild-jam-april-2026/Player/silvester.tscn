@@ -1,30 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4kraustakfpo"]
+[gd_scene format=3 uid="uid://mgy302kin7e3"]
 
 [ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
-[ext_resource type="Texture2D" uid="uid://chbmlc1aetye8" path="res://icon.svg" id="2_3dvcf"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_2h7ck"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("2_3dvcf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://yhu06tb2ae8n" path="res://assets/player_tilesheet.png" id="2_j052w"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
 radius = 48.28
 height = 128.0
 
-[node name="Silvester" type="CharacterBody2D"]
+[node name="Silvester" type="CharacterBody2D" unique_id=1635862186]
 script = ExtResource("1_j052w")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-4.76837e-07, 0)
-scale = Vector2(0.75, 1)
-sprite_frames = SubResource("SpriteFrames_2h7ck")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1905987193]
 shape = SubResource("CapsuleShape2D_maox2")
+
+[node name="PlayerTilesheet" type="Sprite2D" parent="." unique_id=634728675]
+position = Vector2(-1, 2)
+texture = ExtResource("2_j052w")
+hframes = 9
+vframes = 3
