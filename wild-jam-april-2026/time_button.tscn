@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bqap78axkai6t"]
+
+[ext_resource type="Script" uid="uid://bsn3iilrf5uml" path="res://time_button.gd" id="1_pv0h7"]
+
+[node name="Node2D" type="Node2D" unique_id=851970936]
+script = ExtResource("1_pv0h7")
+
+[node name="Timer" type="Timer" parent="." unique_id=2146974139]
+
+[node name="LineEdit" type="LineEdit" parent="." unique_id=187829471]
+offset_right = 126.0
+offset_bottom = 31.0
+placeholder_text = "Time left:"
