@@ -4,7 +4,7 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ObjectivePool.objectives_updated.connect(_obj)
-	pass # Replace with function body.
+	_obj()
 	
 #add function to get and display next objective
 func _obj():
