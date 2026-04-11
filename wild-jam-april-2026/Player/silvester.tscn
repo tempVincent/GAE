@@ -162,6 +162,7 @@ animation = &"idle2"
 frame_progress = 0.0788822
 
 [node name="Hand" type="Node2D" parent="AnimatedSprite2D"]
+position = Vector2(38.845, 28.68)
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 7

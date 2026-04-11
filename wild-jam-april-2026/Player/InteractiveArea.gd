@@ -47,7 +47,7 @@ func _get_interactiveObject():
 			item.get_parent().remove_child(item)
 			character.get_node("AnimatedSprite2D/Hand").add_child(item)
 			item.position = Vector2(0,0)
-			item.position += Vector2(50,0)
+			#item.position += Vector2(50,0)
 			
 			#match 
 		##interact with Object
