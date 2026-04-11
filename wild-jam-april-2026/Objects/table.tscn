@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://bthwokg55t2uw"]
 
-[ext_resource type="Texture2D" uid="uid://chbmlc1aetye8" path="res://icon.svg" id="1_7ii30"]
+[ext_resource type="Texture2D" uid="uid://bfug2imthu1np" path="res://assets/Kitchen area.png" id="1_7ii30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(700, 109.95)
 
 [node name="Table" type="StaticBody2D"]
+modulate = Color(0.329412, 0.65098, 1, 1)
+texture_filter = 1
 collision_layer = 4
 collision_mask = 2
 
@@ -15,5 +17,5 @@ shape = SubResource("RectangleShape2D_muuf1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(254.5, 105)
-scale = Vector2(5.477, 0.864)
+scale = Vector2(2.73047, 0.864)
 texture = ExtResource("1_7ii30")

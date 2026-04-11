@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://d4kraustakfpo"]
+[gd_scene load_steps=21 format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://yhu06tb2ae8n" path="res://assets/player_tilesheet.png" id="2_j052w"]
+[ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
 radius = 31.0
@@ -131,6 +132,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
+size = Vector2(76.6667, 43.3333)
+
 [node name="Silvester" type="CharacterBody2D"]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
@@ -156,3 +160,15 @@ anim_player = NodePath("../AnimationPlayer")
 sprite_frames = SubResource("SpriteFrames_62e7u")
 animation = &"idle2"
 frame_progress = 0.0788822
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 7
+script = ExtResource("3_3dvcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(56.6667, -6)
+shape = SubResource("RectangleShape2D_j052w")
+
+[connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
