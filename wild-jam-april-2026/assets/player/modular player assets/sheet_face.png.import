@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0ak385ar5hf"
-path="res://.godot/imported/Wallpaper.png-03fabc32720d1c37eacdea8bb4af4c64.ctex"
+uid="uid://yr2i7rj8nq12"
+path="res://.godot/imported/sheet_face.png-0e6a342fddc51a1a5bd3cb88ebd8b6d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wallpaper.png"
-dest_files=["res://.godot/imported/Wallpaper.png-03fabc32720d1c37eacdea8bb4af4c64.ctex"]
+source_file="res://assets/player/modular player assets/sheet_face.png"
+dest_files=["res://.godot/imported/sheet_face.png-0e6a342fddc51a1a5bd3cb88ebd8b6d0.ctex"]
 
 [params]
 

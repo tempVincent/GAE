@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://devexx4rv0xp5"]
+
+[ext_resource type="Texture2D" uid="uid://fn8yc5nfmf57" path="res://assets/player/soldier_tilesheet.png" id="1_kb804"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_scrsw"]
+atlas = ExtResource("1_kb804")
+region = Rect2(0, 0, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_slj5f"]
+atlas = ExtResource("1_kb804")
+region = Rect2(0, 220, 80, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dohak"]
+atlas = ExtResource("1_kb804")
+region = Rect2(400, 220, 80, 110)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqaja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_scrsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_slj5f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dohak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Jhonny" type="Node2D" unique_id=1748313404]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1815533701]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_mqaja")
