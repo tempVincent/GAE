@@ -8,8 +8,8 @@ func _ready() -> void:
 	
 #add function to get and display next objective
 func _obj():
-	var obj = str(ObjectivePool.next_objective)
-	label.text = "Next Objective: " + obj
+	var obj = ObjectivePool.get_objective_text(ObjectivePool.next_objective)
+	label.text = "Next Objective: get " + obj
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
