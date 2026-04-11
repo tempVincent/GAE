@@ -11,10 +11,12 @@ func _ready() -> void:
 	label.text = "Time left: " + str(timer.time_left)
 	pass # Replace with function body.
 
-func _timer(difficulty):
-	pass
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	label.text = "Time left: " + str(int(timer.time_left))
 	
+
+
+func _on_timer_timeout() -> void:
+	print("Game finished")
+	pass # Replace with function body.

@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://johnny.tscn" id="9_csgbm"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://time_button.tscn" id="11_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Objective_display.tscn" id="12_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://next.tscn" id="13_dk6sv"]
+[ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://speech_bubble.tscn" id="14_dow5r"]
 
 [node name="WorkInProgress" type="Node2D" unique_id=2077578583]
 
@@ -64,5 +67,14 @@ collision_mask = 5
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 
-[node name="Node2D" parent="." unique_id=851970936 instance=ExtResource("11_dbv7r")]
+[node name="Timer" parent="." unique_id=851970936 instance=ExtResource("11_dbv7r")]
 position = Vector2(-94, -470)
+
+[node name="currentObj" parent="." unique_id=1437534383 instance=ExtResource("12_dbv7r")]
+position = Vector2(-86, -389)
+
+[node name="nextObj" parent="." unique_id=1808636976 instance=ExtResource("13_dk6sv")]
+position = Vector2(241, -432)
+
+[node name="Node2D" parent="." unique_id=1580011084 instance=ExtResource("14_dow5r")]
+position = Vector2(955, -47)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://danlit8f33mtv"]
+
+[ext_resource type="Texture2D" uid="uid://bbqb7u1p5f3gj" path="res://assets/emotes/PNG/Pixel/Style 1/emote__.png" id="1_gm1uq"]
+
+[node name="Node2D" type="Node2D" unique_id=1580011084]
+
+[node name="Emote" type="Sprite2D" parent="." unique_id=1904858376]
+scale = Vector2(6.3437505, 2.875)
+texture = ExtResource("1_gm1uq")
+
+[node name="Label" type="Label" parent="." unique_id=1419304914]
+offset_left = -47.0
+offset_top = -17.0
+offset_right = 44.0
+offset_bottom = 6.0
+theme_override_colors/font_color = Color(0.01, 0.01, 0.01, 1)
+text = "I need coffe"
