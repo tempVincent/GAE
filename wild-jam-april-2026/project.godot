@@ -27,6 +27,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
 
+[global_group]
+
+pickable="Objects can be picked up."
+
 [input]
 
 ui_left={

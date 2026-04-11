@@ -2,15 +2,37 @@ extends RigidBody2D
 
 var isInHand = false
 var characterHand
-var characterAnimation
+var characterAnimation:AnimatedSprite2D
+@onready var sprite:Sprite2D = $Sprite2D
+@onready var collision:CollisionPolygon2D = $CollisionPolygon2D
 
 func _enter_tree() -> void:
 	if get_parent().get_parent().get_parent().scene_file_path == "res://Player/silvester.tscn":
+		
+		##Get Resources
 		isInHand = true
 		characterHand = get_parent().get_node("AnimatedSprite2D/Hand")
 		characterAnimation = get_parent().get_parent()
 		
+		##Set Params
+		freeze = true
+		position = Vector2(0,0)
+		collision.disabled = true
+		scale = Vector2(0.5,0.5)
+		rotation = 0
+		
 		pass
+
+
+func _exit_tree() -> void:
+	if get_parent().get_parent().get_parent().scene_file_path == "res://Player/silvester.tscn":
+		
+		##Cleanup Params
+		freeze = false
+		collision.disabled = false
+		scale = Vector2(1,1)
+
+
 
 
 
@@ -22,7 +44,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if isInHand:
-		if characterAnimation.flip_h == true:
-			scale.x = -1
+		characterAnimation
+		if characterAnimation.flip_h:
+			sprite.flip_h= false
 		else:
-			scale.x = 1
+			sprite.flip_h= true
