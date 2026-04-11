@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var characterAnimation = $"../AnimatedSprite2D"
+@onready var character = $".."
 var coffee_can
 var inRangeObjects:Array
 
@@ -39,6 +40,16 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _get_interactiveObject():
 	if !inRangeObjects.is_empty():
+		var item:Node2D = inRangeObjects[0]
+		
+		if character.itemInHand == null:
+			character.itemInHand = item
+			item.get_parent().remove_child(item)
+			character.get_node("AnimatedSprite2D/Hand").add_child(item)
+			item.position = Vector2(0,0)
+			item.position += Vector2(50,0)
+			
+			#match 
 		##interact with Object
 		##coffe can be picked up (when picked up, disable collision), and set state for player "carring"
 		##coffee can be placed at coffemachine

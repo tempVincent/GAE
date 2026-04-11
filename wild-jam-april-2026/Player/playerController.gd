@@ -5,6 +5,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 enum animationState {idle, idle2, walk, jump}
 var animationStatePlayer: animationState
+var itemInHand: Node2D
 @onready var AnimationController =  $AnimatedSprite2D
 @onready var InteractiveArea = $Area2D
 signal interactSignal

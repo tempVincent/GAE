@@ -161,6 +161,8 @@ sprite_frames = SubResource("SpriteFrames_62e7u")
 animation = &"idle2"
 frame_progress = 0.0788822
 
+[node name="Hand" type="Node2D" parent="AnimatedSprite2D"]
+
 [node name="Area2D" type="Area2D" parent="."]
 collision_mask = 7
 script = ExtResource("3_3dvcf")
