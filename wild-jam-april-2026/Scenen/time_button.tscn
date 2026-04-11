@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqap78axkai6t"]
 
-[ext_resource type="Script" uid="uid://bsn3iilrf5uml" path="res://time_button.gd" id="1_pv0h7"]
+[ext_resource type="Script" uid="uid://bsn3iilrf5uml" path="res://Skripts/time_button.gd" id="1_pv0h7"]
 [ext_resource type="Texture2D" uid="uid://cwmtquwmcg63g" path="res://assets/UI/PNG/Default/panel_brown_damaged_dark.png" id="2_olxky"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_5u2uf"]

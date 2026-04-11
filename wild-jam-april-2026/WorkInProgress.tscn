@@ -8,12 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
-[ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://johnny.tscn" id="9_csgbm"]
-[ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://johnny.gd" id="10_2r8cf"]
-[ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://time_button.tscn" id="11_dbv7r"]
-[ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Objective_display.tscn" id="12_dbv7r"]
-[ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://next.tscn" id="13_dk6sv"]
-[ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://speech_bubble.tscn" id="14_dow5r"]
+[ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
+[ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
+[ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Scenen/next.tscn" id="13_dk6sv"]
+[ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
 
 [node name="WorkInProgress" type="Node2D" unique_id=2077578583]
 
@@ -60,10 +60,11 @@ collision_mask = 22
 input_pickable = true
 
 [node name="Silvester" parent="." unique_id=494767959 instance=ExtResource("2_maox2")]
+z_index = 2
 position = Vector2(0, -120.93)
 collision_mask = 5
 
-[node name="Jhonny" parent="." unique_id=1312494689 instance=ExtResource("9_csgbm")]
+[node name="Johnny" parent="." unique_id=1312494689 instance=ExtResource("9_csgbm")]
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 

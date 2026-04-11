@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://devexx4rv0xp5"]
 
 [ext_resource type="Texture2D" uid="uid://fn8yc5nfmf57" path="res://assets/player/soldier_tilesheet.png" id="1_kb804"]
-[ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://area_2d.gd" id="2_scrsw"]
+[ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://Skripts/area_2d.gd" id="2_scrsw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scrsw"]
 atlas = ExtResource("1_kb804")

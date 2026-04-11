@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b58d0x1lor2lc"]
 
 [ext_resource type="Texture2D" uid="uid://cwmtquwmcg63g" path="res://assets/UI/PNG/Default/panel_brown_damaged_dark.png" id="1_0uw54"]
-[ext_resource type="Script" uid="uid://44u4um7f6l3i" path="res://objective_display.gd" id="1_a6w2e"]
+[ext_resource type="Script" uid="uid://44u4um7f6l3i" path="res://Skripts/objective_display.gd" id="1_a6w2e"]
 
 [node name="Node2D" type="Node2D" unique_id=1437534383]
 script = ExtResource("1_a6w2e")

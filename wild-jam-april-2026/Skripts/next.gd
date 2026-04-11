@@ -1,16 +1,16 @@
 extends Node2D
-@onready var label :Label = $Label
+@onready var label: Label = $Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	_get_current_objective()
+	ObjectivePool.objectives_updated.connect(_obj)
 	pass # Replace with function body.
-
-func _get_current_objective():
-	# add function + finction call to get objective
-	var obj = "Get coffe"
-	label.text = "Current Objective: " +obj
-	pass
+	
+#add function to get and display next objective
+func _obj():
+	var obj = str(ObjectivePool.next_objective)
+	label.text = "Next Objective: " + obj
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

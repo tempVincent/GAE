@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c73h2r5tmiiou"]
 
-[ext_resource type="Script" uid="uid://1c51vppesh8g" path="res://next.gd" id="1_cwt1o"]
+[ext_resource type="Script" uid="uid://1c51vppesh8g" path="res://Skripts/next.gd" id="1_cwt1o"]
 [ext_resource type="Texture2D" uid="uid://dgenrev0eat4q" path="res://assets/UI/PNG/Default/panel_grey_dark.png" id="1_d80l4"]
 
 [node name="Node2D" type="Node2D" unique_id=1808636976]
