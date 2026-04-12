@@ -1,21 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bthwokg55t2uw"]
+[gd_scene format=3 uid="uid://bthwokg55t2uw"]
 
+[ext_resource type="Script" uid="uid://bjnge3scciywp" path="res://Objects/tableController.gd" id="1_6uc0q"]
 [ext_resource type="Texture2D" uid="uid://bfug2imthu1np" path="res://assets/Kitchen area.png" id="1_7ii30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(700, 109.95)
 
-[node name="Table" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ii30"]
+size = Vector2(577, 112)
+
+[node name="Table" type="StaticBody2D" unique_id=308811030]
 modulate = Color(0.329412, 0.65098, 1, 1)
 texture_filter = 1
 collision_layer = 4
 collision_mask = 2
+script = ExtResource("1_6uc0q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399310961]
 position = Vector2(254.65, 104.715)
 shape = SubResource("RectangleShape2D_muuf1")
+one_way_collision = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1000973434]
 position = Vector2(254.5, 105)
 scale = Vector2(2.73047, 0.864)
 texture = ExtResource("1_7ii30")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1394037518]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=904520157]
+position = Vector2(197.5, 105)
+shape = SubResource("RectangleShape2D_7ii30")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]

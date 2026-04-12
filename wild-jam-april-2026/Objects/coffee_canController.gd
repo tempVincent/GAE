@@ -32,6 +32,7 @@ func _exit_tree() -> void:
 		isInHand = false
 		freeze = false
 		collision.disabled = false
+	
 		scale = Vector2(1,1)
 
 

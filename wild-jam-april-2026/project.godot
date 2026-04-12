@@ -65,6 +65,7 @@ itch_page_url="https://tempvinc.itch.io/gamename"
 2d_physics/layer_2="Objects"
 2d_physics/layer_3="Funiture"
 2d_physics/layer_5="Background Funiture"
+2d_physics/layer_8="Floor"
 
 [rendering]
 

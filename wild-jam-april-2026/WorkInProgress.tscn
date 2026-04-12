@@ -26,6 +26,7 @@ texture = ExtResource("1_maox2")
 
 [node name="WorldBorders" parent="BaseComponents" unique_id=1710744587 instance=ExtResource("3_maox2")]
 position = Vector2(0, 130.025)
+collision_layer = 128
 
 [node name="Camera2D" type="Camera2D" parent="BaseComponents" unique_id=1648552374]
 position = Vector2(482.965, -150.21)
@@ -48,13 +49,13 @@ position = Vector2(451, 38)
 [node name="Objects" type="Node2D" parent="." unique_id=222584690]
 
 [node name="CoffeeCan" parent="Objects" unique_id=995889882 instance=ExtResource("4_muuf1")]
-position = Vector2(157.25, 0)
-collision_mask = 22
+position = Vector2(687, -109)
+collision_mask = 150
 input_pickable = true
 
 [node name="Silvester" parent="." unique_id=1342437381 instance=ExtResource("2_maox2")]
 position = Vector2(0, -120.93)
-collision_mask = 5
+collision_mask = 133
 
 [node name="Jhonny" parent="." unique_id=2055670265 instance=ExtResource("9_csgbm")]
 position = Vector2(999, 16)
