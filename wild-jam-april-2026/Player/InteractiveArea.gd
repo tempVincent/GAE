@@ -5,6 +5,9 @@ extends Area2D
 @onready var hand = $"../AnimatedSprite2D/Hand"
 @onready var Objects:Node2D = $"../../Objects"
 @onready var table:StaticBody2D = $"../../Funiture/Table"
+@onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
+
+
 
 var coffee_can
 var inRangeObjects:Array
@@ -75,7 +78,7 @@ func _get_interactiveObject():
 		hand.remove_child(object)
 		Objects.add_child(object)
 		object.global_position = oldPos
-		if table.playerInArea:
-			object.global_position.y -= 200
+		if table.playerInArea or coffetable.playerInArea:
+			object.global_position.y -= 150
 		
 		character.itemInHand = null

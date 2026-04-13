@@ -1,19 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc2nst4h5pfau"]
+[gd_scene format=3 uid="uid://dc2nst4h5pfau"]
 
+[ext_resource type="Script" uid="uid://04usdanm2v75" path="res://Objects/coffeetable.gd" id="1_ad171"]
 [ext_resource type="Texture2D" uid="uid://bhvafdrd4rpkd" path="res://assets/Coffe Table.png" id="1_iyear"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(159.895, 109.38)
 
-[node name="Table" type="StaticBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4kml"]
+size = Vector2(209, 112)
+
+[node name="Table" type="StaticBody2D" unique_id=779630227]
 collision_layer = 4
 collision_mask = 2
+script = ExtResource("1_ad171")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=568968243]
 shape = SubResource("RectangleShape2D_muuf1")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=581443871]
 texture_filter = 1
 position = Vector2(3.8147e-06, -2.86102e-06)
 scale = Vector2(2.5, 1.71875)
 texture = ExtResource("1_iyear")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1671615574]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1919378016]
+position = Vector2(-25.5, -2)
+shape = SubResource("RectangleShape2D_l4kml")
+
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="." method="_on_area_2d_2_body_exited"]
