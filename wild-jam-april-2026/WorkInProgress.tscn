@@ -20,6 +20,7 @@
 [node name="BaseComponents" type="Node2D" parent="." unique_id=1861418136]
 
 [node name="Parallax2D" type="Parallax2D" parent="BaseComponents" unique_id=893340579]
+z_index = -1
 scale = Vector2(0.91, 0.91)
 repeat_size = Vector2(128, 64)
 repeat_times = 10
@@ -42,6 +43,7 @@ position = Vector2(0, 14.13)
 collision_layer = 16
 
 [node name="Stuhl" parent="Funiture" unique_id=1782707943 instance=ExtResource("5_0ajgu")]
+z_index = -1
 position = Vector2(989.755, 93.19)
 collision_layer = 2
 
@@ -65,6 +67,9 @@ position = Vector2(0, -120.93)
 collision_mask = 5
 
 [node name="Johnny" parent="." unique_id=1312494689 instance=ExtResource("9_csgbm")]
+light_mask = 4
+visibility_layer = 4
+z_index = -1
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 

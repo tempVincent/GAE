@@ -7,7 +7,8 @@
 script = ExtResource("1_ug717")
 
 [node name="Emote" type="Sprite2D" parent="." unique_id=1904858376]
-scale = Vector2(6.3437505, 2.875)
+position = Vector2(7.1249948, 0)
+scale = Vector2(7.234375, 2.875)
 texture = ExtResource("1_gm1uq")
 
 [node name="Label" type="Label" parent="." unique_id=1419304914]
