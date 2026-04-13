@@ -18,10 +18,12 @@ func _process(delta: float) -> void:
 	label.text = "Time left: " + str(int(timer.time_left))
 	
 func _updated_time():
-	print("Updating time")
 	timer.wait_time = 300.0 / (ObjectivePool.difficulty+1)
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	print("Game finished")
+	if(ObjectivePool.completed_obj >= 10):
+		print ("Player won")
+	else:
+		print("Player lost")
 	pass # Replace with function body.
