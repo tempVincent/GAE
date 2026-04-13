@@ -20,4 +20,4 @@ func _on_body_entered(body: Node2D):
 		inRangeObjects.append(body)
 		print("i see: CoffeMachine")
 	else:
-		print(body.get_path())
+		print("Johhny:%s" + str(body.get_path()))

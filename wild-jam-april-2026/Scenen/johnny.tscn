@@ -47,11 +47,10 @@ flip_h = true
 light_mask = 2
 visibility_layer = 150
 scale = Vector2(0.6666667, 0.6666667)
+collision_mask = 2
 script = ExtResource("2_scrsw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=697698449]
-light_mask = 6
-visibility_layer = 150
 position = Vector2(-66, 3)
 shape = SubResource("RectangleShape2D_kb804")
 
