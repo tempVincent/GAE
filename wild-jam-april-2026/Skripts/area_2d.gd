@@ -12,12 +12,15 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 func _on_body_entered(body: Node2D):
-	if body.scene_file_path == "res://root/WorkInProgress/Objects/CoffeeCan":
+	var path = body.get_path()
+	if str(path) == "/root/WorkInProgress/Objects/CoffeeCan":
+		if ObjectivePool.current_objective == ObjectivePool.objectives.coffee:
+			print("Objective completed")
+			ObjectivePool._complete_current_objective()
 		inRangeObjects.append(body)
-		print("I see: Coffe CAn")
 	
-	if body.scene_file_path == "res://Objects/coffeMachine.tscn":
+	elif str(path) == "res://Objects/coffeMachine.tscn":
 		inRangeObjects.append(body)
 		print("i see: CoffeMachine")
 	else:
-		print("Johhny:%s" + str(body.get_path()))
+		print("Johhny:" + str(body.get_path()))
