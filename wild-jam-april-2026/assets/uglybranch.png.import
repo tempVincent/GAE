@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cc0ak385ar5hf"
-path="res://.godot/imported/Wallpaper.png-03fabc32720d1c37eacdea8bb4af4c64.ctex"
+uid="uid://buon8vrnlpstf"
+path="res://.godot/imported/uglybranch.png-546a2f3dfc5d0c8e63dc0ebb1ed161ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Wallpaper.png"
-dest_files=["res://.godot/imported/Wallpaper.png-03fabc32720d1c37eacdea8bb4af4c64.ctex"]
+source_file="res://assets/uglybranch.png"
+dest_files=["res://.godot/imported/uglybranch.png-546a2f3dfc5d0c8e63dc0ebb1ed161ff.ctex"]
 
 [params]
 
