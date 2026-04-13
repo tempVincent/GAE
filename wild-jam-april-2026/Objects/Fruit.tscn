@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://dmss18xrcb55g"]
+
+[ext_resource type="Script" uid="uid://cxu8mjteibxf6" path="res://Classes/Fruit.gd" id="1_u5qqq"]
+[ext_resource type="Texture2D" uid="uid://chbmlc1aetye8" path="res://icon.svg" id="2_jnpi6"]
+
+[node name="Fruit" type="RigidBody2D" unique_id=1112410231 groups=["pickable"]]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_u5qqq")
+metadata/_custom_type_script = "uid://cxu8mjteibxf6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017394365]
+texture = ExtResource("2_jnpi6")

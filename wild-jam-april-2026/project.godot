@@ -27,6 +27,10 @@ ObjectivePool="*uid://bv5tbeqgrsi1g"
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Wild Jam April 2026"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
