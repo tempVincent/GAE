@@ -118,6 +118,6 @@ debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
-[connection signal="body_exited" from="Areas/Coffeetable" to="Funiture/Table" method="_on_body_exited"]
+[connection signal="body_exited" from="Areas/Coffeetable" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Area2D" to="Areas" method="_on_body_entered" binds= [false]]
 [connection signal="body_exited" from="Areas/Area2D" to="Areas" method="_on_body_exited"]

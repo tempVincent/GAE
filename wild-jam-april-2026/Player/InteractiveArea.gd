@@ -77,11 +77,25 @@ func _get_interactiveObject():
 		if interactionareas.canPlaceObject:
 			var oldPos = object.global_position
 			print(oldPos)
+			
+			
+			var newPos = oldPos
+			
+			
+			if interactionareas.playerInArea:
+				newPos.y -= 150
+				
+				var moveCan:Tween = get_tree().create_tween()
+				moveCan.tween_property(object,"global_position",newPos,0.25)
+				await moveCan.finished
+				moveCan.kill()
+			
+			
 			hand.remove_child(object)
 			Objects.add_child(object)
-			object.global_position = oldPos
-			if interactionareas.playerInArea:
-				object.global_position.y -= 150
+			
+			
+			object.global_position = newPos
 			
 			character.itemInHand = null
 		
