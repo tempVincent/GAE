@@ -47,6 +47,7 @@ position = Vector2(989.755, 93.19)
 collision_layer = 2
 
 [node name="CoffeeTable" parent="Funiture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
+z_index = 1
 position = Vector2(904, 119)
 collision_layer = 2
 
@@ -65,6 +66,8 @@ position = Vector2(0, -120.93)
 collision_mask = 133
 
 [node name="Jhonny" parent="." unique_id=2055670265 instance=ExtResource("9_csgbm")]
+light_mask = 3
+visibility_layer = 151
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 
