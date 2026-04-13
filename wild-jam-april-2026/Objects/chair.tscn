@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcuhy310eaw00"]
+[gd_scene format=3 uid="uid://dcuhy310eaw00"]
 
-[ext_resource type="Texture2D" uid="uid://bpglk4ult0407" path="res://assets/Stuhl.png" id="1_dff3s"]
+[ext_resource type="Texture2D" uid="uid://bpglk4ult0407" path="res://assets/Objects/Stuhl.png" id="1_dff3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(106.575, 163)

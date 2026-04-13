@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ce84hhal83xr3"]
+[gd_scene format=3 uid="uid://ce84hhal83xr3"]
 
-[ext_resource type="Texture2D" uid="uid://uobk3l75tpdq" path="res://assets/CoffeMachine.png" id="1_p2hp1"]
+[ext_resource type="Texture2D" uid="uid://uobk3l75tpdq" path="res://assets/Objects/CoffeMachine.png" id="1_p2hp1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(85, 114)

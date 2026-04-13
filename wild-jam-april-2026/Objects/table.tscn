@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://bthwokg55t2uw"]
 
 [ext_resource type="Script" uid="uid://bjnge3scciywp" path="res://Objects/tableController.gd" id="1_6uc0q"]
-[ext_resource type="Texture2D" uid="uid://bfug2imthu1np" path="res://assets/Kitchen area.png" id="1_7ii30"]
+[ext_resource type="Texture2D" uid="uid://bfug2imthu1np" path="res://assets/Objects/Kitchen area.png" id="1_7ii30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(700, 109.95)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7ii30"]
-size = Vector2(577, 112)
+size = Vector2(173, 112)
 
 [node name="Table" type="StaticBody2D" unique_id=308811030]
 modulate = Color(0.329412, 0.65098, 1, 1)
@@ -27,10 +27,9 @@ scale = Vector2(2.73047, 0.864)
 texture = ExtResource("1_7ii30")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1394037518]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=904520157]
-position = Vector2(197.5, 105)
+position = Vector2(-4.5, 105)
 shape = SubResource("RectangleShape2D_7ii30")
 disabled = true
 

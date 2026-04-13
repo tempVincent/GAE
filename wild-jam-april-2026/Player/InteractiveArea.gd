@@ -33,6 +33,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.scene_file_path == "res://Objects/coffeMachine.tscn":
 		inRangeObjects.append(body)
 		print("CoffeMachine")
+	
+	if body.scene_file_path == "res://Objects/water.tscn":
+		inRangeObjects.append(body)
+		print("WaterArea")
+	
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -47,6 +52,9 @@ func _get_interactiveObject():
 	if !inRangeObjects.is_empty():
 		var item:Node2D = inRangeObjects[0]
 		
+		
+		##ITEMS DIE MAN AUFHEBEN KANN
+		#region Aufhebbare ITEMS
 		if item.is_in_group("pickable"):
 			
 			##PICKUP ITEM
@@ -70,43 +78,57 @@ func _get_interactiveObject():
 		
 		##then rescan
 	
-	if character.itemInHand and !itemJustPickedUp:
-		var object:Node2D = hand.get_child(0)
+	
+		
+		#endregion
+		
+		#region nicht aufhebbare Items
+		
+		if !item.is_in_group("pickable"):
+			if character.itemInHand:
+				item.interact(character, hand.get_child(0))
+			else:
+				item.interact(null, null)
+			pass
 		
 		
-		if interactionareas.canPlaceObject:
-			var oldPos = object.global_position
-			print(oldPos)
+		
+		
+		#endregion
+		
+		
+		
+		
+	else:
+	
+		##DROP ITEMS
+		if character.itemInHand and !itemJustPickedUp:
+			var object:Node2D = hand.get_child(0)
 			
 			
-			var newPos = oldPos
-			
-			
-			if interactionareas.playerInArea:
-				newPos.y -= 150
+			if interactionareas.canPlaceObject:
+				var oldPos = object.global_position
+				print(oldPos)
 				
-				var moveCan:Tween = get_tree().create_tween()
-				moveCan.tween_property(object,"global_position",newPos,0.25)
-				await moveCan.finished
-				moveCan.kill()
+				
+				var newPos = oldPos
+				
+				
+				if interactionareas.playerInArea:
+					newPos.y -= 150
+					
+					var moveCan:Tween = get_tree().create_tween()
+					moveCan.tween_property(object,"global_position",newPos,0.25)
+					await moveCan.finished
+					moveCan.kill()
+				
+				
+				hand.remove_child(object)
+				Objects.add_child(object)
+				
+				
+				object.global_position = newPos
+				
+				character.itemInHand = null
 			
 			
-			hand.remove_child(object)
-			Objects.add_child(object)
-			
-			
-			object.global_position = newPos
-			
-			character.itemInHand = null
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		

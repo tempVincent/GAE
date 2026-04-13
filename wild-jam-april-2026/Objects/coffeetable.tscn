@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dc2nst4h5pfau"]
 
 [ext_resource type="Script" uid="uid://04usdanm2v75" path="res://Objects/coffeetable.gd" id="1_ad171"]
-[ext_resource type="Texture2D" uid="uid://bhvafdrd4rpkd" path="res://assets/Coffe Table.png" id="1_iyear"]
+[ext_resource type="Texture2D" uid="uid://bhvafdrd4rpkd" path="res://assets/Objects/Coffe Table.png" id="1_iyear"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(159.895, 109.38)

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
+[ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
@@ -49,7 +50,7 @@ position = Vector2(482.965, -150.21)
 [node name="Funiture" type="Node2D" parent="." unique_id=719615469]
 
 [node name="Table" parent="Funiture" unique_id=530798775 instance=ExtResource("4_52blh")]
-position = Vector2(0, 14.13)
+position = Vector2(0, 14)
 collision_layer = 16
 
 [node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
@@ -63,10 +64,14 @@ collision_layer = 2
 [node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
 position = Vector2(451, 38)
 
+[node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
+position = Vector2(35, 16)
+scale = Vector2(1.5, 1.5)
+
 [node name="Objects" type="Node2D" parent="." unique_id=222584690]
 
-[node name="CoffeeCan" parent="Objects" unique_id=995889882 instance=ExtResource("4_muuf1")]
-position = Vector2(687, -109)
+[node name="CoffeeCan" parent="Objects" unique_id=995889882 groups=["canBeFilled"] instance=ExtResource("4_muuf1")]
+position = Vector2(254, -38)
 collision_mask = 150
 input_pickable = true
 

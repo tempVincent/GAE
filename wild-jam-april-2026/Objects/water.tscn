@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b340r1ya6cwhq"]
+
+[ext_resource type="Script" uid="uid://nk0ojkcnn2pi" path="res://Objects/water.gd" id="1_7w8gy"]
+[ext_resource type="Texture2D" uid="uid://5xuia2t5tgy" path="res://assets/Objects/Water/idle.png" id="1_dvsf5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7w8gy"]
+size = Vector2(64, 32)
+
+[node name="Water" type="StaticBody2D" unique_id=840642084]
+collision_layer = 2
+script = ExtResource("1_7w8gy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119757167]
+texture_filter = 1
+texture = ExtResource("1_dvsf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=520114810]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_7w8gy")

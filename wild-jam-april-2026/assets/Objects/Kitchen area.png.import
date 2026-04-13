@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uobk3l75tpdq"
-path="res://.godot/imported/CoffeMachine.png-fb5d93d2a01c397c273bbfa942ad0490.ctex"
+uid="uid://bfug2imthu1np"
+path="res://.godot/imported/Kitchen area.png-515e77519f1681ff20825c6aa8c796f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/CoffeMachine.png"
-dest_files=["res://.godot/imported/CoffeMachine.png-fb5d93d2a01c397c273bbfa942ad0490.ctex"]
+source_file="res://assets/Objects/Kitchen area.png"
+dest_files=["res://.godot/imported/Kitchen area.png-515e77519f1681ff20825c6aa8c796f3.ctex"]
 
 [params]
 
