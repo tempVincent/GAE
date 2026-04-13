@@ -24,4 +24,4 @@ func _on_body_entered(body: Node2D):
 			ObjectivePool._complete_current_objective()
 		print("i see: CoffeMachine")
 	else:
-		print("Johhny:" + str(body.get_path()))
+		print("Johnny sieht:" + str(body.get_path()))

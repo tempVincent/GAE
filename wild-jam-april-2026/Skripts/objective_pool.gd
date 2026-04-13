@@ -30,6 +30,7 @@ func _get_random_Task() -> objectives:
 func _update_difficulty(new_diff :int):
 	difficulty= new_diff
 	difficulty_updated.emit()
+	completed_obj = 0
 	
 func _update_completed():
 	completed_obj +=1

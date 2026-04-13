@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://2dhs3muob4h6"]
+
+[ext_resource type="Script" uid="uid://ddttbyv0vfy80" path="res://Scenen/node_2d_2.gd" id="1_woldj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcwbd"]
+load_path = "res://.godot/imported/panel_brown_damaged_dark.png-09fcc10b3524a41eb231365e5a9469ba.ctex"
+
+[node name="Node2D2" type="Node2D" unique_id=284449888]
+script = ExtResource("1_woldj")
+
+[node name="completed" type="Label" parent="." unique_id=2103804843]
+z_index = 1
+offset_left = 893.0
+offset_top = -7.0
+offset_right = 1071.0
+offset_bottom = 16.0
+text = "Passed Objectives: "
+
+[node name="PanelBrownDamagedDark" type="Sprite2D" parent="." unique_id=222992894]
+position = Vector2(1007, 10)
+scale = Vector2(4.699, 1.4016249)
+texture = SubResource("CompressedTexture2D_dcwbd")

@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Scenen/next.tscn" id="13_dk6sv"]
 [ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="15_hlgq8"]
+[ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="16_gaonw"]
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
 
@@ -85,4 +86,7 @@ position = Vector2(241, -432)
 position = Vector2(955, -47)
 
 [node name="Menu" parent="." unique_id=729242910 instance=ExtResource("15_hlgq8")]
-position = Vector2(956, -465)
+position = Vector2(960, -380)
+
+[node name="Node2D2" parent="." unique_id=284449888 instance=ExtResource("16_gaonw")]
+position = Vector2(-71, -441)
