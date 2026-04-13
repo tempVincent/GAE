@@ -21,19 +21,20 @@ func _ready() -> void:
 func _complete_current_objective():
 	current_objective = next_objective
 	next_objective = _get_random_Task()
-	_update_completed()
+	_update_completed(1)
 	objectives_updated.emit()
 	
 func _get_random_Task() -> objectives:
 	return objs[randi()%objs.size()]
 	
 func _update_difficulty(new_diff :int):
-	difficulty= new_diff
+	difficulty= new_diff	
+	_update_completed(-completed_obj)
 	difficulty_updated.emit()
-	completed_obj = 0
 	
-func _update_completed():
-	completed_obj +=1
+func _update_completed(cnt):
+	completed_obj +=cnt
+	objectives_updated.emit()
 	print(completed_obj)
 	
 func get_objective_text(obj: objectives) -> String:
