@@ -1,17 +1,22 @@
 extends Area2D
 
 @onready var characterAnimation = $"../AnimatedSprite2D"
+@onready var character = $".."
+@onready var hand = $"../AnimatedSprite2D/Hand"
+@onready var Objects:Node2D = $"../../Objects"
+@onready var table:StaticBody2D = $"../../Funiture/Table"
+@onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
+
+
+
 var coffee_can
 var inRangeObjects:Array
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if characterAnimation.flip_h == true:
 		scale.x = -1
@@ -28,7 +33,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.scene_file_path == "res://Objects/coffeMachine.tscn":
 		inRangeObjects.append(body)
 		print("CoffeMachine")
-	
+
 
 func _on_body_exited(body: Node2D) -> void:
 	if inRangeObjects.has(body):
@@ -36,9 +41,24 @@ func _on_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 
 
-
 func _get_interactiveObject():
+	var itemJustPickedUp = false
+	
 	if !inRangeObjects.is_empty():
+		var item:Node2D = inRangeObjects[0]
+		
+		if item.is_in_group("pickable"):
+			
+			##PICKUP ITEM
+			if character.itemInHand == null:
+				character.itemInHand = item
+				item.get_parent().remove_child(item)
+				character.get_node("AnimatedSprite2D/Hand").add_child(item)
+				itemJustPickedUp = true
+				#item.position = Vector2(0,0)
+				#item.position += Vector2(50,0)
+			
+				#match 
 		##interact with Object
 		##coffe can be picked up (when picked up, disable collision), and set state for player "carring"
 		##coffee can be placed at coffemachine
@@ -49,3 +69,16 @@ func _get_interactiveObject():
 		print(inRangeObjects[0])
 		
 		##then rescan
+	
+	if character.itemInHand and !itemJustPickedUp:
+		var object:Node2D = hand.get_child(0)
+		
+		var oldPos = object.global_position
+		print(oldPos)
+		hand.remove_child(object)
+		Objects.add_child(object)
+		object.global_position = oldPos
+		if table.playerInArea or coffetable.playerInArea:
+			object.global_position.y -= 150
+		
+		character.itemInHand = null

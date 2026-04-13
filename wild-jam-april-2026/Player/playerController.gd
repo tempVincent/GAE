@@ -5,7 +5,9 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 enum animationState {idle, idle2, walk, jump}
 var animationStatePlayer: animationState
+var itemInHand: Node2D
 @onready var AnimationController =  $AnimatedSprite2D
+@onready var Hand = $AnimatedSprite2D/Hand
 @onready var InteractiveArea = $Area2D
 signal interactSignal
 
@@ -32,15 +34,16 @@ func _physics_process(delta: float) -> void:
 	animation(direction)
 	
 	
-	
 	move_and_slide()
 
 
 func animation(direction) -> void:
-	if direction < 0:
+	if direction < 0 and AnimationController.flip_h != true:
 		AnimationController.flip_h = true
-	elif direction >0:
+		Hand.position.x *= -1
+	elif direction >0 and AnimationController.flip_h != false:
 		AnimationController.flip_h = false
+		Hand.position.x *= -1
 
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		animationStatePlayer= animationState.walk

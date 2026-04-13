@@ -31,6 +31,10 @@ window/stretch/mode="viewport"
 
 enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
 
+[global_group]
+
+pickable="Objects can be picked up."
+
 [input]
 
 ui_left={
@@ -65,6 +69,7 @@ itch_page_url="https://tempvinc.itch.io/gamename"
 2d_physics/layer_2="Objects"
 2d_physics/layer_3="Funiture"
 2d_physics/layer_5="Background Funiture"
+2d_physics/layer_8="Floor"
 
 [rendering]
 

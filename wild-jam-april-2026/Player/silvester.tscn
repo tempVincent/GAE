@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://d4kraustakfpo"]
+[gd_scene format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://yhu06tb2ae8n" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
@@ -12,9 +12,9 @@ height = 98.0
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3dvcf"]
 graph_offset = Vector2(-1016.08, 122.702)
+nodes/output/position = Vector2(-180, 360)
 nodes/idle/node = SubResource("AnimationNodeAnimation_j052w")
 nodes/idle/position = Vector2(-180, 100)
-nodes/output/position = Vector2(-180, 360)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jyj5e"]
 atlas = ExtResource("2_j052w")
@@ -133,40 +133,43 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
-size = Vector2(76.6667, 43.3333)
+size = Vector2(76.6667, 63.66665)
 
-[node name="Silvester" type="CharacterBody2D"]
+[node name="Silvester" type="CharacterBody2D" unique_id=1980086930]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_j052w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1038112557]
 position = Vector2(0, 6.025)
 shape = SubResource("CapsuleShape2D_maox2")
 
-[node name="PlayerTilesheet" type="Sprite2D" parent="."]
+[node name="PlayerTilesheet" type="Sprite2D" parent="." unique_id=891119384]
 visible = false
 texture = ExtResource("2_j052w")
 hframes = 9
 vframes = 3
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=149646445]
 tree_root = SubResource("AnimationNodeBlendTree_3dvcf")
 anim_player = NodePath("../AnimationPlayer")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=552244121]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1682217476]
 sprite_frames = SubResource("SpriteFrames_62e7u")
 animation = &"idle2"
 frame_progress = 0.0788822
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Hand" type="Node2D" parent="AnimatedSprite2D" unique_id=527515048]
+position = Vector2(40, 30)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1364209751]
 collision_mask = 7
 script = ExtResource("3_3dvcf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(56.6667, -6)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327376693]
+position = Vector2(56.6667, 4.1666746)
 shape = SubResource("RectangleShape2D_j052w")
 
 [connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
