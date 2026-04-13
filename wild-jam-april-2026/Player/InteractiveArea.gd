@@ -6,7 +6,7 @@ extends Area2D
 @onready var Objects:Node2D = $"../../Objects"
 @onready var table:StaticBody2D = $"../../Funiture/Table"
 @onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
-
+@onready var interactionareas:Node2D = $"../../Areas"
 
 
 var coffee_can
@@ -73,12 +73,26 @@ func _get_interactiveObject():
 	if character.itemInHand and !itemJustPickedUp:
 		var object:Node2D = hand.get_child(0)
 		
-		var oldPos = object.global_position
-		print(oldPos)
-		hand.remove_child(object)
-		Objects.add_child(object)
-		object.global_position = oldPos
-		if table.playerInArea or coffetable.playerInArea:
-			object.global_position.y -= 150
 		
-		character.itemInHand = null
+		if interactionareas.canPlaceObject:
+			var oldPos = object.global_position
+			print(oldPos)
+			hand.remove_child(object)
+			Objects.add_child(object)
+			object.global_position = oldPos
+			if interactionareas.playerInArea:
+				object.global_position.y -= 150
+			
+			character.itemInHand = null
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		

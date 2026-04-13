@@ -14,7 +14,16 @@
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Scenen/next.tscn" id="13_dk6sv"]
 [ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
-[ext_resource type="PackedScene" uid="uid://c1ojhrccle60d" path="res://Areas/InteractionAreas.tscn" id="15_hlgq8"]
+[ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dow5r"]
+size = Vector2(592, 666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlgq8"]
+size = Vector2(130, 663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaonw"]
+size = Vector2(124, 661.435)
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
 
@@ -83,8 +92,32 @@ position = Vector2(955, -47)
 
 [node name="Areas" type="Node2D" parent="." unique_id=1058248669]
 position = Vector2(0, 14.13)
+script = ExtResource("15_hlgq8")
 
-[node name="Area2D2" parent="Areas" unique_id=29111056 instance=ExtResource("15_hlgq8")]
+[node name="table" type="Area2D" parent="Areas" unique_id=1251929032]
 
-[node name="Area2D3" parent="Areas" unique_id=1117145974 instance=ExtResource("15_hlgq8")]
-position = Vector2(829, -1.1300001)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/table" unique_id=21780190]
+position = Vector2(191, -170.13)
+shape = SubResource("RectangleShape2D_dow5r")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="Coffeetable" type="Area2D" parent="Areas" unique_id=866881095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Coffeetable" unique_id=2051230471]
+position = Vector2(838, -169.63)
+shape = SubResource("RectangleShape2D_hlgq8")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Areas" unique_id=590212355]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D" unique_id=1560293467]
+position = Vector2(999, -168.4125)
+shape = SubResource("RectangleShape2D_gaonw")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
+[connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
+[connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
+[connection signal="body_exited" from="Areas/Coffeetable" to="Funiture/Table" method="_on_body_exited"]
+[connection signal="body_entered" from="Areas/Area2D" to="Areas" method="_on_body_entered" binds= [false]]
+[connection signal="body_exited" from="Areas/Area2D" to="Areas" method="_on_body_exited"]
