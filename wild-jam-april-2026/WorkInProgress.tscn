@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Scenen/next.tscn" id="13_dk6sv"]
 [ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
+[ext_resource type="PackedScene" uid="uid://c1ojhrccle60d" path="res://Areas/InteractionAreas.tscn" id="15_hlgq8"]
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
 
@@ -44,7 +45,7 @@ collision_layer = 16
 
 [node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
 position = Vector2(989.755, 93.19)
-collision_layer = 2
+collision_layer = 16
 
 [node name="CoffeeTable" parent="Funiture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
 position = Vector2(904, 119)
@@ -79,3 +80,11 @@ position = Vector2(241, -432)
 
 [node name="Node2D" parent="." unique_id=1580011084 instance=ExtResource("14_dow5r")]
 position = Vector2(955, -47)
+
+[node name="Areas" type="Node2D" parent="." unique_id=1058248669]
+position = Vector2(0, 14.13)
+
+[node name="Area2D2" parent="Areas" unique_id=29111056 instance=ExtResource("15_hlgq8")]
+
+[node name="Area2D3" parent="Areas" unique_id=1117145974 instance=ExtResource("15_hlgq8")]
+position = Vector2(829, -1.1300001)
