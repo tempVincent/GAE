@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://2dhs3muob4h6"]
 
-[ext_resource type="Script" uid="uid://ddttbyv0vfy80" path="res://Scenen/node_2d_2.gd" id="1_woldj"]
+[ext_resource type="Script" uid="uid://ddttbyv0vfy80" path="res://Skripts/node_2d_2.gd" id="1_woldj"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dcwbd"]
 load_path = "res://.godot/imported/panel_brown_damaged_dark.png-09fcc10b3524a41eb231365e5a9469ba.ctex"
