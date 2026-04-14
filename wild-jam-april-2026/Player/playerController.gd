@@ -1,17 +1,16 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 enum animationState {idle, idle2, walk, jump}
 var animationStatePlayer: animationState
 var itemInHand: Node2D
-@onready var AnimationController =  $AnimatedSprite2D
-@onready var Hand = $AnimatedSprite2D/Hand
-@onready var InteractiveArea = $Area2D
 signal interactSignal
 var canMove = true
 
+@onready var AnimationController =  $AnimatedSprite2D
+@onready var Hand = $AnimatedSprite2D/Hand
+@onready var InteractiveArea = $Area2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -31,13 +30,13 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		interact()
+		#handle interact
+		if Input.is_action_just_pressed("interact"):
+			interactSignal.emit()
 		
 		animation(direction)
 		
-		
 		move_and_slide()
-
 
 func animation(direction) -> void:
 	if direction < 0 and AnimationController.flip_h != true:
@@ -54,9 +53,7 @@ func animation(direction) -> void:
 	
 	if Input.is_action_just_pressed("ui_accept"):
 		animationStatePlayer= animationState.jump
-	
-	
-	
+
 	####JUMP ANIMATION GEHT NOCH NICHT SAUBER
 	if AnimationController.animation != animationState.keys()[animationStatePlayer]:
 		AnimationController.play(animationState.keys()[animationStatePlayer])
@@ -65,11 +62,3 @@ func animation(direction) -> void:
 			await AnimationController.animation_finished
 		
 	#print(AnimationController.animation)
-
-
-func interact() -> void:
-	if Input.is_action_just_pressed("interact"):
-		interactSignal.emit()
-	
-	
-	pass
