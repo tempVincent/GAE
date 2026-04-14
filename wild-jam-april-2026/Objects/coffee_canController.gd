@@ -1,5 +1,5 @@
 extends RigidBody2D
-
+var item_type = "coffee_can"
 var isInHand = false
 var characterHand
 var characterAnimation:AnimatedSprite2D

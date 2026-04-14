@@ -6,14 +6,16 @@
 [node name="Node2D" type="Node2D" unique_id=1437534383]
 script = ExtResource("1_a6w2e")
 
-[node name="Label" type="Label" parent="." unique_id=1351389060]
+[node name="Node2D" type="Node2D" parent="." unique_id=299211707]
+
+[node name="Label" type="Label" parent="Node2D" unique_id=1351389060]
 z_index = 1
 offset_top = -7.0
 offset_right = 169.0
 offset_bottom = 25.0
 text = "Current Objective"
 
-[node name="PanelBrownDamagedDark" type="Sprite2D" parent="." unique_id=242865485]
+[node name="PanelBrownDamagedDark" type="Sprite2D" parent="Node2D" unique_id=242865485]
 position = Vector2(115.00001, 10)
 scale = Vector2(4.699, 1.4016249)
 texture = ExtResource("1_0uw54")
