@@ -7,11 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
-[ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
+[ext_resource type="PackedScene" path="res://Objects/water.tscn" id="7_gaonw"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
-[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
-[ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
+[ext_resource type="Script" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
+[ext_resource type="PackedScene" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/Objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
@@ -73,6 +74,11 @@ script = ExtResource("7_rlha8")
 [node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
 position = Vector2(35, 16)
 scale = Vector2(1.5, 1.5)
+
+[node name="Tasse" type="Sprite2D" parent="Funiture" unique_id=243312445]
+position = Vector2(885, 44)
+scale = Vector2(3.0000007, 2.875)
+texture = ExtResource("9_qbaj0")
 
 [node name="FruitBranch" parent="." unique_id=883655430 instance=ExtResource("8_dypuf")]
 position = Vector2(-106, -313)
