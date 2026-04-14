@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
 [ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
+[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
@@ -67,6 +68,7 @@ collision_layer = 2
 
 [node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
 position = Vector2(451, 38)
+script = ExtResource("7_rlha8")
 
 [node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
 position = Vector2(35, 16)

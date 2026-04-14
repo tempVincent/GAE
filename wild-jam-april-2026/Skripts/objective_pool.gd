@@ -1,13 +1,12 @@
 extends Node
 enum objectives{
 	coffee,
-	fruits,
 	water
 }
 signal objectives_updated
 signal difficulty_updated
 
-const objs:Array[objectives] = [objectives.coffee, objectives.fruits, objectives.water]
+const objs:Array[objectives] = [objectives.coffee, objectives.water]
 var current_objective:objectives = _get_random_Task()
 var next_objective: objectives = _get_random_Task()
 var difficulty: int = 0
@@ -41,8 +40,8 @@ func get_objective_text(obj: objectives) -> String:
 	match obj:
 		objectives.coffee:
 			return "Coffee"
-		objectives.fruits:
-			return "Fruits"
+		#objectives.fruits:
+		#	return "Fruits"
 		objectives.water:
 			return "Water"
 		_:
