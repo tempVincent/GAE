@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_maox2"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="2_maox2"]
-[ext_resource type="PackedScene" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
+[ext_resource type="PackedScene" uid="uid://ddtbi0r0c6m68" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
 [ext_resource type="PackedScene" uid="uid://bthwokg55t2uw" path="res://Objects/table.tscn" id="4_52blh"]
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
@@ -67,7 +67,7 @@ position = Vector2(904, 119)
 collision_layer = 2
 
 [node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
-position = Vector2(451, 38)
+position = Vector2(451, 42)
 script = ExtResource("7_rlha8")
 
 [node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
