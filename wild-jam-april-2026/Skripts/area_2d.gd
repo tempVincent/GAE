@@ -1,6 +1,7 @@
 extends Area2D
 var coffee_can
 var inRangeObjects:Array
+@onready var tasseFX = $"../../../Funiture/Tasse/CPUParticles2D"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,6 +21,12 @@ func _on_body_entered(body: Node2D):
 		if p.texture == preload("res://assets/Objects/CoffeCan.png")	:		
 			if ObjectivePool.current_objective == ObjectivePool.objectives.coffee:
 				print("Objective completed")
+				
+				tasseFX.emitting = true
+				await get_tree().create_timer(5).timeout
+				tasseFX.emitting = false
+				
+				
 				p.texture = empty_tex
 				ObjectivePool._complete_current_objective()
 	

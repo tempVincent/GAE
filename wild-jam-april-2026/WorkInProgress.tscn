@@ -7,10 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
-[ext_resource type="PackedScene" path="res://Objects/water.tscn" id="7_gaonw"]
+[ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
-[ext_resource type="Script" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
-[ext_resource type="PackedScene" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
+[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
+[ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
 [ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/Objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
@@ -21,6 +21,14 @@
 [ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="18_pogpk"]
 [ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="19_rlha8"]
+
+[sub_resource type="Curve" id="Curve_qbaj0"]
+_data = [Vector2(0.25, 0.31744754), 0.0, 0.0, 0, 0, Vector2(0.8846154, 0.61147016), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_40drc"]
+_data = [Vector2(0.8730769, 1), 0.0, 0.0, 0, 0]
+point_count = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dow5r"]
 size = Vector2(592, 666)
@@ -59,6 +67,7 @@ position = Vector2(0, 14)
 collision_layer = 16
 
 [node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
+z_index = -2
 position = Vector2(989.755, 93.19)
 collision_layer = 16
 
@@ -76,9 +85,27 @@ position = Vector2(35, 16)
 scale = Vector2(1.5, 1.5)
 
 [node name="Tasse" type="Sprite2D" parent="Funiture" unique_id=243312445]
-position = Vector2(885, 44)
+texture_filter = 1
+position = Vector2(942.99994, 44)
 scale = Vector2(3.0000007, 2.875)
 texture = ExtResource("9_qbaj0")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Funiture/Tasse" unique_id=212906843]
+z_index = -1
+position = Vector2(-0.985, -3.2)
+emitting = false
+amount = 5
+emission_shape = 3
+emission_rect_extents = Vector2(3.94, 0.215)
+gravity = Vector2(0, -30)
+linear_accel_min = -61.32
+linear_accel_max = 3.65
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+split_scale = true
+scale_curve_x = SubResource("Curve_qbaj0")
+scale_curve_y = SubResource("Curve_40drc")
+color = Color(0.5294118, 0.5254902, 0.5176471, 1)
 
 [node name="FruitBranch" parent="." unique_id=883655430 instance=ExtResource("8_dypuf")]
 position = Vector2(-106, -313)
@@ -98,6 +125,8 @@ collision_mask = 133
 [node name="Jhonny" parent="." unique_id=2055670265 instance=ExtResource("9_csgbm")]
 light_mask = 3
 visibility_layer = 151
+z_index = -1
+texture_filter = 1
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 
