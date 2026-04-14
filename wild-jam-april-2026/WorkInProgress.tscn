@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://brn222scas0yr"]
 
 [ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_maox2"]
+[ext_resource type="Script" uid="uid://mivjpaam64ej" path="res://GameController.gd" id="1_ykjyh"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="2_maox2"]
 [ext_resource type="PackedScene" uid="uid://ddtbi0r0c6m68" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
 [ext_resource type="PackedScene" uid="uid://bthwokg55t2uw" path="res://Objects/table.tscn" id="4_52blh"]
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
+[ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="4_pims7"]
 [ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
 [ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
@@ -40,10 +42,12 @@ size = Vector2(130, 663)
 size = Vector2(124, 661.435)
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
+script = ExtResource("1_ykjyh")
 
 [node name="BaseComponents" type="Node2D" parent="." unique_id=1185134037]
 
 [node name="Parallax2D" type="Parallax2D" parent="BaseComponents" unique_id=958832936]
+z_index = -4
 scale = Vector2(0.91, 0.91)
 repeat_size = Vector2(128, 64)
 repeat_times = 10
@@ -59,6 +63,10 @@ collision_layer = 128
 
 [node name="Camera2D" type="Camera2D" parent="BaseComponents" unique_id=1648552374]
 position = Vector2(482.965, -150.21)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BaseComponents" unique_id=778864446]
+stream = ExtResource("4_pims7")
+volume_db = -80.0
 
 [node name="Funiture" type="Node2D" parent="." unique_id=719615469]
 
