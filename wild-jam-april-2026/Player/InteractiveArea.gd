@@ -41,6 +41,9 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.scene_file_path == "res://Objects/Fruit.tscn":
 		inRangeObjects.append(body)
 		print("Fruit")
+	
+	if body.scene_file_path == "res://Objects/mixer.tscn":
+		inRangeObjects.append(body)
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -86,10 +89,13 @@ func _get_interactiveObject():
 		#endregion
 		
 		#region nicht aufhebbare Items
-		
+		print("Interact Mixer")
 		if !item.is_in_group("pickable"):
 			if character.itemInHand:
 				if (item.scene_file_path == "res://Objects/coffeMachine.tscn" or item.scene_file_path == "res://Objects/water.tscn") and hand.get_child(0).scene_file_path == "res://Objects/coffee_can.tscn":
+					item.interact(character, hand.get_child(0))
+				if  (item.scene_file_path == "res://Objects/mixer.tscn"):
+					
 					item.interact(character, hand.get_child(0))
 			else:
 				item.interact(null, null)

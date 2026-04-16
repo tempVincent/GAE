@@ -23,4 +23,4 @@ func StartSpawning() -> void:
 
 func spawnAt(parent: Node2D) -> void:
 	parent.add_child(fruit.instantiate())
-	print("fruit spawned")
+	#print("fruit spawned")

@@ -23,6 +23,8 @@
 [ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="18_pogpk"]
 [ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="19_rlha8"]
+[ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
+[ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/mixer.gd" id="25_m085l"]
 
 [sub_resource type="Curve" id="Curve_qbaj0"]
 _data = [Vector2(0.25, 0.31744754), 0.0, 0.0, 0, 0, Vector2(0.8846154, 0.61147016), 0.0, 0.0, 0, 0]
@@ -121,7 +123,7 @@ position = Vector2(-106, -313)
 [node name="Objects" type="Node2D" parent="." unique_id=222584690]
 
 [node name="CoffeeCan" parent="Objects" unique_id=995889882 groups=["canBeFilled"] instance=ExtResource("4_muuf1")]
-position = Vector2(254, -38)
+position = Vector2(233.45, -38)
 collision_mask = 150
 input_pickable = true
 
@@ -181,6 +183,10 @@ position = Vector2(-94, -353)
 
 [node name="Node2D2" parent="." unique_id=284449888 instance=ExtResource("19_rlha8")]
 position = Vector2(-78, -466)
+
+[node name="Mixer" parent="." unique_id=174376775 instance=ExtResource("24_l0i0s")]
+position = Vector2(289, 40)
+script = ExtResource("25_m085l")
 
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
