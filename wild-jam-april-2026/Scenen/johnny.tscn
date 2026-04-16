@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://devexx4rv0xp5"]
 
+[ext_resource type="Script" uid="uid://cra7neomlmiha" path="res://Classes/Consumer.gd" id="1_1djeq"]
 [ext_resource type="Texture2D" uid="uid://cmg5elsmu2crm" path="res://assets/player/soldier_tilesheet.png" id="1_kb804"]
 [ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://Skripts/area_2d.gd" id="2_scrsw"]
 
@@ -35,7 +36,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kb804"]
 size = Vector2(152, 100)
 
-[node name="Johnny" type="Node2D" unique_id=6673050]
+[node name="Johnny" type="StaticBody2D" unique_id=1049355559]
+script = ExtResource("1_1djeq")
+metadata/_custom_type_script = "uid://cra7neomlmiha"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=495831000]
 visibility_layer = 150

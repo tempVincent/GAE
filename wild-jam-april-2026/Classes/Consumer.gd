@@ -1,0 +1,1 @@
+class_name Consumer extends StaticBody2D
