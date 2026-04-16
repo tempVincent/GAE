@@ -1,8 +1,8 @@
 class_name FruitSpawner extends Node2D
 
 var spawnBranches: Array
-var spawnCooldownMin: float = 1 #seconds
-var spawnCooldownMax: float = 10 #seconds
+var spawnCooldownMin: float = 5 #seconds
+var spawnCooldownMax: float = 20 #seconds
 var rng = RandomNumberGenerator.new()
 var fruits: Array[PackedScene] = []
 
@@ -16,6 +16,12 @@ func _ready() -> void:
 func _start() -> void:
 	StartSpawning()
 
+func _process(delta: float) -> void:
+	var total: int = 0
+	for branch in spawnBranches:
+		total += branch.get_node("spawnpoint").get_children().size()
+	print(total)
+
 func StartSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")
@@ -26,5 +32,13 @@ func StartSpawning() -> void:
 			timer.start(rng.randi_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
-	parent.add_child(fruits[rng.randi_range(0,fruits.size()-1)].instantiate())
-	#print("fruit spawned")
+	var fruit: Fruit = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
+	parent.add_child(fruit)
+	
+	#var despawnTimer: Timer = Timer.new()
+	#despawnTimer.timeout.connect(func () -> void:
+	#	parent.remove_child(fruit)
+	#	fruit.queue_free()
+	#)
+	#fruit.add_child(despawnTimer)
+	#despawnTimer.start(10)

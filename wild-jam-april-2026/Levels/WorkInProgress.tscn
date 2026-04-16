@@ -14,13 +14,13 @@
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Prefabs/coffee_carafe.tscn" id="12_wqr5t"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="13_pmr56"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Prefabs/johnny.tscn" id="14_uqw2b"]
-[ext_resource type="Script" uid="uid://codncb5050uqq" path="res://Classes/Johnny.gd" id="15_ajj7m"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Prefabs/time_button.tscn" id="15_fjats"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Prefabs/menu.tscn" id="16_v2lac"]
 [ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Prefabs/next.tscn" id="17_xnqnb"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Prefabs/objective_display.tscn" id="18_mpvfx"]
 [ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Prefabs/passed_objectives.tscn" id="19_3cg0m"]
 [ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Prefabs/speech_bubble.tscn" id="20_icoea"]
+[ext_resource type="Script" uid="uid://dl1wiyokn3qjj" path="res://Classes/FruitKillzone.gd" id="21_ajj7m"]
 
 [sub_resource type="Curve" id="Curve_qbaj0"]
 _data = [Vector2(0.25, 0.31744754), 0.0, 0.0, 0, 0, Vector2(0.8846154, 0.61147016), 0.0, 0.0, 0, 0]
@@ -29,6 +29,8 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_40drc"]
 _data = [Vector2(0.8730769, 1), 0.0, 0.0, 0, 0]
 point_count = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3udl"]
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
 script = ExtResource("1_idjen")
@@ -111,13 +113,13 @@ position = Vector2(-11, 199)
 position = Vector2(95, 604)
 
 [node name="Empty_Carafe" parent="Objects" unique_id=995889882 instance=ExtResource("12_wqr5t")]
-position = Vector2(258, -100)
+position = Vector2(260, -223)
 collision_mask = 150
 input_pickable = true
 
 [node name="Silvester" parent="." unique_id=1342437381 instance=ExtResource("13_pmr56")]
 z_index = 3
-position = Vector2(769, 556)
+position = Vector2(769, 323)
 collision_mask = 133
 
 [node name="Johnny" parent="." unique_id=2055670265 instance=ExtResource("14_uqw2b")]
@@ -126,7 +128,6 @@ visibility_layer = 151
 z_index = -1
 texture_filter = 1
 position = Vector2(1089, 500)
-script = ExtResource("15_ajj7m")
 
 [node name="UI" type="Node2D" parent="." unique_id=930012841]
 position = Vector2(95, 604)
@@ -149,3 +150,16 @@ position = Vector2(-78, -583)
 
 [node name="SpeechBubble" parent="UI" unique_id=1580011084 instance=ExtResource("20_icoea")]
 position = Vector2(951, -163)
+
+[node name="TriggerAreas" type="Node2D" parent="." unique_id=596199855]
+
+[node name="Fruit_Killzone" type="Area2D" parent="TriggerAreas" unique_id=667842329]
+position = Vector2(640, 899.9999)
+scale = Vector2(217.92001, 5.1599975)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("21_ajj7m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TriggerAreas/Fruit_Killzone" unique_id=1248528041]
+shape = SubResource("RectangleShape2D_d3udl")

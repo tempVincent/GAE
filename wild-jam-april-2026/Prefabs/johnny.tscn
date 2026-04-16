@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://devexx4rv0xp5"]
 
 [ext_resource type="Texture2D" uid="uid://cmg5elsmu2crm" path="res://Assets/player/soldier_tilesheet.png" id="1_kb804"]
+[ext_resource type="Script" uid="uid://codncb5050uqq" path="res://Classes/Johnny.gd" id="1_mo7vh"]
 [ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://Classes/Area_2d.gd" id="2_scrsw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scrsw"]
@@ -32,10 +33,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kb804"]
-size = Vector2(152, 100)
+[sub_resource type="CircleShape2D" id="CircleShape2D_mo7vh"]
 
-[node name="Johnny" type="Node2D" unique_id=697403277]
+[node name="Johnny" type="StaticBody2D" unique_id=1423532877]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_mo7vh")
+metadata/_custom_type_script = "uid://codncb5050uqq"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=495831000]
 visibility_layer = 150
@@ -43,15 +47,17 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_mqaja")
 flip_h = true
 
-[node name="Area2D" type="Area2D" parent="AnimatedSprite2D" unique_id=1507051539]
+[node name="JohnnyInteractionArea" type="Area2D" parent="." unique_id=1507051539]
 light_mask = 2
 visibility_layer = 150
-scale = Vector2(0.6666667, 0.6666667)
-collision_mask = 2
+collision_layer = 2
+collision_mask = 0
+monitoring = false
 script = ExtResource("2_scrsw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=697698449]
-position = Vector2(-66, 3)
-shape = SubResource("RectangleShape2D_kb804")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="JohnnyInteractionArea" unique_id=697698449]
+position = Vector2(-66, 0)
+scale = Vector2(5, 5)
+shape = SubResource("CircleShape2D_mo7vh")
 
-[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="JohnnyInteractionArea" to="JohnnyInteractionArea" method="_on_body_entered"]

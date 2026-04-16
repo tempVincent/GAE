@@ -1,6 +1,6 @@
 class_name Johnny extends Consumer
 
-var desiredBeverages: Array[String] = ["Coffee","FruitSmoothie"]
+var desiredBeverages: Array[String] = ["Coffee"]
 var rng = RandomNumberGenerator.new()
 
 func _ready() -> void:

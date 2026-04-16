@@ -5,9 +5,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]
 size = Vector2(700, 15.130001)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ii30"]
-size = Vector2(259, 56)
-
 [node name="CounterTop" type="StaticBody2D" unique_id=1377304503]
 modulate = Color(0.329412, 0.65098, 1, 1)
 texture_filter = 1
@@ -22,10 +19,3 @@ one_way_collision = true
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1000973434]
 scale = Vector2(2.73047, 0.864)
 texture = ExtResource("1_7ii30")
-
-[node name="CounterInteractionArea" type="Area2D" parent="." unique_id=1394037518]
-position = Vector2(-1, -72)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CounterInteractionArea" unique_id=904520157]
-shape = SubResource("RectangleShape2D_7ii30")
-disabled = true
