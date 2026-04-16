@@ -1,12 +1,14 @@
-extends StaticBody2D
+extends Processor
 
-@onready var idle:CompressedTexture2D = preload("res://assets/Objects/Water/idle.png")
-@onready var active:CompressedTexture2D = preload("res://assets/Objects/Water/active.png")
-@onready var filling:CompressedTexture2D = preload("res://assets/Objects/Water/filling.png")
-@onready var sprite:Sprite2D = $Sprite2D
+var sprite: Sprite2D
+
+@onready var idle: CompressedTexture2D = preload("res://assets/Objects/Water/idle.png")
+@onready var active: CompressedTexture2D = preload("res://assets/Objects/Water/active.png")
+@onready var filling: CompressedTexture2D = preload("res://assets/Objects/Water/filling.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sprite = $Sprite2D
 	sprite.texture = idle
 
 func interact(player:CharacterBody2D, object:Node2D) -> void:
@@ -30,7 +32,7 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			object.visible = true
 			player.canMove = true
 			
-			if object.scene_file_path == "res://Objects/coffee_can.tscn":
+			if object.scene_file_path == "res://Objects/coffeeCan.tscn":
 				var p = object.get_child(1)
 				p.texture = preload("res://assets/Objects/WaterCan.png")
 		else:

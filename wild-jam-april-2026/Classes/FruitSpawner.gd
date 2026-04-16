@@ -1,7 +1,9 @@
 class_name FruitSpawner extends Node2D
 
 var spawnBranches: Array
-var spawnCooldown: float = 2 #seconds
+var spawnCooldownMin: float = 1 #seconds
+var spawnCooldownMax: float = 10 #seconds
+var rng = RandomNumberGenerator.new()
 var fruits: Array = []
 var fruit = preload("res://Objects/Fruit.tscn")
 
@@ -17,9 +19,11 @@ func _start() -> void:
 func StartSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")
-		timer.timeout.connect(spawnAt.bind(branch.get_node("spawnpoint")))
-		timer.timeout.connect(timer.start.bind(spawnCooldown))
-		timer.start(spawnCooldown)
+		if timer.is_class("Timer"):
+			timer.timeout.connect(spawnAt.bind(branch.get_node("spawnpoint")))
+			timer.timeout.connect(timer.start.bind(rng.randi_range(spawnCooldownMin,spawnCooldownMax)))
+			timer.timeout.connect(randomize)
+			timer.start(rng.randi_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
 	parent.add_child(fruit.instantiate())

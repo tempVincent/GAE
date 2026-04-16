@@ -1,32 +1,31 @@
 extends Area2D
 
-var coffee_can
-var inRangeObjects:Array
+var inRangeObjects: Array
 
 @onready var characterAnimation = $"../AnimatedSprite2D"
 @onready var character = $".."
 @onready var hand = $"../AnimatedSprite2D/Hand"
 @onready var Objects:Node2D = $"../../Objects"
 @onready var table:StaticBody2D = $"../../Funiture/Table"
-@onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
+@onready var coffetable:StaticBody2D = $"../../Furniture/CoffeeTable"
 @onready var interactionareas:Node2D = $"../../Areas"
 
 func _process(delta: float) -> void:
-	if characterAnimation.flip_h == true:
+	if characterAnimation.flip_h:
 		scale.x = -1
 	else:
 		scale.x = 1
 
 func _on_body_entered(body: Node2D) -> void:
-	if body.scene_file_path == "res://Objects/coffee_can.tscn":
+	if body.scene_file_path == "res://Objects/coffeeCan.tscn":
 		inRangeObjects.append(body)
 		print("Coffee Can")
 	
-	if body.scene_file_path == "res://Objects/coffeMachine.tscn":
+	if body.scene_file_path == "res://Objects/coffeeMachine.tscn":
 		inRangeObjects.append(body)
 		print("Coffee Machine")
 	
-	if body.scene_file_path == "res://Objects/water.tscn":
+	if body.scene_file_path == "res://Objects/sink.tscn":
 		inRangeObjects.append(body)
 		print("WaterArea")
 

@@ -1,15 +1,15 @@
-extends StaticBody2D
+extends Processor
 
 @onready var sprite:Sprite2D = $Sprite2D
 
 func interact(player:CharacterBody2D, object:Node2D) -> void:	
 		if object != null:
 			##POSITION
+			##Make Can invisible
 			object.visible = false
 			player.canMove = false
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans.png")
 			
-			##Make Can invisible
 			await get_tree().create_timer(2.5).timeout
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans_filled.png")
 			
@@ -18,11 +18,11 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			await get_tree().create_timer(2.5).timeout
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans NoCan.png")
 			
-			player.canMove = true
+			##Make can visible
 			object.visible = true
-			##make can visible
+			player.canMove = true
 			
-			if object.scene_file_path == "res://Objects/coffee_can.tscn":
+			if object.scene_file_path == "res://Objects/coffeeCan.tscn":
 				var p = object.get_child(1)
 				p.texture = preload("res://assets/Objects/CoffeCan.png")
 		else:

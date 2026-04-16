@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-var playerInArea:bool
+var playerInArea: bool
 
 @onready var Area = $Area2D
 

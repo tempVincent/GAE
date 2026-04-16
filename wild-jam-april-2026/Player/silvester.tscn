@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
-[ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
+[ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/PlayerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
-[ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
+[ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/PlayerInteractionArea.gd" id="3_3dvcf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
 radius = 31.0
@@ -133,7 +133,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
-size = Vector2(50.99999, 63.66665)
+size = Vector2(51, 90)
 
 [node name="Silvester" type="CharacterBody2D" unique_id=1980086930]
 texture_filter = 1
@@ -164,14 +164,14 @@ frame_progress = 0.0788822
 [node name="Hand" type="Node2D" parent="AnimatedSprite2D" unique_id=527515048]
 position = Vector2(40, 30)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1364209751]
+[node name="PlayerInteractionArea" type="Area2D" parent="." unique_id=1364209751]
 collision_mask = 7
 script = ExtResource("3_3dvcf")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327376693]
-position = Vector2(43.833344, 4.1666746)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerInteractionArea" unique_id=327376693]
+position = Vector2(43.833344, 8.666667)
 shape = SubResource("RectangleShape2D_j052w")
 
-[connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
-[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
-[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="area_entered" from="PlayerInteractionArea" to="." method="x"]
+[connection signal="body_entered" from="PlayerInteractionArea" to="PlayerInteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="PlayerInteractionArea" to="PlayerInteractionArea" method="_on_body_exited"]

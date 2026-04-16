@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cwcrunxqfpski"]
 
-[ext_resource type="Script" uid="uid://ou3adelhu842" path="res://Objects/coffee_canController.gd" id="1_7rh7q"]
+[ext_resource type="Script" uid="uid://ou3adelhu842" path="res://Objects/CoffeeCan.gd" id="1_7rh7q"]
 [ext_resource type="Texture2D" uid="uid://bb45tthsun7oh" path="res://assets/Objects/EmptyWaterCan.png" id="2_7rh7q"]
 
 [node name="CoffeeCan" type="RigidBody2D" unique_id=1110839538 groups=["pickable"]]

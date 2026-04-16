@@ -67,36 +67,36 @@ position = Vector2(482.965, -150.21)
 stream = ExtResource("4_pims7")
 volume_db = -80.0
 
-[node name="Furniture" type="Node2D" parent="." unique_id=719615469]
+[node name="Funiture" type="Node2D" parent="." unique_id=719615469]
 
-[node name="Table" parent="Furniture" unique_id=530798775 instance=ExtResource("4_52blh")]
+[node name="Table" parent="Funiture" unique_id=530798775 instance=ExtResource("4_52blh")]
 position = Vector2(0, 14)
 collision_layer = 16
 
-[node name="Stuhl" parent="Furniture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
+[node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
 z_index = -2
 position = Vector2(989.755, 93.19)
 collision_layer = 16
 
-[node name="CoffeeTable" parent="Furniture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
+[node name="CoffeeTable" parent="Funiture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
 z_index = 1
 position = Vector2(904, 119)
 collision_layer = 2
 
-[node name="CoffeMachine" parent="Furniture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
+[node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
 position = Vector2(451, 42)
 
-[node name="Water" parent="Furniture" unique_id=840642084 instance=ExtResource("7_gaonw")]
+[node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
 position = Vector2(35, 16)
 scale = Vector2(1.5, 1.5)
 
-[node name="Tasse" type="Sprite2D" parent="Furniture" unique_id=243312445]
+[node name="Tasse" type="Sprite2D" parent="Funiture" unique_id=243312445]
 texture_filter = 1
 position = Vector2(942.99994, 44)
 scale = Vector2(3.0000007, 2.875)
 texture = ExtResource("9_qbaj0")
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Furniture/Tasse" unique_id=212906843]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Funiture/Tasse" unique_id=212906843]
 z_index = -1
 position = Vector2(-0.985, -3.2)
 emitting = false
