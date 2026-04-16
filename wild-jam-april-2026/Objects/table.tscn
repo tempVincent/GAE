@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bthwokg55t2uw"]
 
-[ext_resource type="Script" uid="uid://bjnge3scciywp" path="res://Objects/TableController.gd" id="1_6uc0q"]
+[ext_resource type="Script" uid="uid://bjnge3scciywp" path="res://Classes/TableController.gd" id="1_6uc0q"]
 [ext_resource type="Texture2D" uid="uid://bfug2imthu1np" path="res://assets/Objects/Kitchen area.png" id="1_7ii30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_muuf1"]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ce84hhal83xr3"]
 
 [ext_resource type="Texture2D" uid="uid://bh0imours8hxl" path="res://assets/Objects/CoffeMachine beans NoCan.png" id="1_p2hp1"]
-[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/CoffeeMachine.gd" id="1_qpbop"]
+[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Classes/CoffeeMachine.gd" id="1_qpbop"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(112, 106)
