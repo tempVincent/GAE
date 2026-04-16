@@ -4,13 +4,13 @@ var spawnBranches: Array
 var spawnCooldownMin: float = 1 #seconds
 var spawnCooldownMax: float = 10 #seconds
 var rng = RandomNumberGenerator.new()
-var fruits: Array = []
-var fruit = preload("res://Objects/Fruit.tscn")
+var fruits: Array[PackedScene] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	get_tree().get_root().connect("ready", _start)
 	spawnBranches = find_children("spawnBranch"+"?", "Node2D", true, false)
+	fruits.append(preload("res://Prefabs/fruit.tscn"))
 
 # Called once after the root node in the scene tree is ready.
 func _start() -> void:
@@ -26,5 +26,5 @@ func StartSpawning() -> void:
 			timer.start(rng.randi_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
-	parent.add_child(fruit.instantiate())
-	print("fruit spawned")
+	parent.add_child(fruits[rng.randi_range(0,fruits.size()-1)].instantiate())
+	#print("fruit spawned")

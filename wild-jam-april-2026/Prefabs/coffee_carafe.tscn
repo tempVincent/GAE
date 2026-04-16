@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cwcrunxqfpski"]
+
+[ext_resource type="Script" uid="uid://ou3adelhu842" path="res://Classes/Carafe.gd" id="1_sh1v6"]
+[ext_resource type="Texture2D" uid="uid://bb45tthsun7oh" path="res://Assets/objects/carafe/EmptyCarafe.png" id="2_rl16y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m3w0v"]
+radius = 28.0
+
+[node name="CoffeeCan" type="RigidBody2D" unique_id=1110839538]
+collision_layer = 2
+collision_mask = 6
+script = ExtResource("1_sh1v6")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=915644764]
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-57, -23, -44, -9, -56, 46, -39, 56, 31, 56, 40, 41, 37, 30, 57, 13, 41, -33, 17, -38, 14, -48, 0, -46, -3, -52, -19, -56, -23, -45, -36, -44, -42, -26)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=292454670]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_rl16y")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1009614097]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1819330988]
+shape = SubResource("CircleShape2D_m3w0v")

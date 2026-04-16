@@ -1,29 +1,27 @@
 extends Processor
 
-@onready var sprite:Sprite2D = $Sprite2D
+@onready var sprite: Sprite2D = $Sprite2D
+@onready var empty: CompressedTexture2D = preload("res://assets/objects/coffeeMachine/CoffeMachineEmpty.png")
+@onready var beans: CompressedTexture2D = preload("res://assets/objects/coffeeMachine/CoffeeMachineBeans.png")
+@onready var water: CompressedTexture2D = preload("res://assets/objects/coffeeMachine/CoffeMachineWaterCarafe.png")
+@onready var filled: CompressedTexture2D = preload("res://assets/objects/coffeeMachine/CoffeeMachineFilled.png")
+@onready var brewed: CompressedTexture2D = preload("res://assets/objects/coffeeMachine/CoffeMachineBrewed.png")
 
-func interact(player:CharacterBody2D, object:Node2D) -> void:	
-		if object != null:
-			##POSITION
-			##Make Can invisible
-			object.visible = false
-			player.canMove = false
-			sprite.texture = preload("res://assets/Objects/CoffeMachine beans.png")
-			
-			await get_tree().create_timer(2.5).timeout
-			sprite.texture = preload("res://assets/Objects/CoffeMachine beans_filled.png")
-			
-			##Disable movement of player
-			##Create new SPrite with Can and water and show it
-			await get_tree().create_timer(2.5).timeout
-			sprite.texture = preload("res://assets/Objects/CoffeMachine beans NoCan.png")
-			
-			##Make can visible
-			object.visible = true
-			player.canMove = true
-			
-			if object.scene_file_path == "res://Objects/coffeeCan.tscn":
-				var p = object.get_child(1)
-				p.texture = preload("res://assets/Objects/CoffeCan.png")
-		else:
-			await get_tree().create_timer(5.0).timeout
+func _ready() -> void:
+	sprite.texture = empty
+	
+	var stateOneStart: ProcessState = ProcessState.new().initialize(empty, "res://prefabs/objects/coffeeCan.tscn")
+	var stateTwoVariantOneHasBeans: ProcessState = ProcessState.new().initialize(beans, "")
+	var stateTwoVariantTwoHasWater: ProcessState = ProcessState.new().initialize(water, "")
+	var stateThreeHasBeansHasWater: ProcessState = ProcessState.new().initialize(filled, "")
+	var stateFourHasCoffee: ProcessState = ProcessState.new().initialize(brewed, "")
+	
+	stateOneStart.setTransition("Beans", stateTwoVariantOneHasBeans)
+	stateOneStart.setTransition("WaterCarafe", stateTwoVariantTwoHasWater)
+	stateTwoVariantOneHasBeans.setTransition("WaterCarafe", stateThreeHasBeansHasWater)
+	stateTwoVariantTwoHasWater.setTransition("Beans", stateThreeHasBeansHasWater)
+	stateThreeHasBeansHasWater.setAutoTransition(stateFourHasCoffee,5)
+	stateThreeHasBeansHasWater.setAutoTransition(stateOneStart,1)
+	
+	states = [stateOneStart, stateTwoVariantOneHasBeans, stateTwoVariantTwoHasWater, stateThreeHasBeansHasWater, stateFourHasCoffee]
+	currentState = stateOneStart

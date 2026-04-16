@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -400.0
 enum animationState {idle, idle2, walk, jump}
 
 var animationStatePlayer: animationState
-var ItemInHand: Carryable
+var ItemInHand: Portable
 var interactionTargets: Array[Area2D]
 
 var canMove: bool = true
@@ -15,13 +15,12 @@ var handIsEmpty: bool = true
 @onready var AnimationController: AnimatedSprite2D = $AnimatedSprite2D
 @onready var Hand: Node2D = $AnimatedSprite2D/Hand
 @onready var interactionArea: Area2D = $PlayerInteractionArea
-
-func _init() -> void:
-	pass
+@onready var Objects: Node2D = $"../../Objects"
 
 func _ready() -> void:
 	interactionArea.area_entered.connect(func (area: Area2D) -> void:
 		interactionTargets.append(area)
+		print(interactionTargets)
 	)
 	interactionArea.area_exited.connect(func (area: Area2D) -> void: 
 		interactionTargets.erase(area)
@@ -86,19 +85,31 @@ func interact() -> void:
 		if handIsEmpty:
 			print("hand is empty")
 			if target.is_class("Carryable"):
-				print("target is carryable")
-				# pickup returns the Carryable produced by the interaction target
+				print("target is portable")
+				# returns a Tool or Ingredient
 				ItemInHand = target.get_parent().pickupTo(Hand)
 			elif target.is_class("Producer"):
-				print("target produces Carryables")
-				# pickup returns the Carryable produced by the interaction target
+				print("target produces Portables")
+				# returns an Ingredient
 				ItemInHand = target.receiveTo(Hand)
 		else:
 			print("hand contains " + Hand.get_children()[0].to_string())
-			if target.is_class("Processor"):
-				print("target processes Carryables")
-				# process consumes the ItemInHand and optionally returns a Carryable
+			if target.is_class("Consumer"):
+				print("target consumes Beverages")
+				# consumes the Beverage and returns a Tool
+				ItemInHand = target.consume(ItemInHand)
+			elif target.is_class("Processor"):
+				print("target processes Portables")
+				# consumes the Ingredient or Tool and optionally returns a Beverage or Ingredient
 				ItemInHand = target.process(ItemInHand)
 			else:
-				print("no interaction occurred")
+				print("no interaction target")
+				Hand.remove_child(ItemInHand)
+				Objects.add_child(ItemInHand)
+				ItemInHand.isBeingCarried = false
+				ItemInHand.global_position = Hand.global_position
+				ItemInHand.global_position.y -= 150
+				ItemInHand = null
+				print("item dropped")
+	
 	handIsEmpty = (ItemInHand == null)

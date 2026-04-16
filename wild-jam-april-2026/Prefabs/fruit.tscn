@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dmss18xrcb55g"]
+
+[ext_resource type="Script" uid="uid://cxu8mjteibxf6" path="res://Classes/Fruit.gd" id="1_1i6o1"]
+[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/objects/fruits/Banana.png" id="2_gsfce"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jnpi6"]
+radius = 60.133186
+
+[node name="Fruit" type="RigidBody2D" unique_id=1112410231 groups=["pickable"]]
+collision_layer = 66
+collision_mask = 65
+script = ExtResource("1_1i6o1")
+metadata/_custom_type_script = "uid://cxu8mjteibxf6"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017394365]
+texture_filter = 1
+texture = ExtResource("2_gsfce")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2027414850]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CircleShape2D_jnpi6")

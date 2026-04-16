@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cyv1b0pu03khy"
-path="res://.godot/imported/banner_classic_curtain.svg-ad5691cff8ec130bc6c25c5f63feda62.ctex"
+path="res://.godot/imported/banner_classic_curtain.svg-8fd440b93290f16e785ca1738026cab0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Vector/banner_classic_curtain.svg"
-dest_files=["res://.godot/imported/banner_classic_curtain.svg-ad5691cff8ec130bc6c25c5f63feda62.ctex"]
+source_file="res://Assets/ui/Vector/banner_classic_curtain.svg"
+dest_files=["res://.godot/imported/banner_classic_curtain.svg-8fd440b93290f16e785ca1738026cab0.ctex"]
 
 [params]
 
