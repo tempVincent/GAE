@@ -69,7 +69,6 @@ collision_layer = 16
 [node name="Chair" parent="Furniture" unique_id=1993431773 instance=ExtResource("6_1450l")]
 z_index = -2
 position = Vector2(1002, -39)
-collision_layer = 16
 
 [node name="Coffee_Table" parent="Furniture" unique_id=335303586 instance=ExtResource("7_1so61")]
 z_index = 1

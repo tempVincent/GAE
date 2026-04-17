@@ -1,1 +1,1 @@
-extends Ingredient
+class_name WaterCarafe extends Ingredient

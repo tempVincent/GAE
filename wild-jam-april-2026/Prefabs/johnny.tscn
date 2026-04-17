@@ -36,8 +36,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mo7vh"]
 
 [node name="Johnny" type="StaticBody2D" unique_id=1423532877]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 2
+collision_mask = 128
 script = ExtResource("1_mo7vh")
 metadata/_custom_type_script = "uid://codncb5050uqq"
 

@@ -1,4 +1,4 @@
-extends Processor
+class_name Sink extends Processor
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var idle: CompressedTexture2D = preload("res://assets/Objects/sink/idle.png")
@@ -9,15 +9,20 @@ extends Processor
 func _ready() -> void:
 	sprite.texture = idle
 	
-	var stateOneStart: ProcessState = ProcessState.new().initialize(idle, "")
+	var stateOneStart: ProcessState = ProcessState.new().initialize(idle, "res://Prefabs/Water_Carafe.tscn")
 	var stateTwoWaterRunning: ProcessState = ProcessState.new().initialize(running, "")
 	var stateThreeFillingCarafe: ProcessState = ProcessState.new().initialize(filling, "")
-	var stateFourWaterRunning: ProcessState = ProcessState.new().initialize(running, "res://Prefabs/WaterCarafe.tscn")
+	var stateFourWaterRunning: ProcessState = ProcessState.new().initialize(running, "")
 	
 	stateOneStart.setTransition("Carafe", stateTwoWaterRunning)
 	stateTwoWaterRunning.setAutoTransition(stateThreeFillingCarafe, 1)
-	stateThreeFillingCarafe.setAutoTransition(stateFourWaterRunning, 5)
+	stateThreeFillingCarafe.setAutoTransition(stateFourWaterRunning, 1)
 	stateFourWaterRunning.setAutoTransition(stateOneStart, 1)
 	
 	states = [stateOneStart, stateTwoWaterRunning, stateThreeFillingCarafe, stateFourWaterRunning]
 	currentState = stateOneStart
+	
+	self.stateChanged.connect(updateSprite)
+
+func updateSprite() -> void:
+	sprite.texture = currentState.texture

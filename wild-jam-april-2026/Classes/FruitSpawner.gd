@@ -16,12 +16,6 @@ func _ready() -> void:
 func _start() -> void:
 	StartSpawning()
 
-func _process(delta: float) -> void:
-	var total: int = 0
-	for branch in spawnBranches:
-		total += branch.get_node("spawnpoint").get_children().size()
-	print(total)
-
 func StartSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")

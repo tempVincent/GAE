@@ -8,7 +8,7 @@ size = Vector2(700, 15.130001)
 [node name="CounterTop" type="StaticBody2D" unique_id=1377304503]
 modulate = Color(0.329412, 0.65098, 1, 1)
 texture_filter = 1
-collision_layer = 4
+collision_layer = 20
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=399310961]

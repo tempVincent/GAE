@@ -8,7 +8,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_qxtdq"]
 
 [node name="Sink" type="StaticBody2D" unique_id=840642084]
-collision_layer = 2
+collision_layer = 16
+collision_mask = 2
 script = ExtResource("1_7w8gy")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2119757167]
@@ -21,6 +22,9 @@ scale = Vector2(3.1200027, 2.3199997)
 shape = SubResource("CircleShape2D_87xd1")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1736354428]
+collision_layer = 2
+collision_mask = 0
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1999826188]
 position = Vector2(0, 30)

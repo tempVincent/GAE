@@ -1,1 +1,1 @@
-extends Beverage
+class_name FruitSmoothie extends Beverage

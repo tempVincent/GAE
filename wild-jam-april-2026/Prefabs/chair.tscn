@@ -6,8 +6,8 @@
 size = Vector2(106.575, 163)
 
 [node name="Chair" type="StaticBody2D" unique_id=415885453]
-collision_layer = 4
-collision_mask = 2
+collision_layer = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=161796459]
 position = Vector2(0, 1.5)

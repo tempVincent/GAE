@@ -6,9 +6,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_m3w0v"]
 radius = 28.0
 
-[node name="CoffeeCan" type="RigidBody2D" unique_id=1110839538]
+[node name="Carafe" type="RigidBody2D" unique_id=1110839538]
 collision_layer = 2
-collision_mask = 6
+collision_mask = 5
 script = ExtResource("1_sh1v6")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=915644764]
@@ -20,6 +20,9 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_rl16y")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1009614097]
+collision_layer = 2
+collision_mask = 3
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1819330988]
 shape = SubResource("CircleShape2D_m3w0v")

@@ -3,25 +3,40 @@ class_name Processor extends StaticBody2D
 var states: Array[ProcessState]
 var currentState: ProcessState
 
+signal stateChanged
+
 func process(p: Portable) -> Portable:
-	if currentState.stateTransitions.keys().has(p.get_global_name()):
+	print ("begin processing: " + p.get_script().get_global_name())
+	if currentState.stateTransitions.keys().has(p.get_script().get_global_name()):
+		print ("key found")
 		var carrier: Node2D = p.get_parent()
 		carrier.remove_child(p)
 		p.isBeingCarried = false
-		currentState = currentState.stateTransitions[p.get_global_name()]
-		p.queue_free()
+		currentState = currentState.stateTransitions[p.get_script().get_global_name()]
+		stateChanged.emit()
 		while currentState.isAutoTransition:
+			print("awaiting state change")
 			await get_tree().create_timer(currentState.timeoutBeforeAutoTransition).timeout
 			currentState = currentState.autoTransitionTo
+			stateChanged.emit()
+		
+		print("final state reached for this interaction")
 		if currentState.product != null:
 			var product: Portable = currentState.product.instantiate()
 			carrier.add_child(product)
-			currentState.product.isBeingCarried = true
+			product.global_position = carrier.global_position
+			product.isBeingCarried = true
+			product.freeze = true
+			p.queue_free()
 			return product
 		else:
+			# interaction successful, p consumed
+			p.queue_free()
 			return null
 	else:
-		return null
+		# interaction not possible, return p
+		print ("key not found")
+		return p
 
 class ProcessState:
 	var texture: CompressedTexture2D
