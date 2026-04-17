@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://c0qn45pcsvppi"]
+
+[ext_resource type="Script" uid="uid://cr38ltretre7w" path="res://Classes/Portables/Banana.gd" id="1_m6n6g"]
+[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/objects/fruits/banana.png" id="2_ijk6r"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jnpi6"]
+radius = 60.133186
+
+[node name="Banana" type="RigidBody2D" unique_id=1112410231]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("1_m6n6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017394365]
+texture_filter = 1
+texture = ExtResource("2_ijk6r")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1580114975]
+position = Vector2(-4.599294, 4.433531)
+polygon = PackedVector2Array(-11.400705, 5.566469, -11.400705, 7.566469, -10.400705, 9.566469, -8.400705, 10.566469, -0.4007058, 10.566469, 1.5992942, 9.566469, 4.599294, 8.566469, 13.599295, -0.4335308, 15.599295, -4.433531, 16.599295, -7.433531, 16.599295, -15.433531, 15.599295, -20.43353, 13.599295, -20.43353, 12.599295, -18.43353, 9.599295, -15.433531, 5.599294, -7.433531, -0.4007058, -1.4335308, -2.4007058, -0.4335308, -3.4007058, 0.5664692, -5.400706, 1.5664692, -6.400706, 2.5664692, -8.400705, 3.5664692, -9.400705, 4.566469)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=315887052]
+collision_layer = 2
+collision_mask = 3
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2027414850]
+scale = Vector2(0.35, 0.35)
+shape = SubResource("CircleShape2D_jnpi6")

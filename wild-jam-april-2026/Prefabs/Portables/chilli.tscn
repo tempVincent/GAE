@@ -1,20 +1,19 @@
-[gd_scene format=3 uid="uid://dmss18xrcb55g"]
+[gd_scene format=3 uid="uid://c3jyylk5flo3g"]
 
-[ext_resource type="Script" uid="uid://cxu8mjteibxf6" path="res://Classes/Portables/Fruit.gd" id="1_1i6o1"]
-[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/objects/fruits/banana.png" id="2_gsfce"]
+[ext_resource type="Script" uid="uid://cvvaoighj5kyx" path="res://Classes/Portables/Chilli.gd" id="1_4tb07"]
+[ext_resource type="Texture2D" uid="uid://hubrqeh0p4ib" path="res://Assets/objects/fruits/chilli.png" id="2_4tb07"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnpi6"]
 radius = 60.133186
 
-[node name="Fruit" type="RigidBody2D" unique_id=1112410231]
+[node name="Chilli" type="RigidBody2D" unique_id=1112410231]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_1i6o1")
-metadata/_custom_type_script = "uid://cxu8mjteibxf6"
+script = ExtResource("1_4tb07")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2017394365]
 texture_filter = 1
-texture = ExtResource("2_gsfce")
+texture = ExtResource("2_4tb07")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1580114975]
 position = Vector2(-4.599294, 4.433531)

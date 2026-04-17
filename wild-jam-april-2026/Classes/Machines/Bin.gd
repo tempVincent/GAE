@@ -1,1 +1,3 @@
 class_name Bin extends Consumer
+
+# rethink consumer structure. a bin doesn't need a desire...

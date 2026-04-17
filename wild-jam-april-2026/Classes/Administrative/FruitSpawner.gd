@@ -10,7 +10,7 @@ var fruits: Array[PackedScene] = []
 func _ready() -> void:
 	get_tree().get_root().ready.connect(_start)
 	spawnBranches = find_children("spawnBranch"+"?", "Node2D", true, false)
-	fruits.append(preload("res://prefabs/portables/fruit.tscn"))
+	fruits.append(preload("res://prefabs/portables/banana.tscn"))
 
 # Called once after the root node in the scene tree is ready.
 func _start() -> void:
@@ -26,7 +26,7 @@ func StartSpawning() -> void:
 			timer.start(rng.randi_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
-	var fruit: Fruit = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
+	var fruit: Ingredient = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
 	parent.add_child(fruit)
 	
 	#var despawnTimer: Timer = Timer.new()
