@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="18_pogpk"]
 [ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="19_rlha8"]
+[ext_resource type="Script" uid="uid://c2adii1818b6r" path="res://Scripts/Administrative/FruitKillzone.gd" id="22_m085l"]
 [ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
 [ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/mixer.gd" id="25_m085l"]
 
@@ -42,6 +43,9 @@ size = Vector2(130, 663)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gaonw"]
 size = Vector2(124, 661.435)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssoo6"]
+size = Vector2(95.41391, 20)
 
 [node name="WorkInProgress" type="Node2D" unique_id=1142146615]
 script = ExtResource("1_ykjyh")
@@ -176,6 +180,17 @@ debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
 position = Vector2(999, -168.4125)
 shape = SubResource("RectangleShape2D_gaonw")
 debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="FruitKillzone" type="Area2D" parent="Areas" unique_id=833679063]
+position = Vector2(280, 364.87)
+scale = Vector2(27.606031, 3.0228376)
+script = ExtResource("22_m085l")
+metadata/_custom_type_script = "uid://c2adii1818b6r"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/FruitKillzone" unique_id=1960581389]
+position = Vector2(12.569718, 156.8063)
+scale = Vector2(1.0000002, 1)
+shape = SubResource("RectangleShape2D_ssoo6")
 
 [node name="Menu" parent="." unique_id=729242910 instance=ExtResource("18_pogpk")]
 z_index = 4

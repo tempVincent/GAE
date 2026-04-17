@@ -26,5 +26,5 @@ func StartSpawning() -> void:
 			timer.start(rng.randf_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
-	var fruit: RigidBody2D = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
+	var fruit = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
 	parent.add_child(fruit)
