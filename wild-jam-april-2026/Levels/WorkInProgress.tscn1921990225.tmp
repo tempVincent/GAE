@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Prefabs/Furniture/coffee_table.tscn" id="7_1so61"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Prefabs/Machines/coffee_machine.tscn" id="8_yckd7"]
 [ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Prefabs/Machines/sink.tscn" id="9_rxy4a"]
-[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://Assets/objects/cup.png" id="10_78u50"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://Assets/objects/Cup.png" id="10_78u50"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Prefabs/Auxiliary/fruit_branch.tscn" id="11_86lu2"]
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Prefabs/Portables/coffee_carafe.tscn" id="12_wqr5t"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="13_pmr56"]

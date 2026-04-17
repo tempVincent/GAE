@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://buon8vrnlpstf"
-path="res://.godot/imported/Branch.png-1e7da6a6af4badda3a6332858df1817f.ctex"
+path="res://.godot/imported/branch.png-88611409208d139681e23ed0010e74c6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/Branch.png"
-dest_files=["res://.godot/imported/Branch.png-1e7da6a6af4badda3a6332858df1817f.ctex"]
+source_file="res://Assets/objects/branch.png"
+dest_files=["res://.godot/imported/branch.png-88611409208d139681e23ed0010e74c6.ctex"]
 
 [params]
 

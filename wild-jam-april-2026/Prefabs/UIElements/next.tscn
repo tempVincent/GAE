@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c73h2r5tmiiou"]
+
+[ext_resource type="Script" uid="uid://1c51vppesh8g" path="res://Classes/UIElements/Next.gd" id="1_cwt1o"]
+[ext_resource type="Texture2D" uid="uid://dgenrev0eat4q" path="res://Assets/ui/PNG/Default/panel_grey_dark.png" id="1_d80l4"]
+
+[node name="Node2D" type="Node2D" unique_id=1808636976]
+script = ExtResource("1_cwt1o")
+
+[node name="Label" type="Label" parent="." unique_id=1517772231]
+z_index = 1
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Next Objective:  get coffee"
+
+[node name="PanelGreyDark" type="Sprite2D" parent="." unique_id=219210119]
+position = Vector2(108.5, 16.999994)
+scale = Vector2(4.921875, 2.53125)
+texture = ExtResource("1_d80l4")

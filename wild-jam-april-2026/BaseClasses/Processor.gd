@@ -1,4 +1,4 @@
-class_name Processor extends StaticBody2D
+class_name Processor extends Machine
 
 var states: Array[ProcessState]
 var currentState: ProcessState

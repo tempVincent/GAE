@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i3axhg0rqdd"
-path="res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"
+uid="uid://bfug2imthu1np"
+path="res://.godot/imported/kitchen_counter.png-704f7bea0c5f8025cfec181ca03db76a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/cup.png"
-dest_files=["res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"]
+source_file="res://Assets/objects/kitchen_counter.png"
+dest_files=["res://.godot/imported/kitchen_counter.png-704f7bea0c5f8025cfec181ca03db76a.ctex"]
 
 [params]
 

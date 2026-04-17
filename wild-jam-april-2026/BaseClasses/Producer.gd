@@ -1,9 +1,9 @@
-class_name Producer extends StaticBody2D
+class_name Producer extends Machine
 
-var product: PackedScene
+var productPath: String
 
-func receiveTo(carrier: Node2D) -> Portable:
-	var newProduct: Portable = product.instantiate()
+func produce(carrier: Node2D) -> Portable:
+	var newProduct: Portable = load(productPath).instantiate()
 	carrier.add_child(newProduct)
 	newProduct.isBeingCarried = true
 	return newProduct

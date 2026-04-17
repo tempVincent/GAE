@@ -54,20 +54,20 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 func animation(direction) -> void:
-	if direction < 0 and AnimationController.flip_h != true:
+	if direction < 0 and not AnimationController.flip_h:
 		AnimationController.flip_h = true
 		Hand.position.x *= -1
-	elif direction > 0 and AnimationController.flip_h != false:
+	elif direction > 0 and AnimationController.flip_h:
 		AnimationController.flip_h = false
 		Hand.position.x *= -1
 
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-		animationStatePlayer= animationState.walk
+		animationStatePlayer = animationState.walk
 	else:
-		animationStatePlayer= animationState.idle
+		animationStatePlayer = animationState.idle
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		animationStatePlayer= animationState.jump
+		animationStatePlayer = animationState.jump
 
 	####JUMP ANIMATION GEHT NOCH NICHT SAUBER
 	if AnimationController.animation != animationState.keys()[animationStatePlayer]:
@@ -79,40 +79,40 @@ func animation(direction) -> void:
 	#print(AnimationController.animation)
 
 func interact() -> void:
-	print("interaction key pressed")
+	# print("interaction key pressed")
 	for target in interactionTargets:
-		print("target: " + target.to_string())
+		# print("target: " + target.to_string())
 		if handIsEmpty:
-			print("hand is empty")
+			# print("hand is empty")
 			if target is Portable:
-				print("target is portable")
+				# print("target is portable")
 				# returns a Tool or Ingredient
 				ItemInHand = target.pickupTo(Hand)
-				print(ItemInHand)
+				# print(ItemInHand)
 				handIsEmpty = (ItemInHand == null)
 				return
 			elif target is Producer:
-				print("target produces Portables")
+				# print("target produces Portables")
 				# returns an Ingredient
-				ItemInHand = target.receiveTo(Hand)
+				ItemInHand = target.produce(Hand)
 				handIsEmpty = (ItemInHand == null)
 				return
 		else:
-			print("hand is not empty")
+			# print("hand is not empty")
 			if target is Consumer:
-				print("target consumes Beverages")
-				# consumes the Beverage and returns a Tool
+				# print("target consumes Beverages")
+				# consumes the Beverage and optionally returns a Tool
 				ItemInHand = target.consume(ItemInHand)
 				handIsEmpty = (ItemInHand == null)
 				return
 			elif target is Processor:
-				print("target processes Portables")
+				# print("target processes Portables")
 				# consumes the Ingredient or Tool and optionally returns a Beverage or Ingredient
 				ItemInHand = await target.process(ItemInHand)
 				handIsEmpty = (ItemInHand == null)
 				return
 			else:
-				print("no interaction target")
+				# print("no interaction target")
 				Hand.remove_child(ItemInHand)
 				Objects.add_child(ItemInHand)
 				ItemInHand.global_position = Hand.global_position
@@ -120,5 +120,5 @@ func interact() -> void:
 				ItemInHand.isBeingCarried = false
 				ItemInHand = null
 				handIsEmpty = (ItemInHand == null)
-				print("item dropped")
+				# print("item dropped")
 				return

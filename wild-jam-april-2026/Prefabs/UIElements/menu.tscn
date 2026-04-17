@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ya7usg5dq5m0"]
+
+[ext_resource type="Script" uid="uid://bvlwll2weq8l" path="res://Classes/UIElements/OptionButton.gd" id="1_6bcgy"]
+
+[node name="Menu" type="Node2D" unique_id=729242910]
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=366103540]
+offset_right = 96.0
+offset_bottom = 31.0
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+script = ExtResource("1_6bcgy")
+
+[connection signal="item_selected" from="OptionButton" to="OptionButton" method="_on_item_selected"]

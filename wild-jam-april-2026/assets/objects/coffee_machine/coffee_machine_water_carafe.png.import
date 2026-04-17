@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i3axhg0rqdd"
-path="res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"
+uid="uid://uobk3l75tpdq"
+path="res://.godot/imported/coffee_machine_water_carafe.png-8e6bbc78264ff91033e7b2fd7556a325.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/cup.png"
-dest_files=["res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"]
+source_file="res://Assets/objects/coffee_machine/coffee_machine_water_carafe.png"
+dest_files=["res://.godot/imported/coffee_machine_water_carafe.png-8e6bbc78264ff91033e7b2fd7556a325.ctex"]
 
 [params]
 

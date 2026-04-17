@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4i3axhg0rqdd"
-path="res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"
+uid="uid://bb45tthsun7oh"
+path="res://.godot/imported/empty_carafe.png-a48cb1c52c1d66eaf88d6446368758a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/objects/cup.png"
-dest_files=["res://.godot/imported/cup.png-e5f782f4f632696bbbe62989dd586372.ctex"]
+source_file="res://Assets/objects/carafe/empty_carafe.png"
+dest_files=["res://.godot/imported/empty_carafe.png-a48cb1c52c1d66eaf88d6446368758a6.ctex"]
 
 [params]
 
