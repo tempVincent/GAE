@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://busyr3nlogx8u"
-path="res://.godot/imported/emote_cross.png-89340c8e4ca2b17ea9703711cb1bae69.ctex"
+path="res://.godot/imported/emote_cross.png-b51a330b470d9c65cc6942d8ea252929.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/emotes/PNG/Vector/Style 6/emote_cross.png"
-dest_files=["res://.godot/imported/emote_cross.png-89340c8e4ca2b17ea9703711cb1bae69.ctex"]
+source_file="res://Assets/emotes/PNG/Vector/Style 6/emote_cross.png"
+dest_files=["res://.godot/imported/emote_cross.png-b51a330b470d9c65cc6942d8ea252929.ctex"]
 
 [params]
 

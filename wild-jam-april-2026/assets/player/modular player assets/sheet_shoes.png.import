@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8c386750im3y"
-path="res://.godot/imported/sheet_shoes.png-f96b25ff75564fa952ad8976795887bc.ctex"
+path="res://.godot/imported/sheet_shoes.png-99465a04c7d82fc3403a5e1a93bf7eea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/modular player assets/sheet_shoes.png"
-dest_files=["res://.godot/imported/sheet_shoes.png-f96b25ff75564fa952ad8976795887bc.ctex"]
+source_file="res://Assets/player/modular player assets/sheet_shoes.png"
+dest_files=["res://.godot/imported/sheet_shoes.png-99465a04c7d82fc3403a5e1a93bf7eea.ctex"]
 
 [params]
 

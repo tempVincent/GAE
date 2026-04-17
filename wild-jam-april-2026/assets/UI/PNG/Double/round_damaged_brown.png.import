@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://0sou34rtlbyp"
-path="res://.godot/imported/round_damaged_brown.png-85947d3eb0dff6b03b259362ad536a55.ctex"
+path="res://.godot/imported/round_damaged_brown.png-ed1f347660c6832321c9a140075d71d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/PNG/Double/round_damaged_brown.png"
-dest_files=["res://.godot/imported/round_damaged_brown.png-85947d3eb0dff6b03b259362ad536a55.ctex"]
+source_file="res://Assets/ui/PNG/Double/round_damaged_brown.png"
+dest_files=["res://.godot/imported/round_damaged_brown.png-ed1f347660c6832321c9a140075d71d8.ctex"]
 
 [params]
 

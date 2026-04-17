@@ -1,14 +1,16 @@
 class_name FruitSpawner extends Node2D
 
 var spawnBranches: Array
-var spawnCooldown: float = 2 #seconds
-var fruits: Array = []
-var fruit = preload("res://Objects/Fruit.tscn")
+var spawnCooldownMin: float = 1 #seconds
+var spawnCooldownMax: float = 10 #seconds
+var rng = RandomNumberGenerator.new()
+var fruits: Array[PackedScene] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().get_root().connect("ready", _start)
+	get_tree().get_root().ready.connect(_start)
 	spawnBranches = find_children("spawnBranch"+"?", "Node2D", true, false)
+	fruits.append(preload("res://objects/fruit.tscn"))
 
 # Called once after the root node in the scene tree is ready.
 func _start() -> void:
@@ -17,10 +19,12 @@ func _start() -> void:
 func StartSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")
-		timer.timeout.connect(spawnAt.bind(branch.get_node("spawnpoint")))
-		timer.timeout.connect(timer.start.bind(spawnCooldown))
-		timer.start(spawnCooldown)
+		if timer.is_class("Timer"):
+			timer.timeout.connect(spawnAt.bind(branch.get_node("spawnpoint")))
+			timer.timeout.connect(timer.start.bind(rng.randf_range(spawnCooldownMin,spawnCooldownMax)))
+			timer.timeout.connect(randomize)
+			timer.start(rng.randf_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawnAt(parent: Node2D) -> void:
-	parent.add_child(fruit.instantiate())
-	#print("fruit spawned")
+	var fruit: RigidBody2D = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
+	parent.add_child(fruit)

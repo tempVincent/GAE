@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg73giefdi5gi"
-path="res://.godot/imported/button_grey_close.svg-ab754cba0a95c48dd2321ce5213ad600.ctex"
+path="res://.godot/imported/button_grey_close.svg-b5ee24981c5b5d9cd3f30515c10c95e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Vector/button_grey_close.svg"
-dest_files=["res://.godot/imported/button_grey_close.svg-ab754cba0a95c48dd2321ce5213ad600.ctex"]
+source_file="res://Assets/ui/Vector/button_grey_close.svg"
+dest_files=["res://.godot/imported/button_grey_close.svg-b5ee24981c5b5d9cd3f30515c10c95e8.ctex"]
 
 [params]
 
