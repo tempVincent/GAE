@@ -8,7 +8,7 @@ enum objectives{
 signal objectives_updated
 signal difficulty_updated
 
-const objs:Array[objectives] = [objectives.coffee, objectives.water]
+const objs:Array[objectives] = [objectives.coffee, objectives.water, objectives.banana, objectives.juice]
 var current_objective:objectives = _get_random_Task()
 var next_objective: objectives = _get_random_Task()
 var difficulty: int = 0

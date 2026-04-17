@@ -13,6 +13,7 @@ func _on_body_entered(body: Node2D):
 	if str(path) == "/root/WorkInProgress/Objects/CoffeeCan":
 		var empty_tex = preload("res://assets/Objects/EmptyWaterCan.png")
 		var p = body.get_child(1)
+		print(p)
 		if p.texture == preload("res://assets/Objects/WaterCan.png")	:		
 			if ObjectivePool.current_objective == ObjectivePool.objectives.water:
 				print("Objective completed")
@@ -25,17 +26,16 @@ func _on_body_entered(body: Node2D):
 				tasseFX.emitting = true
 				await get_tree().create_timer(5).timeout
 				tasseFX.emitting = false
-				
-				
+
 				p.texture = empty_tex
 				ObjectivePool._complete_current_objective()
-		if p.texture == preload("res://assets/objects/CoffeCan-juice-banana.png")	:		
+		if p.texture == preload("res://assets/objects/CoffeCan-juice-banana.png"):		
 			if ObjectivePool.current_objective == ObjectivePool.objectives.water:
 				print("Objective completed")
 				ObjectivePool._complete_current_objective()
 				p.texture = empty_tex
 
-	elif str(path) == "/root/WorkInProgress/Objects/Fruits":
+	elif body.get_class() == "Fruit" :
 		if ObjectivePool.current_objective == ObjectivePool.objectives.banana:
 			print("Objective completed")
 			ObjectivePool._complete_current_objective()

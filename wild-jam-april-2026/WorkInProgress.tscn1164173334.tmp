@@ -1,0 +1,196 @@
+[gd_scene format=3 uid="uid://brn222scas0yr"]
+
+[ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_maox2"]
+[ext_resource type="Script" path="res://GameController.gd" id="1_ykjyh"]
+[ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="2_maox2"]
+[ext_resource type="PackedScene" uid="uid://ddtbi0r0c6m68" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
+[ext_resource type="PackedScene" uid="uid://bthwokg55t2uw" path="res://Objects/table.tscn" id="4_52blh"]
+[ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Objects/coffee_can.tscn" id="4_muuf1"]
+[ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="4_pims7"]
+[ext_resource type="PackedScene" uid="uid://dcuhy310eaw00" path="res://Objects/chair.tscn" id="5_0ajgu"]
+[ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
+[ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
+[ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
+[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffe_machine.gd" id="7_rlha8"]
+[ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
+[ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/objects/Tasse.png" id="9_qbaj0"]
+[ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
+[ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
+[ext_resource type="PackedScene" uid="uid://c73h2r5tmiiou" path="res://Scenen/next.tscn" id="13_dk6sv"]
+[ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
+[ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
+[ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="18_pogpk"]
+[ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="19_rlha8"]
+[ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
+[ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/mixer.gd" id="25_m085l"]
+
+[sub_resource type="Curve" id="Curve_qbaj0"]
+_data = [Vector2(0.25, 0.31744754), 0.0, 0.0, 0, 0, Vector2(0.8846154, 0.61147016), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_40drc"]
+_data = [Vector2(0.8730769, 1), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dow5r"]
+size = Vector2(592, 666)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hlgq8"]
+size = Vector2(130, 663)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gaonw"]
+size = Vector2(124, 661.435)
+
+[node name="WorkInProgress" type="Node2D" unique_id=1142146615]
+script = ExtResource("1_ykjyh")
+
+[node name="BaseComponents" type="Node2D" parent="." unique_id=1185134037]
+
+[node name="Parallax2D" type="Parallax2D" parent="BaseComponents" unique_id=958832936]
+z_index = -4
+scale = Vector2(0.91, 0.91)
+repeat_size = Vector2(128, 64)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="BaseComponents/Parallax2D" unique_id=1035780733]
+position = Vector2(633.21, 380.31)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_maox2")
+
+[node name="WorldBorders" parent="BaseComponents" unique_id=1710744587 instance=ExtResource("3_maox2")]
+position = Vector2(0, 130.025)
+collision_layer = 128
+
+[node name="Camera2D" type="Camera2D" parent="BaseComponents" unique_id=1648552374]
+position = Vector2(482.965, -150.21)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BaseComponents" unique_id=778864446]
+stream = ExtResource("4_pims7")
+volume_db = -80.0
+
+[node name="Funiture" type="Node2D" parent="." unique_id=719615469]
+
+[node name="Table" parent="Funiture" unique_id=530798775 instance=ExtResource("4_52blh")]
+position = Vector2(0, 14)
+collision_layer = 16
+
+[node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
+z_index = -2
+position = Vector2(989.755, 93.19)
+collision_layer = 16
+
+[node name="CoffeeTable" parent="Funiture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
+z_index = 1
+position = Vector2(904, 119)
+collision_layer = 2
+
+[node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
+position = Vector2(451, 42)
+script = ExtResource("7_rlha8")
+
+[node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
+position = Vector2(35, 16)
+scale = Vector2(1.5, 1.5)
+
+[node name="Tasse" type="Sprite2D" parent="Funiture" unique_id=243312445]
+texture_filter = 1
+position = Vector2(942.99994, 44)
+scale = Vector2(3.0000007, 2.875)
+texture = ExtResource("9_qbaj0")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Funiture/Tasse" unique_id=212906843]
+z_index = -1
+position = Vector2(-0.985, -3.2)
+emitting = false
+amount = 5
+emission_shape = 3
+emission_rect_extents = Vector2(3.94, 0.215)
+gravity = Vector2(0, -30)
+linear_accel_min = -61.32
+linear_accel_max = 3.65
+scale_amount_min = 2.0
+scale_amount_max = 4.0
+split_scale = true
+scale_curve_x = SubResource("Curve_qbaj0")
+scale_curve_y = SubResource("Curve_40drc")
+color = Color(0.5294118, 0.5254902, 0.5176471, 1)
+
+[node name="FruitBranch" parent="." unique_id=883655430 instance=ExtResource("8_dypuf")]
+position = Vector2(-106, -313)
+
+[node name="Objects" type="Node2D" parent="." unique_id=222584690]
+
+[node name="CoffeeCan" parent="Objects" unique_id=995889882 groups=["canBeFilled"] instance=ExtResource("4_muuf1")]
+position = Vector2(233.45, -38)
+collision_mask = 150
+input_pickable = true
+
+[node name="Silvester" parent="." unique_id=1342437381 instance=ExtResource("2_maox2")]
+z_index = 3
+position = Vector2(0, -120.93)
+collision_mask = 133
+
+[node name="Jhonny" parent="." unique_id=2055670265 instance=ExtResource("9_csgbm")]
+light_mask = 3
+visibility_layer = 151
+z_index = -1
+texture_filter = 1
+position = Vector2(999, 16)
+script = ExtResource("10_2r8cf")
+
+[node name="Timer" parent="." unique_id=851970936 instance=ExtResource("11_dbv7r")]
+position = Vector2(-94, -470)
+
+[node name="currentObj" parent="." unique_id=1437534383 instance=ExtResource("12_dbv7r")]
+position = Vector2(-86, -389)
+
+[node name="nextObj" parent="." unique_id=1808636976 instance=ExtResource("13_dk6sv")]
+position = Vector2(241, -432)
+
+[node name="Node2D" parent="." unique_id=1580011084 instance=ExtResource("14_dow5r")]
+position = Vector2(955, -47)
+
+[node name="Areas" type="Node2D" parent="." unique_id=1058248669]
+position = Vector2(0, 14.13)
+script = ExtResource("15_hlgq8")
+
+[node name="table" type="Area2D" parent="Areas" unique_id=1251929032]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/table" unique_id=21780190]
+position = Vector2(191, -170.13)
+shape = SubResource("RectangleShape2D_dow5r")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="Coffeetable" type="Area2D" parent="Areas" unique_id=866881095]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Coffeetable" unique_id=2051230471]
+position = Vector2(838, -169.63)
+shape = SubResource("RectangleShape2D_hlgq8")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="Area2D" type="Area2D" parent="Areas" unique_id=590212355]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/Area2D" unique_id=1560293467]
+position = Vector2(999, -168.4125)
+shape = SubResource("RectangleShape2D_gaonw")
+debug_color = Color(0.6538086, 0.50026417, 0.38114062, 0.41960785)
+
+[node name="Menu" parent="." unique_id=729242910 instance=ExtResource("18_pogpk")]
+z_index = 4
+position = Vector2(-94, -353)
+
+[node name="Node2D2" parent="." unique_id=284449888 instance=ExtResource("19_rlha8")]
+position = Vector2(-78, -466)
+
+[node name="Mixer" parent="." unique_id=174376775 instance=ExtResource("24_l0i0s")]
+position = Vector2(289, 40)
+script = ExtResource("25_m085l")
+
+[connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
+[connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
+[connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
+[connection signal="body_exited" from="Areas/Coffeetable" to="Areas" method="_on_body_exited"]
+[connection signal="body_entered" from="Areas/Area2D" to="Areas" method="_on_body_entered" binds= [false]]
+[connection signal="body_exited" from="Areas/Area2D" to="Areas" method="_on_body_exited"]
