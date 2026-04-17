@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://Assets/objects/cup.png" id="10_78u50"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Prefabs/Auxiliary/fruit_branch.tscn" id="11_86lu2"]
 [ext_resource type="PackedScene" uid="uid://cwcrunxqfpski" path="res://Prefabs/Portables/coffee_carafe.tscn" id="12_wqr5t"]
+[ext_resource type="Script" uid="uid://ou3adelhu842" path="res://Classes/Portables/EmptyCarafe.gd" id="13_d3udl"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="13_pmr56"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Prefabs/Machines/johnny.tscn" id="14_uqw2b"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Prefabs/UIElements/time_button.tscn" id="15_fjats"]
@@ -115,6 +116,7 @@ position = Vector2(95, 604)
 position = Vector2(260, -223)
 collision_mask = 150
 input_pickable = true
+script = ExtResource("13_d3udl")
 
 [node name="Silvester" parent="." unique_id=1342437381 instance=ExtResource("13_pmr56")]
 z_index = 3
