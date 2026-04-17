@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctv647p80uibl"
-path="res://.godot/imported/emote_cash.png-4518563f9034fdb73a9940d0d993f02e.ctex"
+path="res://.godot/imported/emote_cash.png-12d33700bab2fe624143a6da54c44aab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/emotes/PNG/Vector/Style 7/emote_cash.png"
-dest_files=["res://.godot/imported/emote_cash.png-4518563f9034fdb73a9940d0d993f02e.ctex"]
+source_file="res://Assets/emotes/PNG/Vector/Style 7/emote_cash.png"
+dest_files=["res://.godot/imported/emote_cash.png-12d33700bab2fe624143a6da54c44aab.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bob8ly8bx8vwl"
-path="res://.godot/imported/CoffeCan-juice-banana.png-b07a58762c9288e91c7bbfac25fda0f6.ctex"
+path="res://.godot/imported/CoffeCan-juice-banana.png-0127dcb668ef111dc4e592991f6b94d4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/objects/CoffeCan-juice-banana.png"
-dest_files=["res://.godot/imported/CoffeCan-juice-banana.png-b07a58762c9288e91c7bbfac25fda0f6.ctex"]
+source_file="res://Assets/Objects/CoffeCan-juice-banana.png"
+dest_files=["res://.godot/imported/CoffeCan-juice-banana.png-0127dcb668ef111dc4e592991f6b94d4.ctex"]
 
 [params]
 

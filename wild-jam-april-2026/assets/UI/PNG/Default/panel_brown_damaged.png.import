@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bfbsjpg8inlyi"
-path="res://.godot/imported/panel_brown_damaged.png-6fd8f177c951fec24feb52c645858f53.ctex"
+path="res://.godot/imported/panel_brown_damaged.png-5cdfb740e5bf991007491bc41a3d6f43.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/PNG/Default/panel_brown_damaged.png"
-dest_files=["res://.godot/imported/panel_brown_damaged.png-6fd8f177c951fec24feb52c645858f53.ctex"]
+source_file="res://Assets/ui/PNG/Default/panel_brown_damaged.png"
+dest_files=["res://.godot/imported/panel_brown_damaged.png-5cdfb740e5bf991007491bc41a3d6f43.ctex"]
 
 [params]
 
