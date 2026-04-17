@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhvafdrd4rpkd"
-path="res://.godot/imported/Coffe Table.png-9017b8c6856c270e89c8f5b2542fef72.ctex"
+path="res://.godot/imported/Coffe Table.png-6967a8689c816af77bb79eb16fffcf5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Coffe Table.png"
-dest_files=["res://.godot/imported/Coffe Table.png-9017b8c6856c270e89c8f5b2542fef72.ctex"]
+source_file="res://assets/objects/Coffe Table.png"
+dest_files=["res://.godot/imported/Coffe Table.png-6967a8689c816af77bb79eb16fffcf5b.ctex"]
 
 [params]
 

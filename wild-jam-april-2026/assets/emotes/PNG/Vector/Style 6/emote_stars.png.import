@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brcw8ukafeyft"
-path="res://.godot/imported/emote_stars.png-4bb4a524accedf1b7e9d14caa30b1214.ctex"
+path="res://.godot/imported/emote_stars.png-dc36c9a6cee3e6465bb082a441bf3549.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/emotes/PNG/Vector/Style 6/emote_stars.png"
-dest_files=["res://.godot/imported/emote_stars.png-4bb4a524accedf1b7e9d14caa30b1214.ctex"]
+source_file="res://assets/emotes/PNG/Vector/Style 6/emote_stars.png"
+dest_files=["res://.godot/imported/emote_stars.png-dc36c9a6cee3e6465bb082a441bf3549.ctex"]
 
 [params]
 

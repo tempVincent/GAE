@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlgx4gqgoec13"
-path="res://.godot/imported/minimap_icon_star_red.png-32d2d128c56806b65cb8f59fa46d3507.ctex"
+path="res://.godot/imported/minimap_icon_star_red.png-aee99fac882445d87ea74e09ad2e6080.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Default/minimap_icon_star_red.png"
-dest_files=["res://.godot/imported/minimap_icon_star_red.png-32d2d128c56806b65cb8f59fa46d3507.ctex"]
+source_file="res://assets/UI/PNG/Default/minimap_icon_star_red.png"
+dest_files=["res://.godot/imported/minimap_icon_star_red.png-aee99fac882445d87ea74e09ad2e6080.ctex"]
 
 [params]
 

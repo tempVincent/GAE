@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7efvll0j518m"
-path="res://.godot/imported/scrollbar_future_grey_small.svg-133b6d8b8d0c2d2f1ca4f54dd47c27e5.ctex"
+path="res://.godot/imported/scrollbar_future_grey_small.svg-561a6e727fce96d584f0ebb6847f85d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/scrollbar_future_grey_small.svg"
-dest_files=["res://.godot/imported/scrollbar_future_grey_small.svg-133b6d8b8d0c2d2f1ca4f54dd47c27e5.ctex"]
+source_file="res://assets/UI/Vector/scrollbar_future_grey_small.svg"
+dest_files=["res://.godot/imported/scrollbar_future_grey_small.svg-561a6e727fce96d584f0ebb6847f85d6.ctex"]
 
 [params]
 
