@@ -1,10 +1,9 @@
 [gd_scene format=3 uid="uid://dmss18xrcb55g"]
 
 [ext_resource type="Script" uid="uid://cxu8mjteibxf6" path="res://Classes/Fruit.gd" id="1_u5qqq"]
-[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://assets/fruits/Banane.png" id="2_jnpi6"]
+[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/fruits/Banane.png" id="2_jnpi6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnpi6"]
-radius = 60.133186
 
 [node name="Fruit" type="RigidBody2D" unique_id=1112410231 groups=["pickable"]]
 collision_layer = 66
@@ -16,6 +15,14 @@ metadata/_custom_type_script = "uid://cxu8mjteibxf6"
 texture_filter = 1
 texture = ExtResource("2_jnpi6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2027414850]
-scale = Vector2(0.25, 0.25)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=946230183]
+position = Vector2(-5.0445347, 6.255007)
+polygon = PackedVector2Array(14.044535, -22.255007, 16.044535, -22.255007, 17.044535, -17.255007, 17.044535, -9.255007, 14.044535, -2.2550068, 5.0445347, 6.744993, 0.044534683, 8.744993, -7.9554653, 8.744993, -9.955465, 7.744993, -10.955465, 5.744993, -10.955465, 3.7449932, -7.9554653, 1.7449932, 3.0445347, -6.255007, 10.044535, -17.255007)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1831829856]
+collision_layer = 256
+collision_mask = 256
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1322132400]
 shape = SubResource("CircleShape2D_jnpi6")
