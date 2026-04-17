@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfhgj6haafukb"
-path="res://.godot/imported/hexagon_damaged_brown.png-4c9ab09d11cda81a5da1ae1d7f152929.ctex"
+path="res://.godot/imported/hexagon_damaged_brown.png-df8d755f4be03657be2a47f8f24d015a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Default/hexagon_damaged_brown.png"
-dest_files=["res://.godot/imported/hexagon_damaged_brown.png-4c9ab09d11cda81a5da1ae1d7f152929.ctex"]
+source_file="res://assets/UI/PNG/Default/hexagon_damaged_brown.png"
+dest_files=["res://.godot/imported/hexagon_damaged_brown.png-df8d755f4be03657be2a47f8f24d015a.ctex"]
 
 [params]
 

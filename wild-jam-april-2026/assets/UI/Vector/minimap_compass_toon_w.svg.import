@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crhx6w8tlo4fg"
-path="res://.godot/imported/minimap_compass_toon_w.svg-951506901a6dd6217ed725f0e8ceb1d3.ctex"
+path="res://.godot/imported/minimap_compass_toon_w.svg-9a6f8fc3da24687e155ea1f477958e02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/minimap_compass_toon_w.svg"
-dest_files=["res://.godot/imported/minimap_compass_toon_w.svg-951506901a6dd6217ed725f0e8ceb1d3.ctex"]
+source_file="res://assets/UI/Vector/minimap_compass_toon_w.svg"
+dest_files=["res://.godot/imported/minimap_compass_toon_w.svg-9a6f8fc3da24687e155ea1f477958e02.ctex"]
 
 [params]
 

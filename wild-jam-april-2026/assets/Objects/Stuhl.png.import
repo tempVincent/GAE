@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bpglk4ult0407"
-path="res://.godot/imported/Stuhl.png-322f5284795b971fa93db0b5b2d588d6.ctex"
+path="res://.godot/imported/Stuhl.png-49161c53f1d7be8b9a814b2a8a51491c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Stuhl.png"
-dest_files=["res://.godot/imported/Stuhl.png-322f5284795b971fa93db0b5b2d588d6.ctex"]
+source_file="res://assets/objects/Stuhl.png"
+dest_files=["res://.godot/imported/Stuhl.png-49161c53f1d7be8b9a814b2a8a51491c.ctex"]
 
 [params]
 

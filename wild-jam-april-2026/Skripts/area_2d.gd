@@ -29,12 +29,16 @@ func _on_body_entered(body: Node2D):
 				
 				p.texture = empty_tex
 				ObjectivePool._complete_current_objective()
-	
+		if p.texture == preload("res://assets/objects/CoffeCan-juice-banana.png")	:		
+			if ObjectivePool.current_objective == ObjectivePool.objectives.water:
+				print("Objective completed")
+				ObjectivePool._complete_current_objective()
+				p.texture = empty_tex
 
-	#elif str(path) == "/root/WorkInProgress/Objects/Fruits":
-		#if ObjectivePool.current_objective == ObjectivePool.objectives.fruits:
-		#	print("Objective completed")
-		#	ObjectivePool._complete_current_objective()
+	elif str(path) == "/root/WorkInProgress/Objects/Fruits":
+		if ObjectivePool.current_objective == ObjectivePool.objectives.banana:
+			print("Objective completed")
+			ObjectivePool._complete_current_objective()
 					
 	elif str(path) == "/root/WorkInProgress/Objects/Water":
 		if ObjectivePool.current_objective == ObjectivePool.objectives.water:

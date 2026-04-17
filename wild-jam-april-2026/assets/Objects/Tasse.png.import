@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4i3axhg0rqdd"
-path="res://.godot/imported/Tasse.png-1f0c00517f3a0f9db30acb050dda786b.ctex"
+path="res://.godot/imported/Tasse.png-6d4100dc69c98577c96d7bc07ba08299.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Tasse.png"
-dest_files=["res://.godot/imported/Tasse.png-1f0c00517f3a0f9db30acb050dda786b.ctex"]
+source_file="res://assets/objects/Tasse.png"
+dest_files=["res://.godot/imported/Tasse.png-6d4100dc69c98577c96d7bc07ba08299.ctex"]
 
 [params]
 
