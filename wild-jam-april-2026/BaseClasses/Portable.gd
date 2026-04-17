@@ -16,4 +16,6 @@ func pickupTo(carrier: Node2D) -> Portable:
 	global_position = carrier.global_position
 	isBeingCarried = true
 	freeze = true
+	collision.disabled = true
+	scale = Vector2(0.5,0.5)
 	return self

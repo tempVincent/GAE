@@ -27,6 +27,8 @@ func process(p: Portable) -> Portable:
 			product.global_position = carrier.global_position
 			product.isBeingCarried = true
 			product.freeze = true
+			product.collision.disabled = true
+			product.scale = Vector2(0.5,0.5)
 			p.queue_free()
 			return product
 		else:

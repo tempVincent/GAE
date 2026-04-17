@@ -118,6 +118,9 @@ func interact() -> void:
 				ItemInHand.global_position = Hand.global_position
 				ItemInHand.global_position.y -= 150
 				ItemInHand.isBeingCarried = false
+				ItemInHand.freeze = false
+				ItemInHand.collision.disabled = false
+				ItemInHand.scale = Vector2(1,1)
 				ItemInHand = null
 				handIsEmpty = (ItemInHand == null)
 				# print("item dropped")
