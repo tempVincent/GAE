@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ii0nwcch4ksk"
-path="res://.godot/imported/CoffeMachine beans.png-68956d4b942de15ccb92912200d1ef59.ctex"
+path="res://.godot/imported/CoffeMachine beans.png-5ba0bd6dbb7c5a401ce3606a36476001.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Objects/CoffeMachine beans.png"
-dest_files=["res://.godot/imported/CoffeMachine beans.png-68956d4b942de15ccb92912200d1ef59.ctex"]
+source_file="res://Assets/Objects/CoffeMachine beans.png"
+dest_files=["res://.godot/imported/CoffeMachine beans.png-5ba0bd6dbb7c5a401ce3606a36476001.ctex"]
 
 [params]
 

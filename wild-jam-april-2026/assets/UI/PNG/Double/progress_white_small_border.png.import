@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dwga4g3mvfmxw"
-path="res://.godot/imported/progress_white_small_border.png-620565650a36352f90ef97075bd3442d.ctex"
+path="res://.godot/imported/progress_white_small_border.png-140fd4267a3d8a5356c62b96565f634d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/PNG/Double/progress_white_small_border.png"
-dest_files=["res://.godot/imported/progress_white_small_border.png-620565650a36352f90ef97075bd3442d.ctex"]
+source_file="res://Assets/ui/PNG/Double/progress_white_small_border.png"
+dest_files=["res://.godot/imported/progress_white_small_border.png-140fd4267a3d8a5356c62b96565f634d.ctex"]
 
 [params]
 

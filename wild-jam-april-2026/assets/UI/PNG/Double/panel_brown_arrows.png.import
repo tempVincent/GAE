@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cb8221cdi7ewb"
-path="res://.godot/imported/panel_brown_arrows.png-0d346ec5326c2b0423c311ee9275b61a.ctex"
+path="res://.godot/imported/panel_brown_arrows.png-d128b96fcd8d6ac104c639ba01caf85e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/PNG/Double/panel_brown_arrows.png"
-dest_files=["res://.godot/imported/panel_brown_arrows.png-0d346ec5326c2b0423c311ee9275b61a.ctex"]
+source_file="res://Assets/ui/PNG/Double/panel_brown_arrows.png"
+dest_files=["res://.godot/imported/panel_brown_arrows.png-d128b96fcd8d6ac104c639ba01caf85e.ctex"]
 
 [params]
 

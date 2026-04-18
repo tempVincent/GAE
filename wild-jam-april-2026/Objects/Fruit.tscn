@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmss18xrcb55g"]
 
 [ext_resource type="Script" uid="uid://cxu8mjteibxf6" path="res://Classes/Fruit.gd" id="1_u5qqq"]
-[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://assets/fruits/Banane.png" id="2_jnpi6"]
+[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/fruits/Banane.png" id="2_jnpi6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jnpi6"]
 

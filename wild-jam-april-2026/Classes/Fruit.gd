@@ -6,8 +6,8 @@ var peelTexture: CompressedTexture2D = load("res://Assets/fruits/Bananenschale.p
 var isInHand = false
 var isHazard = false
 var characterHand
-var characterAnimation:AnimatedSprite2D
-@onready var collision:CollisionShape2D = $CollisionShape2D
+var characterAnimation: AnimatedSprite2D
+@onready var collision: CollisionPolygon2D = $CollisionPolygon2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,6 +24,7 @@ func becomeHazard(a: Area2D) -> void:
 	set_collision_layer_value(13, true)
 	set_collision_layer_value(9, false)
 	set_collision_mask_value(9, false)
+	remove_from_group("pickable")
 
 func _enter_tree() -> void:
 	if get_parent().get_parent().get_parent().scene_file_path == "res://Player/silvester.tscn":
