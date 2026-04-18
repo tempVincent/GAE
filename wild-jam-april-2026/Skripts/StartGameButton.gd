@@ -17,6 +17,7 @@ func _on_button_up() -> void:
 	tween.tween_property(self,"theme_override_font_sizes/font_size",20,0.5)
 	tween.kill()
 	
+	get_tree().change_scene_to_file("res://WorkInProgress.tscn")
 	
 	pass # Replace with function body.
 
