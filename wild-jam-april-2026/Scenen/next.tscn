@@ -8,11 +8,20 @@ script = ExtResource("1_cwt1o")
 
 [node name="Label" type="Label" parent="." unique_id=1517772231]
 z_index = 1
-offset_right = 40.0
-offset_bottom = 23.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.5
+offset_top = -11.5
+offset_right = 101.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
 text = "Next Objective:  get coffee"
 
 [node name="PanelGreyDark" type="Sprite2D" parent="." unique_id=219210119]
-position = Vector2(108.5, 16.999994)
-scale = Vector2(4.921875, 2.53125)
+scale = Vector2(4, 1.2)
 texture = ExtResource("1_d80l4")

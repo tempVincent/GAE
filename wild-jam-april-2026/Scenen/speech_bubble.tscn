@@ -7,9 +7,10 @@
 script = ExtResource("1_ug717")
 
 [node name="Emote" type="Sprite2D" parent="." unique_id=1904858376]
-position = Vector2(7.1249948, 0)
+texture_filter = 1
 scale = Vector2(7.234375, 2.875)
 texture = ExtResource("1_gm1uq")
+region_rect = Rect2(4.305, 0, 0, 0)
 
 [node name="Label" type="Label" parent="." unique_id=1419304914]
 offset_left = -47.0
