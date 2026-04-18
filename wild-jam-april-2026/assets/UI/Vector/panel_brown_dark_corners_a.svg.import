@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c62shl0alvg5c"
-path="res://.godot/imported/panel_brown_dark_corners_a.svg-44abf0741a5cdee97d82bfa58f3eaa3d.ctex"
+path="res://.godot/imported/panel_brown_dark_corners_a.svg-b2e15cebf7c990ca4baebcaec60686ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/panel_brown_dark_corners_a.svg"
-dest_files=["res://.godot/imported/panel_brown_dark_corners_a.svg-44abf0741a5cdee97d82bfa58f3eaa3d.ctex"]
+source_file="res://assets/UI/Vector/panel_brown_dark_corners_a.svg"
+dest_files=["res://.godot/imported/panel_brown_dark_corners_a.svg-b2e15cebf7c990ca4baebcaec60686ab.ctex"]
 
 [params]
 

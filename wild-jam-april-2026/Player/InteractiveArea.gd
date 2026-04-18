@@ -38,7 +38,7 @@ func _on_body_entered(body: Node2D) -> void:
 		inRangeObjects.append(body)
 		#print("WaterArea")
 	
-	if body.scene_file_path == "res://Objects/Fruit.tscn":
+	if body.scene_file_path == "res://objects/fruit.tscn":
 		inRangeObjects.append(body)
 		print("Fruit")
 	

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://sfk3ewj4aq83"
-path="res://.godot/imported/panel_grey_bolts.png-cfd18eacc5f6ecd98de249d0d7b69067.ctex"
+path="res://.godot/imported/panel_grey_bolts.png-3600a8d270ac547588b9235a9c370a96.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Double/panel_grey_bolts.png"
-dest_files=["res://.godot/imported/panel_grey_bolts.png-cfd18eacc5f6ecd98de249d0d7b69067.ctex"]
+source_file="res://assets/UI/PNG/Double/panel_grey_bolts.png"
+dest_files=["res://.godot/imported/panel_grey_bolts.png-3600a8d270ac547588b9235a9c370a96.ctex"]
 
 [params]
 
