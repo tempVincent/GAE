@@ -135,6 +135,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
 size = Vector2(50.99999, 63.66665)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dvcf"]
+
 [node name="Silvester" type="CharacterBody2D" unique_id=1980086930]
 texture_filter = 1
 scale = Vector2(1.5, 1.5)
@@ -171,6 +173,13 @@ script = ExtResource("3_3dvcf")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327376693]
 position = Vector2(43.833344, 4.1666746)
 shape = SubResource("RectangleShape2D_j052w")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=650143752]
+
+[node name="Area2D2" type="Area2D" parent="Node2D" unique_id=58671496]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2" unique_id=1225338190]
+shape = SubResource("CapsuleShape2D_3dvcf")
 
 [connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
