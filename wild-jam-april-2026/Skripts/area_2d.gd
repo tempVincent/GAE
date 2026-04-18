@@ -10,6 +10,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D):
 	var path = body.get_path()
 	print(path)
+	print(body)
 	if str(path) == "/root/WorkInProgress/Objects/CoffeeCan":
 		var empty_tex = preload("res://assets/Objects/EmptyWaterCan.png")
 		var p = body.get_child(1)
@@ -30,7 +31,7 @@ func _on_body_entered(body: Node2D):
 				p.texture = empty_tex
 				ObjectivePool._complete_current_objective()
 		if p.texture == preload("res://assets/objects/CoffeCan-juice-banana.png"):		
-			if ObjectivePool.current_objective == ObjectivePool.objectives.water:
+			if ObjectivePool.current_objective == ObjectivePool.objectives.juice:
 				print("Objective completed")
 				ObjectivePool._complete_current_objective()
 				p.texture = empty_tex

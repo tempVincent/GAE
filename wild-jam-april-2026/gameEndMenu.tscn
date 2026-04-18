@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bxamp026a0j2l"]
+
+[ext_resource type="Texture2D" uid="uid://b0x8tcghnomik" path="res://assets/UI/PNG/Default/button_brown.png" id="1_i7w6d"]
+[ext_resource type="Script" uid="uid://bn27ur5fre35c" path="res://game_end_menu.gd" id="1_quji8"]
+
+[node name="Control" type="Control" unique_id=372088563]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_quji8")
+
+[node name="TextureButton" type="TextureButton" parent="." unique_id=1195267798]
+layout_mode = 0
+offset_left = 583.0
+offset_top = 312.0
+offset_right = 669.0
+offset_bottom = 336.0
+texture_normal = ExtResource("1_i7w6d")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="TextureButton" unique_id=614870347]
+layout_mode = 0
+offset_left = 12.0
+offset_top = -1.0
+offset_right = 69.0
+offset_bottom = 22.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Restart"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=93990085]
+z_index = -1
+layout_mode = 0
+offset_right = 1149.0
+offset_bottom = 662.0
+color = Color(0.7455094, 0.5508319, 0.34210944, 1)
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

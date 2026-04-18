@@ -22,6 +22,7 @@ func _updated_time():
 	timer.start()
 
 func _on_timer_timeout() -> void:
+	get_tree().change_scene_to_file("res://gameEndMenu.tscn")
 	if(ObjectivePool.completed_obj >= 10):
 		print ("Player won")
 	else:
