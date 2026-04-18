@@ -16,8 +16,9 @@ func _process(delta: float) -> void:
 
 func interact(player:CharacterBody2D, object:Node2D) -> void:	
 		if object != null:
+			print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 			
-			if object.scene_file_path == "res://Objects/Fruit.tscn":
+			if object.scene_file_path == "res://objects/fruit.tscn":
 				object.visible = false
 				sprite.play("default")
 				##Make Can invisible
@@ -43,6 +44,8 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 					
 					player.canMove = true
 					object.visible = true
+					
+					fruit = false
 					
 				
 		else:

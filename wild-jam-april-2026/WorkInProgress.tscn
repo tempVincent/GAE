@@ -147,18 +147,6 @@ texture_filter = 1
 position = Vector2(999, 16)
 script = ExtResource("10_2r8cf")
 
-[node name="Timer" parent="." unique_id=851970936 instance=ExtResource("11_dbv7r")]
-position = Vector2(-94, -470)
-
-[node name="currentObj" parent="." unique_id=1437534383 instance=ExtResource("12_dbv7r")]
-position = Vector2(-86, -389)
-
-[node name="nextObj" parent="." unique_id=1808636976 instance=ExtResource("13_dk6sv")]
-position = Vector2(241, -432)
-
-[node name="Node2D" parent="." unique_id=1580011084 instance=ExtResource("14_dow5r")]
-position = Vector2(955, -47)
-
 [node name="Areas" type="Node2D" parent="." unique_id=1058248669]
 position = Vector2(0, 14.13)
 script = ExtResource("15_hlgq8")
@@ -207,16 +195,30 @@ position = Vector2(12.569718, 156.8063)
 scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_ssoo6")
 
-[node name="Menu" parent="." unique_id=729242910 instance=ExtResource("18_pogpk")]
-z_index = 4
-position = Vector2(-94, -353)
-
-[node name="Node2D2" parent="." unique_id=284449888 instance=ExtResource("19_rlha8")]
-position = Vector2(-78, -466)
-
 [node name="Mixer" parent="." unique_id=174376775 instance=ExtResource("24_l0i0s")]
 position = Vector2(289, 40)
 script = ExtResource("25_m085l")
+
+[node name="UI" type="Node2D" parent="." unique_id=2141478330]
+
+[node name="Node2D" parent="UI" unique_id=1580011084 instance=ExtResource("14_dow5r")]
+position = Vector2(955, -47)
+
+[node name="nextObj" parent="UI" unique_id=1808636976 instance=ExtResource("13_dk6sv")]
+position = Vector2(241, -432)
+
+[node name="currentObj" parent="UI" unique_id=1437534383 instance=ExtResource("12_dbv7r")]
+position = Vector2(-86, -389)
+
+[node name="Timer" parent="UI" unique_id=851970936 instance=ExtResource("11_dbv7r")]
+position = Vector2(-94, -470)
+
+[node name="Node2D2" parent="UI" unique_id=284449888 instance=ExtResource("19_rlha8")]
+position = Vector2(-78, -466)
+
+[node name="Menu" parent="UI" unique_id=729242910 instance=ExtResource("18_pogpk")]
+z_index = 4
+position = Vector2(-94, -353)
 
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
