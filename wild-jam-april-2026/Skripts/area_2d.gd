@@ -36,10 +36,10 @@ func _on_body_entered(body: Node2D):
 				ObjectivePool._complete_current_objective()
 				p.texture = empty_tex
 
-	elif body.get_class() == "Fruit" :
-		if ObjectivePool.current_objective == ObjectivePool.objectives.banana:
-			print("Objective completed")
-			ObjectivePool._complete_current_objective()
+	elif body.scene_file_path == "res://objects/fruit.tscn":
+			if ObjectivePool.current_objective == ObjectivePool.objectives.banana:
+				print("Objective completed")
+				ObjectivePool._complete_current_objective()
 					
 	elif str(path) == "/root/WorkInProgress/Objects/Water":
 		if ObjectivePool.current_objective == ObjectivePool.objectives.water:
