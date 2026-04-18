@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://dfgxj3pqw4qm5"]
 
 [ext_resource type="Script" uid="uid://bo1ilxp14pqgs" path="res://Skripts/StartGameButton.gd" id="1_eiy7p"]
+[ext_resource type="Script" uid="uid://c0clfm2fu6jp2" path="res://main_menu.gd" id="1_h7a2f"]
 [ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_i26rj"]
+[ext_resource type="Texture2D" uid="uid://dv6wsi5qo70tg" path="res://assets/MainMenu Logo.png" id="2_e2xy7"]
+[ext_resource type="Script" uid="uid://dcq3j1g8xp3wa" path="res://openSettings.gd" id="3_cqjrg"]
+[ext_resource type="Script" uid="uid://bf06hxnldnv2x" path="res://ChangeVolSound.gd" id="3_qoqlk"]
+[ext_resource type="Script" uid="uid://cb6r4v2aavh7d" path="res://exitSettings.gd" id="4_7r1g0"]
+[ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 
 [node name="MainMenu" type="Node2D" unique_id=1909509357]
+script = ExtResource("1_h7a2f")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1121197092]
+texture_filter = 1
+offset_left = 256.395
+offset_right = 512.3955
+offset_bottom = 128.0
+scale = Vector2(2.5, 2.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("2_e2xy7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1585539027]
 offset_right = 1152.0
@@ -27,6 +44,7 @@ layout_mode = 2
 [node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1866224912]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.75
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1939456140]
 layout_mode = 2
@@ -55,27 +73,110 @@ custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
-text = "TUTORIAL"
+text = "SETTINGS"
+script = ExtResource("3_cqjrg")
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1600647587]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.35
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer" unique_id=2106999447]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.25
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2111924631]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=880907250]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 0.25
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=1421831460]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.99
+ratio = 1.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/AspectRatioContainer" unique_id=1540810189]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1285634631]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=385058472]
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 4.6413
+
+[node name="GridContainer" type="GridContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=872668856]
+layout_mode = 2
+columns = 2
+
+[node name="Label" type="Label" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=1301909261]
+layout_mode = 2
+text = "SOUND VOLUME     "
+
+[node name="HSlider" type="HSlider" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=755856970]
+custom_minimum_size = Vector2(124.25, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+value = 100.0
+rounded = true
+script = ExtResource("3_qoqlk")
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1661337764]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1577582994]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.65
+
+[node name="Button" type="Button" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=1084217131]
+custom_minimum_size = Vector2(252.54, 0)
+layout_mode = 2
+text = "back"
+script = ExtResource("4_7r1g0")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=638277375]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=1400610261]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 0.25
+
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
+modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
 z_index = -4
 scale = Vector2(0.91, 0.91)
+skew = 0.31939524
 repeat_size = Vector2(128, 64)
-repeat_times = 10
+autoscroll = Vector2(10, 0)
+repeat_times = 15
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=457042098]
 position = Vector2(633.21, 380.31)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_i26rj")
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=1057682712]
+stream = ExtResource("5_iwfq2")
+volume_db = -80.0
+
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_down"]
 [connection signal="button_up" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_up"]
+[connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
+[connection signal="drag_ended" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" method="_on_drag_ended"]
+[connection signal="button_down" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
