@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
-[ext_resource type="Script" uid="uid://duj3yv4x278o6" path="res://Player/playerController.gd" id="1_j052w"]
+[ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://Assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
 
@@ -177,6 +177,7 @@ shape = SubResource("RectangleShape2D_j052w")
 [node name="Node2D" type="Node2D" parent="." unique_id=650143752]
 
 [node name="Area2D2" type="Area2D" parent="Node2D" unique_id=58671496]
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2" unique_id=1225338190]
 shape = SubResource("CapsuleShape2D_3dvcf")

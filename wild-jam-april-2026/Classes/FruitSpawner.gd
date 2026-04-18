@@ -5,6 +5,7 @@ var spawnCooldownMin: float = 1 #seconds
 var spawnCooldownMax: float = 10 #seconds
 var rng = RandomNumberGenerator.new()
 var fruits: Array[PackedScene] = []
+@onready var Objects = $"../Objects"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,4 +28,5 @@ func StartSpawning() -> void:
 
 func spawnAt(parent: Node2D) -> void:
 	var fruit = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
-	parent.add_child(fruit)
+	fruit.global_position = parent.global_position
+	Objects.add_child(fruit)
