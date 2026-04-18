@@ -13,6 +13,7 @@ var current_objective:objectives = _get_random_Task()
 var next_objective: objectives = _get_random_Task()
 var difficulty: int = 0
 var completed_obj = 0
+var objs_toComplete = 10
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	objectives_updated.emit()

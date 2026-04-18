@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://b0x8tcghnomik" path="res://assets/UI/PNG/Default/button_brown.png" id="1_i7w6d"]
 [ext_resource type="Script" uid="uid://bn27ur5fre35c" path="res://game_end_menu.gd" id="1_quji8"]
+[ext_resource type="Script" uid="uid://2kmdinlr8wjj" path="res://label.gd" id="3_yct3k"]
 
 [node name="Control" type="Control" unique_id=372088563]
 layout_mode = 3
@@ -11,6 +12,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_quji8")
+
+[node name="Label2" type="Label" parent="." unique_id=903035442]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.03, 0.03, 0.03, 1)
+text = "win state"
+horizontal_alignment = 1
+script = ExtResource("3_yct3k")
 
 [node name="TextureButton" type="TextureButton" parent="." unique_id=1195267798]
 layout_mode = 0

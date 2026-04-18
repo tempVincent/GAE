@@ -10,7 +10,6 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D):
 	var path = body.get_path()
 	print(path)
-	print(body)
 	if str(path) == "/root/WorkInProgress/Objects/CoffeeCan":
 		var empty_tex = preload("res://assets/Objects/EmptyWaterCan.png")
 		var p = body.get_child(1)
