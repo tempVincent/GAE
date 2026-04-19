@@ -9,4 +9,4 @@ func _ready() -> void:
 func _get_current_objective():
 	# add function + finction call to get objective
 	var obj = ObjectivePool.get_objective_text(ObjectivePool.current_objective)
-	label.text = "Current Objective: get " +obj
+	label.text = "Current Objective: \nget " +obj

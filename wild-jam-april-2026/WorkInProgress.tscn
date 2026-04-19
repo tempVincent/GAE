@@ -80,30 +80,33 @@ volume_db = -80.0
 [node name="Funiture" type="Node2D" parent="." unique_id=719615469]
 
 [node name="Table" parent="Funiture" unique_id=530798775 instance=ExtResource("4_52blh")]
+modulate = Color(1, 1, 1, 1)
 position = Vector2(0, 14)
 collision_layer = 16
 
 [node name="Stuhl" parent="Funiture" unique_id=1993431773 instance=ExtResource("5_0ajgu")]
 z_index = -2
-position = Vector2(989.755, 93.19)
+position = Vector2(989.755, 114.19)
 collision_layer = 16
 
 [node name="CoffeeTable" parent="Funiture" unique_id=335303586 instance=ExtResource("5_jy8u0")]
 z_index = 1
-position = Vector2(904, 119)
+position = Vector2(904, 125)
 collision_layer = 2
 
 [node name="CoffeMachine" parent="Funiture" unique_id=2046379185 instance=ExtResource("7_nerjk")]
-position = Vector2(451, 42)
+position = Vector2(493.555, 44.715)
+scale = Vector2(0.81, 0.81)
 script = ExtResource("7_rlha8")
 
 [node name="Water" parent="Funiture" unique_id=840642084 instance=ExtResource("7_gaonw")]
-position = Vector2(35, 16)
-scale = Vector2(1.5, 1.5)
+position = Vector2(-18.26, 14.62)
+scale = Vector2(1.505, 1.505)
 
 [node name="Tasse" type="Sprite2D" parent="Funiture" unique_id=243312445]
+z_index = 1
 texture_filter = 1
-position = Vector2(942.99994, 44)
+position = Vector2(933.9999, 57.000004)
 scale = Vector2(3.0000007, 2.875)
 texture = ExtResource("9_qbaj0")
 
@@ -144,11 +147,11 @@ light_mask = 3
 visibility_layer = 151
 z_index = -1
 texture_filter = 1
-position = Vector2(999, 16)
+position = Vector2(992, 42)
 script = ExtResource("10_2r8cf")
 
 [node name="Areas" type="Node2D" parent="." unique_id=1058248669]
-position = Vector2(0, 14.13)
+position = Vector2(0, 12.13)
 script = ExtResource("15_hlgq8")
 
 [node name="table" type="Area2D" parent="Areas" unique_id=1251929032]
@@ -196,7 +199,8 @@ scale = Vector2(1.0000002, 1)
 shape = SubResource("RectangleShape2D_ssoo6")
 
 [node name="Mixer" parent="." unique_id=174376775 instance=ExtResource("24_l0i0s")]
-position = Vector2(289, 40)
+position = Vector2(289, 45.75)
+scale = Vector2(0.755, 0.755)
 script = ExtResource("25_m085l")
 
 [node name="UI" type="Node2D" parent="." unique_id=2141478330]
@@ -205,6 +209,7 @@ script = ExtResource("25_m085l")
 position = Vector2(997.055, -56.59)
 
 [node name="nextObj" parent="UI" unique_id=1808636976 instance=ExtResource("13_dk6sv")]
+visible = false
 position = Vector2(520, -431)
 
 [node name="currentObj" parent="UI" unique_id=1437534383 instance=ExtResource("12_dbv7r")]

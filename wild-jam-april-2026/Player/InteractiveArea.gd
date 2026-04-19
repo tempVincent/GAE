@@ -56,7 +56,11 @@ func _get_interactiveObject():
 	var itemJustPickedUp = false
 	
 	if !inRangeObjects.is_empty():
-		var item:Node2D = inRangeObjects[0]
+		
+		var matches = inRangeObjects.filter(func(item): return item.scene_file_path == "res://objects/fruit.tscn")
+		var item:Node2D = matches[0] if not matches.is_empty() else inRangeObjects[0]
+		#var item:Node2D = inRangeObjects[0]
+		
 		
 		
 		##ITEMS DIE MAN AUFHEBEN KANN
@@ -69,16 +73,9 @@ func _get_interactiveObject():
 				item.get_parent().remove_child(item)
 				character.get_node("AnimatedSprite2D/Hand").add_child(item)
 				itemJustPickedUp = true
-				#item.position = Vector2(0,0)
-				#item.position += Vector2(50,0)
-			
-				#match 
-		##interact with Object
-		##coffe can be picked up (when picked up, disable collision), and set state for player "carring"
-		##coffee can be placed at coffemachine
-		##coffee can be picked up from coffeemachine
-		
-		##coffeMachine can be started
+
+				if item.scene_file_path == "res://objects/fruit.tscn":
+					item.set_collision_mask_value(2, true)
 		
 		print(inRangeObjects[0])
 		

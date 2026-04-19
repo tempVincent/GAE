@@ -13,7 +13,7 @@ var characterAnimation: AnimatedSprite2D
 func _ready() -> void:
 	sprite = get_node("Sprite2D")
 	sprite.texture = defaultTexture
-	get_node("Area2D").area_entered.connect(becomeHazard.bind())
+	#get_node("Area2D").area_entered.connect(becomeHazard.bind())
 
 func becomeHazard(a: Area2D) -> void:
 	print("collided with floor2")

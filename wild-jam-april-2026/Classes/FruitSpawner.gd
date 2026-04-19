@@ -9,9 +9,10 @@ var fruits: Array[PackedScene] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	get_tree().get_root().ready.connect(_start)
+	#get_tree().get_root().ready.connect(_start)
 	spawnBranches = find_children("spawnBranch"+"?", "Node2D", true, false)
 	fruits.append(preload("res://objects/fruit.tscn"))
+	StartSpawning()
 
 # Called once after the root node in the scene tree is ready.
 func _start() -> void:

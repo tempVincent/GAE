@@ -24,9 +24,9 @@ popup/item_2/id = 2
 script = ExtResource("1_6bcgy")
 
 [node name="Label" type="Label" parent="." unique_id=632430937]
-offset_left = -76.185
+offset_left = -84.185
 offset_top = 2.125
-offset_right = -1.1849976
+offset_right = -9.184998
 offset_bottom = 25.125
 text = "Difficulty:"
 

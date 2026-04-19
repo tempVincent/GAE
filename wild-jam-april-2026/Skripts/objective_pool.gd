@@ -42,12 +42,12 @@ func _update_completed(cnt):
 func get_objective_text(obj: objectives) -> String:
 	match obj:
 		objectives.coffee:
-			return "Coffee"
+			return "coffee"
 		objectives.banana:
 			return "banana"
 		objectives.juice:
 			return "juice"
 		objectives.water:
-			return "Water"
+			return "water"
 		_:
 			return "Unknown"
