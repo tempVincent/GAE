@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c2adii1818b6r" path="res://Scripts/Administrative/FruitKillzone.gd" id="22_m085l"]
 [ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
 [ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/mixer.gd" id="25_m085l"]
+[ext_resource type="Script" uid="uid://dqbrm2hnryie3" path="res://backToMenu.gd" id="27_ssoo6"]
 
 [sub_resource type="Curve" id="Curve_qbaj0"]
 _data = [Vector2(0.25, 0.31744754), 0.0, 0.0, 0, 0, Vector2(0.8846154, 0.61147016), 0.0, 0.0, 0, 0]
@@ -225,9 +226,18 @@ position = Vector2(503, -436)
 z_index = 4
 position = Vector2(14, -383)
 
+[node name="Button" type="Button" parent="." unique_id=1209164206]
+offset_left = 962.0
+offset_top = -465.0
+offset_right = 1053.0
+offset_bottom = -434.0
+text = "EXIT"
+script = ExtResource("27_ssoo6")
+
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/Coffeetable" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Area2D" to="Areas" method="_on_body_entered" binds= [false]]
 [connection signal="body_exited" from="Areas/Area2D" to="Areas" method="_on_body_exited"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
