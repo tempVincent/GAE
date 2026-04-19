@@ -40,7 +40,7 @@ func _on_body_entered(body: Node2D):
 				print("Objective completed")
 				player.play()
 				ObjectivePool._complete_current_objective()
-					
+				body.free()	
 	elif str(path) == "/root/WorkInProgress/Objects/Water":
 		if ObjectivePool.current_objective == ObjectivePool.objectives.water:
 			print("Objective completed")
