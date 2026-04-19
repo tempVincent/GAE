@@ -16,6 +16,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	label.text = "Time left: " + str(int(timer.time_left))
+	if ObjectivePool.completed_obj == ObjectivePool.objs_toComplete:
+		_on_timer_timeout()
 	
 func _updated_time():
 	timer.wait_time = 200.0 / (ObjectivePool.difficulty+1)
