@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://dv6wsi5qo70tg" path="res://assets/MainMenu Logo.png" id="2_e2xy7"]
 [ext_resource type="Script" uid="uid://dcq3j1g8xp3wa" path="res://openSettings.gd" id="3_cqjrg"]
 [ext_resource type="Script" uid="uid://bf06hxnldnv2x" path="res://ChangeVolSound.gd" id="3_qoqlk"]
+[ext_resource type="Texture2D" uid="uid://ckbywse5jgnx1" path="res://assets/UI/KeyboardUI/keyboard_arrows_horizontal.png" id="3_u7cqb"]
 [ext_resource type="Script" uid="uid://cb6r4v2aavh7d" path="res://exitSettings.gd" id="4_7r1g0"]
+[ext_resource type="Texture2D" uid="uid://bcyi0dl6hj0ln" path="res://assets/UI/KeyboardUI/keyboard_s.png" id="4_afec1"]
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 
 [node name="MainMenu" type="Node2D" unique_id=1909509357]
@@ -30,12 +32,62 @@ alignment = 1
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer" unique_id=323585735]
 layout_mode = 2
 size_flags_horizontal = 3
-ratio = 0.25
+ratio = 0.3
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer2" unique_id=1447411214]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.08, 0.08, 0.08, 0.5294118)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer2" unique_id=1571946527]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1540049554]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1999872400]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=133645788]
+layout_mode = 2
+texture = ExtResource("3_u7cqb")
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=377629449]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Movement"
+
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=8844563]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=1169419996]
+layout_mode = 2
+texture = ExtResource("4_afec1")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=165764809]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Interact"
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1763644645]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=140280870]
+layout_mode = 2
+size_flags_vertical = 3
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer" unique_id=1034861613]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.99
+size_flags_stretch_ratio = 1.75
 ratio = 1.5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer" unique_id=461313659]
@@ -84,7 +136,7 @@ size_flags_stretch_ratio = 0.35
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer" unique_id=2106999447]
 layout_mode = 2
 size_flags_horizontal = 3
-ratio = 0.25
+ratio = 0.3
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2111924631]
 visible = false
