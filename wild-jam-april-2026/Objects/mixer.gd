@@ -21,7 +21,7 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 		if object != null:
 			print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 			
-			if object.scene_file_path == "res://objects/fruit.tscn":
+			if object.scene_file_path == "res://Objects/Fruit.tscn":
 				object.visible = false
 				sprite.play("default")
 				##Make Can invisible

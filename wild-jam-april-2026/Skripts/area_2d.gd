@@ -35,7 +35,7 @@ func _on_body_entered(body: Node2D):
 				ObjectivePool._complete_current_objective()
 				p.texture = empty_tex
 
-	elif body.scene_file_path == "res://objects/fruit.tscn":
+	elif body.scene_file_path == "res://Objects/Fruit.tscn":
 			if ObjectivePool.current_objective == ObjectivePool.objectives.banana:
 				print("Objective completed")
 				player.play()

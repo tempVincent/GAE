@@ -1,7 +1,7 @@
 extends RigidBody2D
 var item_type = "coffee_can"
 var isInHand = false
-var characterHand
+#var characterHand
 var characterAnimation:AnimatedSprite2D
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var collision:CollisionPolygon2D = $CollisionPolygon2D
@@ -11,7 +11,7 @@ func _enter_tree() -> void:
 		
 		##Get Resources
 		
-		characterHand = get_parent().get_node("AnimatedSprite2D/Hand")
+#		characterHand = get_parent().get_node("AnimatedSprite2D/Hand")
 		characterAnimation = get_parent().get_parent()
 		
 		##Set Params

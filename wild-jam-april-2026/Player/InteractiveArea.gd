@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 
 
 func _on_body_entered(body: Node2D) -> void:
+	print(body.scene_file_path)
 	if body.scene_file_path == "res://Objects/coffee_can.tscn":
 		inRangeObjects.append(body)
 		#print("Coffe CAn")
@@ -38,7 +39,7 @@ func _on_body_entered(body: Node2D) -> void:
 		inRangeObjects.append(body)
 		#print("WaterArea")
 	
-	if body.scene_file_path == "res://objects/fruit.tscn":
+	if body.scene_file_path == "res://Objects/Fruit.tscn":
 		inRangeObjects.append(body)
 		print("Fruit")
 	

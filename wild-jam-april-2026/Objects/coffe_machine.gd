@@ -2,7 +2,7 @@ extends StaticBody2D
 
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var progress:ProgressBar = $ProgressBar
-var worktime = 4
+var worktime = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -26,11 +26,11 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans.png")
 			##Make Can invisible
-			await get_tree().create_timer(worktime/2).timeout
+			await get_tree().create_timer(float(worktime)/2).timeout
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans_filled.png")
 			##Disable movement of player
 			##Create new SPrite with Can and water and show it
-			await get_tree().create_timer(worktime/2).timeout
+			await get_tree().create_timer(float(worktime)/2).timeout
 			sprite.texture = preload("res://assets/Objects/CoffeMachine beans NoCan.png")
 			
 			transitionIN.kill()

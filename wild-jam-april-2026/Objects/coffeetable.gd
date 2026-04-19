@@ -1,7 +1,7 @@
 extends StaticBody2D
 
 var playerInArea:bool
-@onready var Area = $Area2D
+@onready var Area = $Area2D2
 # Called when the node enters the scene tree for the first time.
 
 

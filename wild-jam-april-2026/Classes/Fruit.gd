@@ -1,11 +1,11 @@
 class_name Fruit extends RigidBody2D
 
 var sprite: Sprite2D
-var defaultTexture: CompressedTexture2D = preload("res://Assets/fruits/Banane.png")
-var peelTexture: CompressedTexture2D = load("res://Assets/fruits/Bananenschale.png")
+var defaultTexture: CompressedTexture2D = preload("res://assets/fruits/Banane.png")
+var peelTexture: CompressedTexture2D = load("res://assets/fruits/Chilli.png")
 var isInHand = false
 var isHazard = false
-var characterHand
+#var characterHand
 var characterAnimation: AnimatedSprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
 
@@ -30,7 +30,7 @@ func _enter_tree() -> void:
 	if get_parent().get_parent().get_parent().scene_file_path == "res://Player/silvester.tscn":
 		
 		##Get Resources
-		characterHand = get_parent().get_node("AnimatedSprite2D/Hand")
+#		characterHand = get_parent().get_node("AnimatedSprite2D/Hand")
 		characterAnimation = get_parent().get_parent()
 		
 		##Set Params
