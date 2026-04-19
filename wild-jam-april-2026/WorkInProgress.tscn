@@ -133,7 +133,7 @@ position = Vector2(-106, -313)
 [node name="Objects" type="Node2D" parent="." unique_id=222584690]
 
 [node name="CoffeeCan" parent="Objects" unique_id=995889882 groups=["canBeFilled"] instance=ExtResource("4_muuf1")]
-position = Vector2(233.45, -38)
+position = Vector2(407.45, -22)
 collision_mask = 150
 input_pickable = true
 

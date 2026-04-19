@@ -61,3 +61,12 @@ texture_filter = 1
 position = Vector2(19.999998, -56.999996)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_ujt3v")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1742755886]
+visible = false
+offset_left = -11.0
+offset_top = -84.0
+offset_right = 51.0
+offset_bottom = -71.0
+value = 100.0
+show_percentage = false

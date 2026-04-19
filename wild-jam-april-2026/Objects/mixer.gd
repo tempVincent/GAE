@@ -2,10 +2,13 @@ extends StaticBody2D
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 var fruit = false
-
+@onready var progress:ProgressBar = $ProgressBar
+var worktime = 3
+var shortworktime = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	progress.value = 100
 	pass # Replace with function body.
 
 
@@ -23,7 +26,17 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 				sprite.play("default")
 				##Make Can invisible
 				player.canMove = false
-				await get_tree().create_timer(5).timeout
+				
+				progress.visible = true
+				var transitionIN:Tween = get_tree().create_tween()
+				transitionIN.tween_property(progress,"value",0,worktime)
+				
+				await get_tree().create_timer(worktime).timeout
+				transitionIN.kill()
+				progress.visible = false
+				progress.value = 100
+				
+				
 				player.canMove = true
 				sprite.stop()
 				sprite.frame = 5
@@ -37,7 +50,14 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 					object.visible = false
 					sprite.frame = 0
 					
-					await get_tree().create_timer(1).timeout
+					progress.visible = true
+					var transitionIN:Tween = get_tree().create_tween()
+					transitionIN.tween_property(progress,"value",0,shortworktime)
+					
+					await get_tree().create_timer(shortworktime).timeout
+					transitionIN.kill()
+					progress.visible = false
+					progress.value = 100
 					
 					var p = object.get_child(1)
 					p.texture = preload("res://assets/Objects/CoffeCan-juice-banana.png")

@@ -18,3 +18,12 @@ flip_h = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014370906]
 position = Vector2(20, -31)
 shape = SubResource("RectangleShape2D_p2hp1")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=255522027]
+visible = false
+offset_left = -13.0
+offset_top = -98.0
+offset_right = 66.0
+offset_bottom = -87.0
+value = 100.0
+show_percentage = false

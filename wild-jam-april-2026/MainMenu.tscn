@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bo1ilxp14pqgs" path="res://Skripts/StartGameButton.gd" id="1_eiy7p"]
 [ext_resource type="Script" uid="uid://c0clfm2fu6jp2" path="res://main_menu.gd" id="1_h7a2f"]
 [ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_i26rj"]
+[ext_resource type="Shader" uid="uid://cfcmv8l21yfjc" path="res://MainMenuLogo.gdshader" id="2_31qfy"]
 [ext_resource type="Texture2D" uid="uid://dv6wsi5qo70tg" path="res://assets/MainMenu Logo.png" id="2_e2xy7"]
 [ext_resource type="Script" uid="uid://dcq3j1g8xp3wa" path="res://openSettings.gd" id="3_cqjrg"]
 [ext_resource type="Script" uid="uid://bf06hxnldnv2x" path="res://ChangeVolSound.gd" id="3_qoqlk"]
@@ -12,11 +13,27 @@
 [ext_resource type="Script" uid="uid://bvlwll2weq8l" path="res://Skripts/option_button.gd" id="5_afec1"]
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qie43"]
+shader = ExtResource("2_31qfy")
+shader_parameter/waveAmplitude = 0.0770000036575
+shader_parameter/correctVertex = false
+shader_parameter/waveFrequency = 18.000000855
+shader_parameter/verticalWave = true
+shader_parameter/keepTransparency = true
+shader_parameter/useTime = true
+shader_parameter/waveSpeed = 3.39200016112
+shader_parameter/progress = 0.0
+shader_parameter/firstHalf = 0.5
+shader_parameter/secondHalf = 0.5
+shader_parameter/freezeFirstHalf = false
+shader_parameter/freezeSecondHalf = false
+
 [node name="MainMenu" type="Node2D" unique_id=1909509357]
 script = ExtResource("1_h7a2f")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1121197092]
 texture_filter = 1
+material = SubResource("ShaderMaterial_qie43")
 offset_left = 256.395
 offset_right = 512.3955
 offset_bottom = 128.0
@@ -250,7 +267,6 @@ size_flags_horizontal = 3
 ratio = 0.25
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
-visible = false
 modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
 z_index = -4
 scale = Vector2(0.91, 0.91)
