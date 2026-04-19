@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ckbywse5jgnx1" path="res://assets/UI/KeyboardUI/keyboard_arrows_horizontal.png" id="3_u7cqb"]
 [ext_resource type="Script" uid="uid://cb6r4v2aavh7d" path="res://exitSettings.gd" id="4_7r1g0"]
 [ext_resource type="Texture2D" uid="uid://bcyi0dl6hj0ln" path="res://assets/UI/KeyboardUI/keyboard_s.png" id="4_afec1"]
+[ext_resource type="Script" uid="uid://bvlwll2weq8l" path="res://Skripts/option_button.gd" id="5_afec1"]
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 
 [node name="MainMenu" type="Node2D" unique_id=1909509357]
@@ -93,10 +94,54 @@ ratio = 1.5
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer" unique_id=461313659]
 layout_mode = 2
 
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1600647587]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+
 [node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1866224912]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.75
+
+[node name="Control" type="Control" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4" unique_id=548015309]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=899287433]
+self_modulate = Color(0.21, 0.21, 0.21, 1)
+layout_mode = 1
+offset_left = -62.0
+offset_top = 42.66667
+offset_right = 185.0
+offset_bottom = 102.52167
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="OptionButton" type="OptionButton" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=491592461]
+modulate = Color(6.0763073, 3.387432, 0.6985572, 0.8117647)
+layout_mode = 0
+offset_left = 62.0
+offset_top = 57.66667
+offset_right = 158.0
+offset_bottom = 88.66667
+size_flags_vertical = 4
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+script = ExtResource("5_afec1")
+
+[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=1482703626]
+layout_mode = 0
+offset_left = -23.0
+offset_top = 60.66667
+offset_right = 52.0
+offset_bottom = 83.66667
+size_flags_horizontal = 4
+text = "Difficulty:"
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1939456140]
 layout_mode = 2
@@ -127,11 +172,6 @@ theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 20
 text = "SETTINGS"
 script = ExtResource("3_cqjrg")
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1600647587]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.35
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer" unique_id=2106999447]
 layout_mode = 2
@@ -210,6 +250,7 @@ size_flags_horizontal = 3
 ratio = 0.25
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
+visible = false
 modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
 z_index = -4
 scale = Vector2(0.91, 0.91)
@@ -227,6 +268,7 @@ texture = ExtResource("1_i26rj")
 stream = ExtResource("5_iwfq2")
 volume_db = -80.0
 
+[connection signal="item_selected" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" method="_on_item_selected"]
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_down"]
 [connection signal="button_up" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_up"]
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]

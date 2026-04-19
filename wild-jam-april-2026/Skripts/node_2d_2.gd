@@ -7,4 +7,4 @@ func _ready() -> void:
 	_update_text()
 
 func _update_text():
-	label.text = "Completed Objectives: " + str(ObjectivePool.completed_obj)
+	label.text = "Score: \n" + str(ObjectivePool.completed_obj)
