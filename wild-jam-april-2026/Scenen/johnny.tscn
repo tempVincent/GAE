@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cmg5elsmu2crm" path="res://assets/player/soldier_tilesheet.png" id="1_kb804"]
 [ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://Skripts/area_2d.gd" id="2_scrsw"]
+[ext_resource type="AudioStream" uid="uid://c4husgu18t1yu" path="res://pickupCoin.wav" id="3_1djeq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scrsw"]
 atlas = ExtResource("1_kb804")
@@ -53,5 +54,8 @@ script = ExtResource("2_scrsw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D" unique_id=697698449]
 position = Vector2(-66, 3)
 shape = SubResource("RectangleShape2D_kb804")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=270339621]
+stream = ExtResource("3_1djeq")
 
 [connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D/Area2D" method="_on_body_entered"]
