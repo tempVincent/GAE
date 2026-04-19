@@ -4,9 +4,9 @@ extends Label
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if ObjectivePool.completed_obj >= ObjectivePool.objs_toComplete:
-		self.text= "You won"
+		self.text= "\nYou won"
 	else:
-		self.text = "You lost"
+		self.text = "\nYou lost"
 	pass # Replace with function body.
 
 
