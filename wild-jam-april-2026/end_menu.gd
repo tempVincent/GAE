@@ -1,14 +1,9 @@
-extends Label
-
+extends Control
+@onready var player = $AudioStreamPlayer2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	if ObjectivePool.completed_obj >= ObjectivePool.objs_toComplete:
-		self.text= "\nYou won"
-	else:
-		self.text = "\nYou lost"
-	pass # Replace with function body.
-
+	player.playing = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
