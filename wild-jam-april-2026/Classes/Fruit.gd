@@ -13,7 +13,13 @@ var characterAnimation: AnimatedSprite2D
 func _ready() -> void:
 	sprite = get_node("Sprite2D")
 	sprite.texture = defaultTexture
+	var transitionIN:Tween = get_tree().create_tween()
+	transitionIN.tween_property(self,"scale",Vector2(1,1),0.5)
+	await transitionIN.finished
+	transitionIN.kill()
+	self.gravity_scale = 1
 	#get_node("Area2D").area_entered.connect(becomeHazard.bind())
+	
 
 func becomeHazard(a: Area2D) -> void:
 	print("collided with floor2")
