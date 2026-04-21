@@ -18,6 +18,7 @@ func _on_body_entered(body: Node2D):
 				player.play()
 				ObjectivePool._complete_current_objective()
 				p.texture = empty_tex
+			
 		if p.texture == preload("res://assets/Objects/CoffeCan.png")	:		
 			if ObjectivePool.current_objective == ObjectivePool.objectives.coffee:
 				print("Objective completed")
@@ -40,7 +41,8 @@ func _on_body_entered(body: Node2D):
 				print("Objective completed")
 				player.play()
 				ObjectivePool._complete_current_objective()
-				body.free()	
+				body.free()
+	
 	elif str(path) == "/root/WorkInProgress/Objects/Water":
 		if ObjectivePool.current_objective == ObjectivePool.objectives.water:
 			print("Objective completed")
