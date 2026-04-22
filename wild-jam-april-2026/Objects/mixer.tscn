@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://p77csd3oujq4"]
 
 [ext_resource type="Texture2D" uid="uid://4uxrd7vcggek" path="res://assets/Objects/Mixer/Mixer.png" id="1_yf2bh"]
+[ext_resource type="FontFile" uid="uid://cj22gaw2npwhc" path="res://assets/Fonts/SuperMaples-2vR2w.ttf" id="2_teww3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(70, 92)
@@ -70,3 +71,13 @@ offset_right = 51.0
 offset_bottom = -71.0
 value = 100.0
 show_percentage = false
+
+[node name="Label" type="Label" parent="." unique_id=2099679929]
+offset_top = -110.0
+offset_right = 40.0
+offset_bottom = -78.0
+theme_override_fonts/font = ExtResource("2_teww3")
+theme_override_font_sizes/font_size = 25
+text = "0/3"
+horizontal_alignment = 1
+vertical_alignment = 2

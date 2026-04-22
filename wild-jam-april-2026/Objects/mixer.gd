@@ -1,14 +1,19 @@
 extends StaticBody2D
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
-var fruit = false
+var juice = false
 @onready var progress:ProgressBar = $ProgressBar
 var worktime = 3
 var shortworktime = 1
+var fruitsCollected:int = 0
+@onready var label_fruitsCollected:Label = $Label
+var newFont = load("res://assets/Fonts/SuperMaples-2vR2w.ttf")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progress.value = 100
+	label_fruitsCollected.add_theme_font_override("myFont", newFont)
 	pass # Replace with function body.
 
 
@@ -22,30 +27,39 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 			
 			if object.scene_file_path == "res://Objects/Fruit.tscn":
-				object.visible = false
-				sprite.play("default")
-				##Make Can invisible
-				player.canMove = false
 				
-				progress.visible = true
-				var transitionIN:Tween = get_tree().create_tween()
-				transitionIN.tween_property(progress,"value",0,worktime)
+				fruitsCollected += 1
+				label_fruitsCollected.text =  str(fruitsCollected) + "/3"
+				if fruitsCollected ==3:
+					object.visible = false
+					sprite.play("default")
+					player.canMove = false
+					
+					label_fruitsCollected.visible = false
+					progress.visible = true
+					var transitionIN:Tween = get_tree().create_tween()
+					transitionIN.tween_property(progress,"value",0,worktime)
+					
+					await get_tree().create_timer(worktime).timeout
+					transitionIN.kill()
+					progress.visible = false
+					progress.value = 100
+					
+					
+					player.canMove = true
+					sprite.stop()
+					sprite.frame = 5
+					juice = true
+					
+					fruitsCollected = 0
+					
 				
-				await get_tree().create_timer(worktime).timeout
-				transitionIN.kill()
-				progress.visible = false
-				progress.value = 100
-				
-				
-				player.canMove = true
-				sprite.stop()
-				sprite.frame = 5
 				object.get_parent().remove_child(object)
-				fruit = true
 				player.itemInHand = null
+				
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
-				if fruit == true:
+				if juice == true:
 					player.canMove = false
 					object.visible = false
 					sprite.frame = 0
@@ -64,8 +78,10 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 					
 					player.canMove = true
 					object.visible = true
-					
-					fruit = false
+					label_fruitsCollected.visible = true
+					juice = false
+					#fruitsCollected = 0
+					label_fruitsCollected.text =  str(fruitsCollected) + "/3"
 					
 				
 		else:
