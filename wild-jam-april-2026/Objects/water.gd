@@ -29,7 +29,15 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			##POSITION
 			sprite.texture = filling
 			object.visible = false
-			player.canMove = false
+			var items = get_tree().current_scene.get_node("Objects")
+			object.reparent(items)
+			player.itemInHand = null
+			object.freeze = false
+			var collision = object.get_node("CollisionPolygon2D")
+			collision.disabled = false
+			object.global_position = Vector2(50,450)
+			object.isInHand = false
+			player.Hand.remove_child(object)
 			##Make Can invisible
 			##Disable movement of player
 			##Create new SPrite with Can and water and show it

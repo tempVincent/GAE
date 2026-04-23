@@ -33,8 +33,6 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 				if fruitsCollected ==3:
 					object.visible = false
 					sprite.play("default")
-					player.canMove = false
-					
 					label_fruitsCollected.visible = false
 					progress.visible = true
 					var transitionIN:Tween = get_tree().create_tween()
@@ -46,7 +44,6 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 					progress.value = 100
 					
 					
-					player.canMove = true
 					sprite.stop()
 					sprite.frame = 5
 					juice = true
@@ -60,8 +57,18 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
 				if juice == true:
-					player.canMove = false
+
 					object.visible = false
+					var items = get_tree().current_scene.get_node("Objects")
+					object.reparent(items)
+					player.itemInHand = null
+					object.freeze = false
+
+					var collision = object.get_node("CollisionPolygon2D")
+					collision.disabled = false
+					object.global_position = Vector2(400,600)
+					object.isInHand = false
+					player.Hand.remove_child(object)
 					sprite.frame = 0
 					
 					progress.visible = true

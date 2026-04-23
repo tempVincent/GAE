@@ -18,9 +18,19 @@ func _process(delta: float) -> void:
 func interact(player:CharacterBody2D, object:Node2D) -> void:	
 		if object != null:
 			##POSITION
+			for child in object.get_children():
+				print("Child:", child, " visible:", child.visible)
 			object.visible = false
-			player.canMove = false
+			#player.canMove = false
 			progress.visible = true
+			var items = get_tree().current_scene.get_node("Objects")
+			object.reparent(items)
+			player.itemInHand = null
+			object.freeze = false
+
+			var collision = object.get_node("CollisionPolygon2D")
+			collision.disabled = false
+			object.global_position = Vector2(400,600)
 			var transitionIN:Tween = get_tree().create_tween()
 			transitionIN.tween_property(progress,"value",0,worktime)
 			
@@ -37,15 +47,20 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 			progress.visible = false
 			progress.value = 100
 			
-			player.canMove = true
+			#player.canMove = true
 			object.visible = true
+			object.isInHand = false
+			player.Hand.remove_child(object)
 			##make can visible
 			
-			
+			print("Kanne pos: ", object.global_position)
+			print("visible: ", object.visible)
+			print("z_index: ", object.z_index)
+
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
-				var p = object.get_child(1)
+				var p = object.get_node("Sprite2D")
+				print(p)
 				p.texture = preload("res://assets/Objects/CoffeCan.png")
-				
-				pass
+
 		else:
 			await get_tree().create_timer(5.0).timeout
