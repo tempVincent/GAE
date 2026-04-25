@@ -11,7 +11,7 @@ func _ready() -> void:
 	var increaseVol:Tween = get_tree().create_tween()
 	print(settings.musicVol)
 	if settings.musicVol != 0:
-		increaseVol.tween_property(musicplayer,"volume_db",-80 + (settings.musicVol * 0.55),1.5).set_trans(Tween.TRANS_QUAD)
+		increaseVol.tween_property(musicplayer,"volume_db",-80 + (15*pow(settings.musicVol,0.37)),1.5).set_trans(Tween.TRANS_QUAD)
 	else:
 		increaseVol.tween_property(musicplayer,"volume_db",-10,1.5).set_trans(Tween.TRANS_QUAD)
 	await increaseVol.finished

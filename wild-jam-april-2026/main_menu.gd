@@ -9,7 +9,7 @@ func _ready() -> void:
 	settings.musicVol = 100
 	musicplayer.playing = true
 	var increaseVol:Tween = get_tree().create_tween()
-	increaseVol.tween_property(musicplayer,"volume_db",-80 + (settings.musicVol * 0.8),1.5).set_trans(Tween.TRANS_QUAD)
+	increaseVol.tween_property(musicplayer,"volume_db",-80 + (15*pow(settings.musicVol,0.37)),1).set_trans(Tween.TRANS_QUAD)
 	await increaseVol.finished
 	increaseVol.kill()
 	print("done")
@@ -21,11 +21,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func changeVol() -> void:
-	
-	var increaseVol:Tween = get_tree().create_tween()
-	increaseVol.tween_property(musicplayer,"volume_db",-80 + (settings.musicVol * 0.8),1.5).set_trans(Tween.TRANS_QUAD)
-	await increaseVol.finished
-	increaseVol.kill()
+	musicplayer.volume_db = -80 + (15*pow(settings.musicVol,0.37))
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
