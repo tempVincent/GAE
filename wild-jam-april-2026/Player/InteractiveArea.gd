@@ -7,7 +7,9 @@ extends Area2D
 @onready var table:StaticBody2D = $"../../Funiture/Table"
 @onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
 @onready var interactionareas:Node2D = $"../../Areas"
-
+@onready var interactionUI:Sprite2D = $"../KeyboardSOutline"
+var interactiveObjects:Array = ["res://Objects/coffee_can.tscn","res://Objects/coffeMachine.tscn",
+								"res://Objects/water.tscn","res://Objects/Fruit.tscn","res://Objects/mixer.tscn"]
 
 var coffee_can
 var inRangeObjects:Array
@@ -27,29 +29,18 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	print(body.scene_file_path)
-	if body.scene_file_path == "res://Objects/coffee_can.tscn":
-		inRangeObjects.append(body)
-		#print("Coffe CAn")
 	
-	if body.scene_file_path == "res://Objects/coffeMachine.tscn":
+	if  interactiveObjects.find(body.scene_file_path) != -1:
 		inRangeObjects.append(body)
-		#print("CoffeMachine")
+		interactionUI.visible = true
 	
-	if body.scene_file_path == "res://Objects/water.tscn":
-		inRangeObjects.append(body)
-		#print("WaterArea")
-	
-	if body.scene_file_path == "res://Objects/Fruit.tscn":
-		inRangeObjects.append(body)
-		print("Fruit")
-	
-	if body.scene_file_path == "res://Objects/mixer.tscn":
-		inRangeObjects.append(body)
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if inRangeObjects.has(body):
 		inRangeObjects.erase(body)
+	if inRangeObjects.size() == 0:
+		interactionUI.visible = false
 	pass # Replace with function body.
 
 
