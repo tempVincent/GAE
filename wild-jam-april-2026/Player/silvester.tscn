@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
 [ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
-[ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://assets/UI/KeyboardUI/keyboard_s_outline.png" id="4_jyj5e"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
 radius = 31.0
@@ -182,11 +181,6 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2" unique_id=1225338190]
 shape = SubResource("CapsuleShape2D_3dvcf")
-
-[node name="KeyboardSOutline" type="Sprite2D" parent="." unique_id=1651531348]
-position = Vector2(2.3841858e-07, -63.999996)
-scale = Vector2(0.4947917, 0.5000001)
-texture = ExtResource("4_jyj5e")
 
 [connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]

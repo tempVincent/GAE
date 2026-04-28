@@ -7,9 +7,11 @@ extends Area2D
 @onready var table:StaticBody2D = $"../../Funiture/Table"
 @onready var coffetable:StaticBody2D = $"../../Funiture/CoffeeTable"
 @onready var interactionareas:Node2D = $"../../Areas"
-@onready var interactionUI:Sprite2D = $"../KeyboardSOutline"
+
+@onready var interactionUI = preload("res://assets/UI/KeyboardUI/keyboard_s_outline.png")
 var interactiveObjects:Array = ["res://Objects/coffee_can.tscn","res://Objects/coffeMachine.tscn",
 								"res://Objects/water.tscn","res://Objects/Fruit.tscn","res://Objects/mixer.tscn"]
+
 
 var coffee_can
 var inRangeObjects:Array
@@ -18,12 +20,8 @@ var inRangeObjects:Array
 func _ready() -> void:
 	pass
 
-
 func _process(delta: float) -> void:
-	if characterAnimation.flip_h == true:
-		scale.x = -1
-	else:
-		scale.x = 1
+	pass
 
 
 
@@ -32,16 +30,21 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	if  interactiveObjects.find(body.scene_file_path) != -1:
 		inRangeObjects.append(body)
-		interactionUI.visible = true
-	
+		
+		#UI for Interaction
+		var uiOverlay = body.get_node("Interact")
+		if uiOverlay != null:
+			uiOverlay.visible = true
 
 
 func _on_body_exited(body: Node2D) -> void:
 	if inRangeObjects.has(body):
 		inRangeObjects.erase(body)
-	if inRangeObjects.size() == 0:
-		interactionUI.visible = false
-	pass # Replace with function body.
+		
+		#UI for Interaction
+		var uiOverlay = body.get_node("Interact")
+		if uiOverlay != null:
+			uiOverlay.visible = false
 
 
 func _get_interactiveObject():

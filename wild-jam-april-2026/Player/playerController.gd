@@ -37,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		animation(direction)
 		
 		
+		
 		move_and_slide()
 
 
@@ -64,7 +65,7 @@ func animation(direction) -> void:
 		
 		if animationStatePlayer == animationState.jump:
 			await AnimationController.animation_finished
-		
+	
 	#print(AnimationController.animation)
 
 
