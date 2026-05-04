@@ -48,8 +48,10 @@ func interact(player: PlayerController, object: Node2D = null, carriedObjectData
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
 				var p = object.get_child(1)
-				p.texture = preload("res://assets/Objects/WaterCan.png")
-				
+				if p.texture == preload("res://assets/Objects/WaterCan.png") or p.texture == preload("res://assets/Objects/CoffeCan.png") or  p.texture == preload("res://assets/Objects/CoffeCan-juice-banana.png")  :
+					p.texture = preload("res://assets/objects/EmptyWaterCan.png")
+				else:
+					p.texture = preload("res://assets/Objects/WaterCan.png")
 				pass
 		else:
 			progress.visible = true
