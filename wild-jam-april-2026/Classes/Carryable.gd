@@ -1,4 +1,4 @@
-class_name Ingredient extends Resource
+class_name Carryable extends Resource
 
 var id: String
 var displayName: String
