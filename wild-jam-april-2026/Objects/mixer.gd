@@ -13,9 +13,8 @@ var newFont = load("res://assets/Fonts/SuperMaples-2vR2w.ttf")
 func _ready() -> void:
 	progress.value = 100
 	label_fruitsCollected.add_theme_font_override("myFont", newFont)
-	pass # Replace with function body.
 
-func interact(player:CharacterBody2D, object:Node2D) -> void:
+func interact(player: PlayerController, object: Node2D = null, carriedObjectData: Carryable = null) -> void:
 		if object != null:
 			print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 			

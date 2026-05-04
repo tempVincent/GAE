@@ -11,19 +11,10 @@ var worktime = 3
 func _ready() -> void:
 	sprite.texture = idle
 	progress.value = 100
-	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-
-func interact(player:CharacterBody2D, object:Node2D) -> void:
+func interact(player: PlayerController, object: Node2D = null, carriedObjectData: Carryable = null) -> void:
 	if sprite.texture == idle:
 		sprite.texture = active
-		
 	
 		if object != null:
 			##POSITION

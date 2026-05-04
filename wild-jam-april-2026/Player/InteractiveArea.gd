@@ -74,11 +74,11 @@ func _get_interactiveObject():
 		if !item.is_in_group("pickable"):
 			if character.itemInHand:
 				if item != null and (item.scene_file_path == "res://Objects/coffeMachine.tscn" or item.scene_file_path == "res://Objects/water.tscn") and hand.get_child(0).scene_file_path == "res://Objects/coffee_can.tscn":
-					item.interact(character, hand.get_child(0))
+					item.interact(character, hand.get_child(0), null)
 				if  item != null and (item.scene_file_path == "res://Objects/mixer.tscn"):
-					item.interact(character, hand.get_child(0))
+					item.interact(character, hand.get_child(0), null)
 			else:
-				item.interact(null, null)
+				item.interact(null, null, null)
 			pass
 		
 		

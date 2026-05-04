@@ -1,7 +1,8 @@
-class_name Processor extends StaticBody2D
+class_name Processor extends Machine
 ## A processor is a machine in the kitchen
 ## 
 ## The player can interact with it
+## interaction with processors are lower priority than interactions with carryables
 
 ## these are the states that this processor can be in - like a state machine
 var states: Array[PState]
@@ -17,21 +18,19 @@ var inTransition: bool = false
 #@onready var timer: Timer = $Timer
 
 ## this method is called from the player's interactive area.
-## carriedObject can be null if the player's hand is empty.
-## returns true if the player is required to stay at the machine during transition. 
+## object/carriedObjectData can be null if the player's hand is empty.
 ## Alternatively, PlayerController can be accessed directly and canMove can be set to false for the transit duration
-func interact2(player: PlayerController, carriedObject: Carryable) -> bool:
+func interact(player: PlayerController, object: Node2D = null, carriedObjectData: Carryable = null) -> void:
 	if (inTransition):
-		return false
+		pass
 	else:
 		#TODO handle interaction
 		#if object is in currentState.stateTransitions.keys ...
 		#...
 		#...
 		#...
-		#after initiating the state transition, return currentState.stateTransitions[object].requiresPlayerAttention
-		
-		return false
+		#check currentState.stateTransitions[object].requiresPlayerAttention
+		pass
 
 ## a State or contains all information to handle player interactions
 ## and possibly as a result of them, transition to a different state
