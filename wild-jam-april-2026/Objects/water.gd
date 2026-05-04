@@ -18,7 +18,9 @@ func interact(player: PlayerController, object: Node2D = null, carriedObjectData
 	
 		if object != null:
 			##POSITION
-			sprite.texture = filling
+			var p = object.get_child(1)
+			if p.texture == preload("res://assets/objects/EmptyWaterCan.png"):
+				sprite.texture = filling
 			object.visible = false
 			var items = get_tree().current_scene.get_node("Objects")
 			object.reparent(items)
@@ -47,7 +49,6 @@ func interact(player: PlayerController, object: Node2D = null, carriedObjectData
 			
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
-				var p = object.get_child(1)
 				if p.texture == preload("res://assets/Objects/WaterCan.png") or p.texture == preload("res://assets/Objects/CoffeCan.png") or  p.texture == preload("res://assets/Objects/CoffeCan-juice-banana.png")  :
 					p.texture = preload("res://assets/objects/EmptyWaterCan.png")
 				else:

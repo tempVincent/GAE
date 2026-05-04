@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://bbqb7u1p5f3gj" path="res://assets/emotes/PNG/Pixel/Style 1/emote__.png" id="1_gm1uq"]
 [ext_resource type="Script" uid="uid://c0tixvbrjh7xc" path="res://Skripts/speech_bubble.gd" id="1_ug717"]
 [ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://assets/fruits/Banane.png" id="3_mhul3"]
-[ext_resource type="Texture2D" uid="uid://bhgypvldyxltc" path="res://assets/Objects/CoffeCan.png" id="4_2116h"]
-[ext_resource type="Texture2D" uid="uid://bob8ly8bx8vwl" path="res://assets/Objects/CoffeCan-juice-banana.png" id="5_62eki"]
-[ext_resource type="Texture2D" uid="uid://dm8ykw88ni7xm" path="res://assets/Objects/WaterCan.png" id="6_mytv6"]
+[ext_resource type="Texture2D" uid="uid://bhgypvldyxltc" path="res://assets/objects/CoffeCan.png" id="4_2116h"]
+[ext_resource type="Texture2D" uid="uid://bob8ly8bx8vwl" path="res://assets/objects/CoffeCan-juice-banana.png" id="5_62eki"]
+[ext_resource type="Texture2D" uid="uid://dm8ykw88ni7xm" path="res://assets/objects/WaterCan.png" id="6_mytv6"]
 
 [node name="Node2D" type="Node2D" unique_id=1580011084]
 script = ExtResource("1_ug717")
@@ -17,22 +17,21 @@ texture = ExtResource("1_gm1uq")
 region_rect = Rect2(4.305, 0, 0, 0)
 
 [node name="Label" type="Label" parent="." unique_id=1419304914]
-visible = false
 offset_left = -47.0
 offset_top = -17.0
 offset_right = 44.0
 offset_bottom = 6.0
 theme_override_colors/font_color = Color(0.01, 0.01, 0.01, 1)
-text = "I need coffe"
+text = "I need "
 
 [node name="Banane" type="Sprite2D" parent="." unique_id=1791257967]
 texture_filter = 3
-position = Vector2(-1, -5)
+position = Vector2(21, -5)
 texture = ExtResource("3_mhul3")
 
 [node name="Coffee" type="Sprite2D" parent="." unique_id=590483901]
-visible = false
 self_modulate = Color(0, 0, 0, 1)
+position = Vector2(23, -4)
 scale = Vector2(0.276, 0.265)
 texture = ExtResource("4_2116h")
 
@@ -43,6 +42,7 @@ texture = ExtResource("4_2116h")
 [node name="Juice" type="Sprite2D" parent="." unique_id=1307686642]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
+position = Vector2(23, -4)
 scale = Vector2(0.276, 0.265)
 texture = ExtResource("4_2116h")
 
@@ -53,6 +53,7 @@ texture = ExtResource("5_62eki")
 [node name="Water" type="Sprite2D" parent="." unique_id=1501830381]
 visible = false
 self_modulate = Color(0, 0, 0, 1)
+position = Vector2(23.000002, -4)
 scale = Vector2(0.276, 0.265)
 texture = ExtResource("4_2116h")
 
