@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name PlayerController extends CharacterBody2D
 
 var SPEED = 400.0
 const JUMP_VELOCITY = -400.0
@@ -45,9 +45,11 @@ func animation(direction) -> void:
 	if direction < 0 and AnimationController.flip_h != true:
 		AnimationController.flip_h = true
 		Hand.position.x *= -1
+		InteractiveArea.collisionShape.position.x *= -1
 	elif direction >0 and AnimationController.flip_h != false:
 		AnimationController.flip_h = false
 		Hand.position.x *= -1
+		InteractiveArea.collisionShape.position.x *= -1
 
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		animationStatePlayer= animationState.walk

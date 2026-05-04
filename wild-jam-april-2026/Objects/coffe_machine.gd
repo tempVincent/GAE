@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Processor
 
 @onready var sprite:Sprite2D = $Sprite2D
 @onready var progress:ProgressBar = $ProgressBar

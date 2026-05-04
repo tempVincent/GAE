@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Processor
 
 @onready var idle:CompressedTexture2D = preload("res://assets/Objects/Water/idle.png")
 @onready var active:CompressedTexture2D = preload("res://assets/Objects/Water/active.png")

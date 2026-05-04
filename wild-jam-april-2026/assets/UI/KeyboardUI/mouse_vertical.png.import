@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://6086b2ltj8kp"
-path="res://.godot/imported/mouse_vertical.png-61971cfeb56e127e6f23b8aa2191de39.ctex"
+path="res://.godot/imported/mouse_vertical.png-101f213e4d0db536705c4a41da7a647f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/KeyboardUI/mouse_vertical.png"
-dest_files=["res://.godot/imported/mouse_vertical.png-61971cfeb56e127e6f23b8aa2191de39.ctex"]
+source_file="res://Assets/ui/KeyboardUI/mouse_vertical.png"
+dest_files=["res://.godot/imported/mouse_vertical.png-101f213e4d0db536705c4a41da7a647f.ctex"]
 
 [params]
 

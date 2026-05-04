@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Processor
 
 @onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 var juice = false
@@ -9,28 +9,21 @@ var fruitsCollected:int = 0
 @onready var label_fruitsCollected:Label = $Label
 var newFont = load("res://assets/Fonts/SuperMaples-2vR2w.ttf")
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	progress.value = 100
 	label_fruitsCollected.add_theme_font_override("myFont", newFont)
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-
-func interact(player:CharacterBody2D, object:Node2D) -> void:	
+func interact(player:CharacterBody2D, object:Node2D) -> void:
 		if object != null:
 			print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 			
 			if object.scene_file_path == "res://Objects/Fruit.tscn":
-				
 				fruitsCollected += 1
-				label_fruitsCollected.text =  str(fruitsCollected) + "/3"
-				if fruitsCollected ==3:
+				label_fruitsCollected.text = str(fruitsCollected) + "/3"
+				
+				if fruitsCollected == 3:
 					object.visible = false
 					sprite.play("default")
 					label_fruitsCollected.visible = false
@@ -43,21 +36,18 @@ func interact(player:CharacterBody2D, object:Node2D) -> void:
 					progress.visible = false
 					progress.value = 100
 					
-					
 					sprite.stop()
 					sprite.frame = 5
 					juice = true
 					
 					fruitsCollected = 0
 					
-				
 				object.get_parent().remove_child(object)
 				player.itemInHand = null
 				
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
 				if juice == true:
-
 					object.visible = false
 					var items = get_tree().current_scene.get_node("Objects")
 					object.reparent(items)

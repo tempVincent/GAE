@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmycf682btnj5"
-path="res://.godot/imported/pattern_grid_blueprint.svg-8979c8caa62e69334d6d9700cf88332a.ctex"
+path="res://.godot/imported/pattern_grid_blueprint.svg-bcb3c2b5788f15ef348822db26c9f3b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/Vector/pattern_grid_blueprint.svg"
-dest_files=["res://.godot/imported/pattern_grid_blueprint.svg-8979c8caa62e69334d6d9700cf88332a.ctex"]
+source_file="res://Assets/ui/Vector/pattern_grid_blueprint.svg"
+dest_files=["res://.godot/imported/pattern_grid_blueprint.svg-bcb3c2b5788f15ef348822db26c9f3b9.ctex"]
 
 [params]
 

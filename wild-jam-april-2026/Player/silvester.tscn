@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
-[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
+[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://Assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
@@ -11,7 +11,6 @@ height = 98.0
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j052w"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_3dvcf"]
-graph_offset = Vector2(-1016.08, 122.702)
 nodes/output/position = Vector2(-180, 360)
 nodes/idle/node = SubResource("AnimationNodeAnimation_j052w")
 nodes/idle/position = Vector2(-180, 100)
