@@ -9,10 +9,15 @@ var worktime = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	finished = false
 	sprite.texture = idle
 	progress.value = 100
 
-func interact(player: PlayerController, object: Node2D = null, carriedObjectData: Carryable = null) -> void:
+func interact(player: PlayerController, object: Variant) -> void:
+	if player != null:
+		object = player.getItemInHand()
+		print("Player:", player, " Item:", object)
+	
 	if sprite.texture == idle:
 		sprite.texture = active
 	

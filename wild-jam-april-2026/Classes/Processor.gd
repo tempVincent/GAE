@@ -4,6 +4,8 @@ class_name Processor extends Machine
 ## The player can interact with it
 ## interaction with processors are lower priority than interactions with carryables
 
+var finished: bool = false
+
 ## these are the states that this processor can be in - like a state machine
 var states: Array[PState]
 
@@ -20,10 +22,15 @@ var inTransition: bool = false
 ## this method is called from the player's interactive area.
 ## object/carriedObjectData can be null if the player's hand is empty.
 ## Alternatively, PlayerController can be accessed directly and canMove can be set to false for the transit duration
-func interact(player: PlayerController, object: Node2D = null, carriedObjectData: Carryable = null) -> void:
+func interact(player: PlayerController, item: Variant):
+	if (!finished):
+		pass
 	if (inTransition):
 		pass
+	if (item == null):
+		pass
 	else:
+		var itemData: Resource = item.get_script().getData()
 		#TODO handle interaction
 		#if object is in currentState.stateTransitions.keys ...
 		#...
@@ -32,7 +39,7 @@ func interact(player: PlayerController, object: Node2D = null, carriedObjectData
 		#check currentState.stateTransitions[object].requiresPlayerAttention
 		pass
 
-## a State or contains all information to handle player interactions
+## a State contains all information to handle player interactions
 ## and possibly as a result of them, transition to a different state
 class PState extends Resource:
 	var displayTexture: Texture2D
@@ -52,12 +59,12 @@ class PState extends Resource:
 ## a StateTransition contains all information needed to display the machine as it
 ## is processing a player interaction and whether the player needs to remain glued to it
 class PStateTransition extends Resource:
-	var displayTextureDuringTransition: Texture2D
-	var durationSeconds: float
+	var displayTextureDuringTransition: Array[Texture2D]
+	var durationSeconds: Array[float]
 	var requiresPlayerAttention: bool
 	var stateAfter: PState
 	
-	func _init(texDuringTransit: Texture2D, transitDuration: float, reqPlayer: bool, newState: PState):
+	func _init(texDuringTransit: Array[Texture2D], transitDuration: Array[float], reqPlayer: bool, newState: PState):
 		displayTextureDuringTransition = texDuringTransit
 		durationSeconds = transitDuration
 		requiresPlayerAttention = reqPlayer

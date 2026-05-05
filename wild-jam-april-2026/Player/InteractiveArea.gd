@@ -43,6 +43,7 @@ func _get_interactiveObject():
 	
 	if !inRangeObjects.is_empty():
 		
+		##prioritize interactions
 		var matches = inRangeObjects.filter(func(item): return item.scene_file_path == "res://Objects/Fruit.tscn")
 		var item: Node2D = matches[0] if not matches.is_empty() else inRangeObjects[0]
 		#var item: Node2D = inRangeObjects[0]
@@ -57,16 +58,11 @@ func _get_interactiveObject():
 				item.get_parent().remove_child(item)
 				character.get_node("AnimatedSprite2D/Hand").add_child(item)
 				itemJustPickedUp = true
-
 				if item.scene_file_path == "res://objects/fruit.tscn":
 					item.set_collision_mask_value(2, true)
 		
 		print(inRangeObjects[0])
-		
 		##then rescan
-	
-	
-		
 		#endregion
 		
 		#region nicht aufhebbare Items
@@ -74,51 +70,32 @@ func _get_interactiveObject():
 		if !item.is_in_group("pickable"):
 			if character.itemInHand:
 				if item != null and (item.scene_file_path == "res://Objects/coffeMachine.tscn" or item.scene_file_path == "res://Objects/water.tscn") and hand.get_child(0).scene_file_path == "res://Objects/coffee_can.tscn":
-					item.interact(character, hand.get_child(0), null)
+					item.interact(character, null)#hand.get_child(0))
 				if  item != null and (item.scene_file_path == "res://Objects/mixer.tscn"):
-					item.interact(character, hand.get_child(0), null)
+					item.interact(character, null)#hand.get_child(0))
 			else:
-				item.interact(null, null, null)
+				item.interact(null, null)
 			pass
 		
-		
-		
-		
 		#endregion
-		
-		
-		
-		
-	else:
 	
+	else:
 		##DROP ITEMS
 		if character.itemInHand and !itemJustPickedUp:
 			var object:Node2D = hand.get_child(0)
 			
-			
 			if interactionareas.canPlaceObject:
 				var oldPos = object.global_position
 				print(oldPos)
-				
-				
 				var newPos = oldPos
-				
-				
 				if interactionareas.playerInArea:
 					newPos.y -= 150
-					
 					var moveCan:Tween = get_tree().create_tween()
 					moveCan.tween_property(object,"global_position",newPos,0.25)
 					await moveCan.finished
 					moveCan.kill()
 				
-				
 				hand.remove_child(object)
 				Objects.add_child(object)
-				
-				
 				object.global_position = newPos
-				
 				character.itemInHand = null
-			
-			

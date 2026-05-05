@@ -32,34 +32,29 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		
-		interact()
+		if Input.is_action_just_pressed("interact"):
+			interactSignal.emit()
 		
 		animation(direction)
-		
-		
-		
 		move_and_slide()
 
-
 func animation(direction) -> void:
-	if direction < 0 and AnimationController.flip_h != true:
-		AnimationController.flip_h = true
+	if direction < 0 and !AnimationController.flip_h:
+		AnimationController.flip_h = !AnimationController.flip_h
 		Hand.position.x *= -1
 		InteractiveArea.collisionShape.position.x *= -1
-	elif direction >0 and AnimationController.flip_h != false:
-		AnimationController.flip_h = false
+	elif direction > 0 and AnimationController.flip_h:
+		AnimationController.flip_h = !AnimationController.flip_h
 		Hand.position.x *= -1
 		InteractiveArea.collisionShape.position.x *= -1
-
+	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
-		animationStatePlayer= animationState.walk
+		animationStatePlayer = animationState.walk
 	else:
-		animationStatePlayer= animationState.idle
+		animationStatePlayer = animationState.idle
 	
 	if Input.is_action_just_pressed("ui_accept"):
-		animationStatePlayer= animationState.jump
-	
-	
+		animationStatePlayer = animationState.jump
 	
 	####JUMP ANIMATION GEHT NOCH NICHT SAUBER
 	if AnimationController.animation != animationState.keys()[animationStatePlayer]:
@@ -70,10 +65,8 @@ func animation(direction) -> void:
 	
 	#print(AnimationController.animation)
 
+func getItemInHand() -> Node2D:
+	return InteractiveArea.hand.get_child(0)
 
-func interact() -> void:
-	if Input.is_action_just_pressed("interact"):
-		interactSignal.emit()
-	
-	
+func placeIteminHand(item: Node2D) -> void:
 	pass
