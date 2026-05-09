@@ -8,9 +8,14 @@ var itemInHand: Node2D
 @onready var AnimationController =  $AnimatedSprite2D
 @onready var Hand = $AnimatedSprite2D/Hand
 @onready var InteractiveArea = $Area2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 signal interactSignal
 var canMove = true
-
+const step_sound = [preload("res://soundFX/footstep07.ogg"),preload("res://soundFX/footstep08.ogg"),preload("res://soundFX/footstep09.ogg")]
+func _play_footstep():
+	audio_stream_player_2d.stream = step_sound.pick_random()
+	audio_stream_player_2d.play()
+	
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
@@ -50,7 +55,10 @@ func animation(direction) -> void:
 	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		animationStatePlayer = animationState.walk
+		if !audio_stream_player_2d.playing:
+			audio_stream_player_2d.play()
 	else:
+		audio_stream_player_2d.stop()
 		animationStatePlayer = animationState.idle
 	
 	if Input.is_action_just_pressed("ui_accept"):
@@ -68,3 +76,12 @@ func getItemInHand() -> Node2D:
 
 func placeIteminHand(item: Node2D) -> void:
 	pass
+
+
+
+func _on_animated_sprite_2d_sprite_frames_changed() -> void:
+		if $AnimatedSprite2D.animation == "walk":
+			var frame = $AnimatedSprite2D.frame
+			if frame == 2 or frame == 4:
+				_play_footstep()
+		pass # Replace with function body.
