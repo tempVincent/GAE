@@ -34,7 +34,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			progress.visible = true
 			var transitionIN:Tween = get_tree().create_tween()
 			transitionIN.tween_property(progress,"value",0,worktime)
-			audioStream.play()
+			audioStream.play(0)
 			
 			
 			await get_tree().create_timer(worktime).timeout
