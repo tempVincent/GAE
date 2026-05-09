@@ -9,7 +9,9 @@ extends Area2D
 @onready var interactionareas: Node2D = $"../../Areas"
 @onready var collisionShape: CollisionShape2D = $"CollisionShape2D"
 @onready var interactionUI = preload("res://assets/UI/KeyboardUI/keyboard_s_outline.png")
-
+@onready var interaction_sounds: AudioStreamPlayer2D = $InteractionSounds
+const pickupSound = preload("res://soundFX/571629__ugila__item-pickup.wav")
+const notificationSound = preload("res://soundFX/235911__yfjesse__notification-sound.wav")
 var interactiveMachines: Array[String] = ["res://Objects/coffeMachine.tscn", "res://Objects/water.tscn", "res://Objects/mixer.tscn"]
 # this array is supposed to be ordered in order of priority of interaction descending
 var interactiveCarriables: Array[String] = ["res://Objects/Fruit.tscn", "res://Objects/coffee_can.tscn"]
@@ -91,13 +93,16 @@ func _get_interactiveObject():
 			dropHeldItem()
 
 func pickUpItem(item: Node2D) -> void:
+	interaction_sounds.stream = pickupSound
 	character.itemInHand = item
 	item.get_parent().remove_child(item)
+	interaction_sounds.play()
 	character.get_node("AnimatedSprite2D/Hand").add_child(item)
 	if item.scene_file_path == "res://objects/fruit.tscn":
 		item.set_collision_mask_value(2, true)
 
 func dropHeldItem() -> void:
+	interaction_sounds.stream = notificationSound
 	var obj: Node2D = hand.get_child(0)
 	if interactionareas.canPlaceObject:
 		var oldPos = obj.global_position
@@ -106,9 +111,11 @@ func dropHeldItem() -> void:
 		if interactionareas.playerInArea:
 			newPos.y -= 150
 			var moveCan: Tween = get_tree().create_tween()
+			interaction_sounds.play()
 			moveCan.tween_property(obj, "global_position", newPos, 0.25)
 			await moveCan.finished
 			moveCan.kill()
+		interaction_sounds.play()
 		hand.remove_child(obj)
 		Objects.add_child(obj)
 		obj.global_position = newPos

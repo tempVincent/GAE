@@ -11,7 +11,8 @@ var itemInHand: Node2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 signal interactSignal
 var canMove = true
-const step_sound = [preload("res://soundFX/footstep07.ogg"),preload("res://soundFX/footstep08.ogg"),preload("res://soundFX/footstep09.ogg")]
+const step_sound = [preload("res://soundFX/footstep07.ogg"),preload("res://soundFX/footstep08.ogg"),preload("res://soundFX/footstep09.ogg"), preload("res://soundFX/footstep00.ogg")]
+
 func _play_footstep():
 	audio_stream_player_2d.stream = step_sound.pick_random()
 	audio_stream_player_2d.play()
