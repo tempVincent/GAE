@@ -1,4 +1,4 @@
-extends RigidBody2D
+class_name Coffee_canController extends Carryable
 var item_type = "coffee_can"
 var isInHand = false
 #var characterHand

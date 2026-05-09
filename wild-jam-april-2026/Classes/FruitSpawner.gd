@@ -1,33 +1,39 @@
 class_name FruitSpawner extends Node2D
 
-var spawnBranches: Array
-var spawnCooldownMin: float = 1 #seconds
-var spawnCooldownMax: float = 10 #seconds
-var rng = RandomNumberGenerator.new()
-var fruits: Array[PackedScene] = []
+var spawnBranches: Array[Node]
+var spawnCooldownMin: float = 1.0 #seconds
+var spawnCooldownMax: float = 10.0 #seconds
+var fruit: PackedScene = preload("res://Objects/Fruit.tscn")
+var fruitsData: Array[Ingredient] = [preload("res://Fruits/banana.tres"), preload("res://Fruits/chilli.tres")]
 @onready var Objects = $"../Objects"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#get_tree().get_root().ready.connect(_start)
 	spawnBranches = find_children("spawnBranch"+"?", "Node2D", true, false)
-	fruits.append(preload("res://Objects/Fruit.tscn"))
-	StartSpawning()
-
-# Called once after the root node in the scene tree is ready.
-func _start() -> void:
 	StartSpawning()
 
 func StartSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")
-		if timer.is_class("Timer"):
-			timer.timeout.connect(spawnAt.bind(branch.get_node("spawnpoint")))
-			timer.timeout.connect(timer.start.bind(rng.randf_range(spawnCooldownMin,spawnCooldownMax)))
-			timer.timeout.connect(randomize)
-			timer.start(rng.randf_range(spawnCooldownMin,spawnCooldownMax))
+		assert(timer.is_class("Timer"), "Timer is not a Timer")
+		timer.timeout.connect(spawn.bind(fruit, fruitsData[randi_range(0,fruitsData.size()-1)], branch.get_node("spawnpoint")))
+		timer.timeout.connect(startRandomTimer.bind(timer))
+		startRandomTimer(timer)
 
-func spawnAt(parent: Node2D) -> void:
-	var fruit = fruits[rng.randi_range(0,fruits.size()-1)].instantiate()
-	fruit.global_position = parent.global_position
-	Objects.add_child(fruit)
+func StopSpawning() -> void:
+	for branch in spawnBranches:
+		var timer = branch.get_node("Timer")
+		assert(timer.is_class("Timer"), "Timer is not a Timer")
+		timer.timeout.disconnect(spawn)
+		timer.timeout.disconnect(timer.start)
+		timer.stop()
+
+func startRandomTimer(timer: Timer) -> void:
+	randomize()
+	timer.start(randf_range(spawnCooldownMin,spawnCooldownMax))
+
+func spawn(obj: PackedScene, objData: Resource, parent: Node2D) -> void:
+	var instance = obj.instantiate()
+	instance.data = objData
+	instance.global_position = parent.global_position
+	Objects.add_child(instance)

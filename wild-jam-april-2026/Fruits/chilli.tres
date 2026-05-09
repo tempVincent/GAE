@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://uey4ts3fndg4"]
+
+[ext_resource type="Texture2D" uid="uid://hubrqeh0p4ib" path="res://Assets/fruits/Chilli.png" id="1_qi7bp"]
+[ext_resource type="Script" uid="uid://m6n7wy1chci7" path="res://Classes/Ingredient.gd" id="2_25u68"]
+
+[resource]
+script = ExtResource("2_25u68")
+id = "res_ing_fruit_chilli"
+displayName = "Chilli"
+displayTexture = ExtResource("1_qi7bp")
+metadata/_custom_type_script = "uid://m6n7wy1chci7"

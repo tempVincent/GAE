@@ -52,7 +52,6 @@ func interact(player: PlayerController, object: Variant) -> void:
 			object.visible = true
 			##make can visible
 			
-			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
 				if p.texture == preload("res://assets/Objects/WaterCan.png") or p.texture == preload("res://assets/Objects/CoffeCan.png") or  p.texture == preload("res://assets/Objects/CoffeCan-juice-banana.png")  :
 					p.texture = preload("res://assets/objects/EmptyWaterCan.png")

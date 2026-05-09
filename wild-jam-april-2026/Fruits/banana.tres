@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dvugwbw7uq2e8"]
+
+[ext_resource type="Texture2D" uid="uid://cx1ir0mbeewqa" path="res://Assets/fruits/Banane.png" id="1_riidj"]
+[ext_resource type="Script" uid="uid://m6n7wy1chci7" path="res://Classes/Ingredient.gd" id="1_y4cte"]
+
+[resource]
+script = ExtResource("1_y4cte")
+id = "res_ing_fruit_banana"
+displayName = "Banane"
+displayTexture = ExtResource("1_riidj")
+flavour = 1
+metadata/_custom_type_script = "uid://m6n7wy1chci7"
