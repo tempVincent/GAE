@@ -41,6 +41,8 @@ enabled=PackedStringArray("res://addons/itch_uploader/plugin.cfg")
 
 pickable="Objects can be picked up."
 canBeFilled=""
+producer="interactable. takes no items, produces one item"
+processor="interactable. takes one item, produces up to one item"
 
 [input]
 
