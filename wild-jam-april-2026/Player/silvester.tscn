@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
-[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://Assets/player/player_tilesheet.png" id="2_j052w"]
+[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
+[ext_resource type="AudioStream" uid="uid://5jla8hgilhbi" path="res://soundFX/footstep08.ogg" id="4_jyj5e"]
+[ext_resource type="AudioStream" uid="uid://c330r5sbnjbsb" path="res://soundFX/571629__ugila__item-pickup.wav" id="4_vve37"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_maox2"]
 radius = 31.0
@@ -124,6 +126,9 @@ animations = [{
 "texture": SubResource("AtlasTexture_3xuh7")
 }, {
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_yqx7y")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c3xba")
 }],
 "loop": true,
@@ -159,8 +164,7 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1682217476]
 sprite_frames = SubResource("SpriteFrames_62e7u")
-animation = &"idle2"
-frame_progress = 0.0788822
+animation = &"walk"
 
 [node name="Hand" type="Node2D" parent="AnimatedSprite2D" unique_id=527515048]
 position = Vector2(40, 30)
@@ -173,6 +177,10 @@ script = ExtResource("3_3dvcf")
 position = Vector2(22.291668, -1.249995)
 shape = SubResource("RectangleShape2D_j052w")
 
+[node name="InteractionSounds" type="AudioStreamPlayer2D" parent="Area2D" unique_id=509145973]
+stream = ExtResource("4_vve37")
+volume_db = 12.571
+
 [node name="Node2D" type="Node2D" parent="." unique_id=650143752]
 
 [node name="Area2D2" type="Area2D" parent="Node2D" unique_id=58671496]
@@ -181,6 +189,11 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D2" unique_id=1225338190]
 shape = SubResource("CapsuleShape2D_3dvcf")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1540278390]
+stream = ExtResource("4_jyj5e")
+volume_db = 4.571
+
 [connection signal="interactSignal" from="." to="Area2D" method="_get_interactiveObject"]
+[connection signal="sprite_frames_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_sprite_frames_changed"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
