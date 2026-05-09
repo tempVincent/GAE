@@ -82,18 +82,18 @@ func _get_interactiveObject():
 			dropHeldItem()
 
 func dropHeldItem() -> void:
-	var object: Node2D = hand.get_child(0)
+	var obj: Node2D = hand.get_child(0)
 	if interactionareas.canPlaceObject:
-		var oldPos = object.global_position
+		var oldPos = obj.global_position
 		print(oldPos)
 		var newPos = oldPos
 		if interactionareas.playerInArea:
 			newPos.y -= 150
 			var moveCan: Tween = get_tree().create_tween()
-			moveCan.tween_property(object,"global_position",newPos,0.25)
+			moveCan.tween_property(obj, "global_position", newPos, 0.25)
 			await moveCan.finished
 			moveCan.kill()
-		hand.remove_child(object)
-		Objects.add_child(object)
-		object.global_position = newPos
+		hand.remove_child(obj)
+		Objects.add_child(obj)
+		obj.global_position = newPos
 		character.itemInHand = null
