@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cmg5elsmu2crm" path="res://assets/player/soldier_tilesheet.png" id="1_kb804"]
 [ext_resource type="Script" uid="uid://ckm5uupsqjyvw" path="res://Skripts/area_2d.gd" id="2_scrsw"]
 [ext_resource type="AudioStream" uid="uid://b0gcgy7kf5y6q" path="res://soundFX/242501__gabrielaraujo__powerupsuccess.wav" id="3_n475b"]
-[ext_resource type="Script" path="res://Scenen/ScoreAudio.gd" id="4_n475b"]
+[ext_resource type="Script" uid="uid://cmdri67hyuihk" path="res://Scenen/ScoreAudio.gd" id="4_n475b"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_scrsw"]
 atlas = ExtResource("1_kb804")
