@@ -61,7 +61,7 @@ func _get_interactiveObject():
 				var producer = inRangeObjects.filter(func(obj): return obj.is_in_group("producer")).front()
 				if producer != null:
 					print("interacting with a producer")
-					producer.interact(character, null)
+					producer.interact(character, character.getItemInHand())
 		else:
 			## prioritize interacting with a processor
 			var processors = inRangeObjects.filter(func(obj): return obj.is_in_group("processor"))
@@ -70,13 +70,20 @@ func _get_interactiveObject():
 			if processor != null:
 				match character.getItemInHand().scene_file_path:
 					"res://Objects/coffee_can.tscn":
-						if processor.scene_file_path == "res://Objects/coffeMachine.tscn" or processor.scene_file_path == "res://Objects/water.tscn" or processor.scene_file_path == "res://Objects/mixer.tscn":
-							print("filling a coffee can")
-							processor.interact(character, null)
+						match processor.scene_file_path:
+							"res://Objects/coffeMachine.tscn":
+								print("filling can with coffee")
+								processor.interact(character, character.getItemInHand())
+							"res://Objects/water.tscn":
+								print("filling can with water")
+								processor.interact(character, character.getItemInHand())
+							"res://Objects/mixer.tscn":
+								print("filling can with juice")
+								processor.interact(character, character.getItemInHand())
 					"res://Objects/Fruit.tscn":
 						if processor.scene_file_path == "res://Objects/mixer.tscn":
 							print("putting fruit in mixer")
-							processor.interact(character, null)
+							processor.interact(character, character.getItemInHand())
 	else:
 		## drop held item
 		if character.itemInHand != null and !itemJustPickedUp:

@@ -6,19 +6,27 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(112, 106)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_cxdce"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_p2hp1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="CoffeMachine" type="StaticBody2D" unique_id=174376775 groups=["processor"]]
 collision_layer = 2
 collision_mask = 6
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1942693667]
-texture_filter = 1
-position = Vector2(10, -30.875)
-texture = ExtResource("1_p2hp1")
-flip_h = true
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014370906]
 position = Vector2(20, -31)
 shape = SubResource("RectangleShape2D_p2hp1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236021555]
+sprite_frames = SubResource("SpriteFrames_cxdce")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=255522027]
 visible = false

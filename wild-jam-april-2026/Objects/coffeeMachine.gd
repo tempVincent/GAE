@@ -1,7 +1,5 @@
-extends Processor
+class_name CoffeeMachine extends Processor
 
-@onready var sprite:Sprite2D = $Sprite2D
-@onready var progress:ProgressBar = $ProgressBar
 var worktime = 3
 
 # Called when the node enters the scene tree for the first time.
@@ -10,10 +8,6 @@ func _ready() -> void:
 	progress.value = 100
 
 func interact(player: PlayerController, object: Variant) -> void:
-	if player != null:
-		object = player.getItemInHand()
-		print("Player:", player, " Item:", object)
-	
 	if object != null:
 		##POSITION
 		for child in object.get_children():

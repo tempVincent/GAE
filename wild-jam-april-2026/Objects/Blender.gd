@@ -1,8 +1,6 @@
-extends Processor
+class_name Blender extends Processor
 
-@onready var sprite:AnimatedSprite2D = $AnimatedSprite2D
 var juice = false
-@onready var progress:ProgressBar = $ProgressBar
 var worktime = 3
 var shortworktime = 1
 var fruitsCollected:int = 0
@@ -16,10 +14,6 @@ func _ready() -> void:
 	label_fruitsCollected.add_theme_font_override("myFont", newFont)
 
 func interact(player: PlayerController, object: Variant) -> void:
-	if player != null:
-		object = player.getItemInHand()
-		print("Player:", player, " Item:", object)
-	
 	if object != null:
 		print("Mixer wird ausgeführt mit: " + object.scene_file_path)
 		

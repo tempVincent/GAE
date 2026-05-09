@@ -6,7 +6,6 @@ var isInHand = false
 var isHazard = false
 var characterAnimation: AnimatedSprite2D
 @onready var collision: CollisionPolygon2D = $CollisionPolygon2D
-var data: Ingredient = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -18,9 +17,6 @@ func _ready() -> void:
 	await transitionIN.finished
 	transitionIN.kill()
 	self.gravity_scale = 1
-
-func getData() -> Resource:
-	return data
 
 func _enter_tree() -> void:
 	if get_parent().get_parent().get_parent().scene_file_path == "res://Player/silvester.tscn":

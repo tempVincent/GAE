@@ -1,6 +1,6 @@
 class_name FruitSpawner extends Node2D
 
-var spawnBranches: Array[Node]
+var spawnBranches: Array[Node] = []
 var spawnCooldownMin: float = 1.0 #seconds
 var spawnCooldownMax: float = 10.0 #seconds
 var fruit: PackedScene = preload("res://Objects/Fruit.tscn")
