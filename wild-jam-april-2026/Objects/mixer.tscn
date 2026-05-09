@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://p77csd3oujq4"]
 
-[ext_resource type="Texture2D" uid="uid://4uxrd7vcggek" path="res://Assets/Objects/Mixer/Mixer.png" id="1_yf2bh"]
-[ext_resource type="FontFile" uid="uid://cj22gaw2npwhc" path="res://Assets/Fonts/SuperMaples-2vR2w.ttf" id="2_teww3"]
-[ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://Assets/ui/KeyboardUI/keyboard_s_outline.png" id="3_na5ar"]
+[ext_resource type="Texture2D" uid="uid://4uxrd7vcggek" path="res://assets/Objects/Mixer/Mixer.png" id="1_yf2bh"]
+[ext_resource type="FontFile" uid="uid://cj22gaw2npwhc" path="res://assets/Fonts/SuperMaples-2vR2w.ttf" id="2_teww3"]
+[ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://assets/UI/KeyboardUI/keyboard_s_outline.png" id="3_na5ar"]
+[ext_resource type="AudioStream" uid="uid://blywslfcjcelx" path="res://soundFX/BRS_Hand_Mixer_Braun_On-Run-Off_Steady_1.wav" id="4_hgo7s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(70, 92)
@@ -87,3 +88,6 @@ vertical_alignment = 2
 visible = false
 position = Vector2(19, -145)
 texture = ExtResource("3_na5ar")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1541813192]
+stream = ExtResource("4_hgo7s")

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hubrqeh0p4ib"
-path="res://.godot/imported/Chilli.png-f35917db834796128196fb8e2f4e8615.ctex"
+path="res://.godot/imported/Chilli.png-e7e686f61ce7efcbaad88a020f0383ad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fruits/Chilli.png"
-dest_files=["res://.godot/imported/Chilli.png-f35917db834796128196fb8e2f4e8615.ctex"]
+source_file="res://assets/fruits/Chilli.png"
+dest_files=["res://.godot/imported/Chilli.png-e7e686f61ce7efcbaad88a020f0383ad.ctex"]
 
 [params]
 

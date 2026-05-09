@@ -2,14 +2,13 @@ extends Node2D
 
 @onready var musicplayer = $BaseComponents/AudioStreamPlayer
 @onready var settings= $"/root/GlobalVars"
+@onready var master_bus_index = AudioServer.get_bus_index("Master")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	musicplayer.playing = true
-	var increaseVol:Tween = get_tree().create_tween()
-	increaseVol.tween_property(musicplayer,"volume_db",-80 + (15*pow(settings.musicVol,0.37)),1).set_trans(Tween.TRANS_QUAD)
-	await increaseVol.finished
-	increaseVol.kill()
+	musicplayer.volume_db = 0
+	
 	pass # Replace with function body.
 
 

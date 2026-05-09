@@ -23,11 +23,11 @@ func _on_body_entered(body: Node2D):
 			if ObjectivePool.current_objective == ObjectivePool.objectives.coffee:
 				print("Objective completed")
 				player.play()
-				tasseFX.emitting = true
+				#tasseFX.emitting = true
 				p.texture = empty_tex
 				ObjectivePool._complete_current_objective()
 				await get_tree().create_timer(5).timeout
-				tasseFX.emitting = false
+				#tasseFX.emitting = false
 
 		if p.texture == preload("res://assets/Objects/CoffeCan-juice-banana.png"):		
 			if ObjectivePool.current_objective == ObjectivePool.objectives.juice:

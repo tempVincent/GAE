@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://ce84hhal83xr3"]
 
-[ext_resource type="Texture2D" uid="uid://bh0imours8hxl" path="res://Assets/Objects/CoffeMachine beans NoCan.png" id="1_p2hp1"]
-[ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://Assets/ui/KeyboardUI/keyboard_s_outline.png" id="2_cxdce"]
-[ext_resource type="Texture2D" uid="uid://ii0nwcch4ksk" path="res://Assets/Objects/CoffeMachine beans.png" id="2_twp8o"]
-[ext_resource type="Texture2D" uid="uid://bv2ybgl5usq0o" path="res://Assets/Objects/CoffeMachine beans_filled.png" id="3_yuc3y"]
-[ext_resource type="Texture2D" uid="uid://cyl2s6u1ilg84" path="res://Assets/Objects/CoffeMachine NoCan.png" id="4_yuc3y"]
+[ext_resource type="Texture2D" uid="uid://bh0imours8hxl" path="res://assets/Objects/CoffeMachine beans NoCan.png" id="1_p2hp1"]
+[ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://assets/UI/KeyboardUI/keyboard_s_outline.png" id="2_cxdce"]
+[ext_resource type="Texture2D" uid="uid://ii0nwcch4ksk" path="res://assets/Objects/CoffeMachine beans.png" id="2_twp8o"]
+[ext_resource type="Texture2D" uid="uid://bv2ybgl5usq0o" path="res://assets/Objects/CoffeMachine beans_filled.png" id="3_yuc3y"]
+[ext_resource type="Texture2D" uid="uid://cyl2s6u1ilg84" path="res://assets/Objects/CoffeMachine NoCan.png" id="4_yuc3y"]
+[ext_resource type="AudioStream" uid="uid://dk3ult1j03o1o" path="res://soundFX/FF_WP_foley_coffee_machine_running_long.wav" id="6_fx4tj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(112, 106)
@@ -52,3 +53,7 @@ show_percentage = false
 visible = false
 position = Vector2(29, -117)
 texture = ExtResource("2_cxdce")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=601050092]
+stream = ExtResource("6_fx4tj")
+volume_db = -6.613

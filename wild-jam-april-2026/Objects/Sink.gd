@@ -1,6 +1,7 @@
 class_name Sink extends Processor
 
 var worktime = 3
+@onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,6 +34,8 @@ func interact(player: PlayerController, object: Variant) -> void:
 			progress.visible = true
 			var transitionIN:Tween = get_tree().create_tween()
 			transitionIN.tween_property(progress,"value",0,worktime)
+			audioStream.play()
+			
 			
 			await get_tree().create_timer(worktime).timeout
 			transitionIN.kill()
@@ -41,6 +44,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			
 			player.canMove = true
 			object.visible = true
+			audioStream.stop()
 			##make can visible
 			
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":

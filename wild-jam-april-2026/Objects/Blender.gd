@@ -1,4 +1,5 @@
 class_name Blender extends Processor
+@onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var juice = false
 var worktime = 3
@@ -32,12 +33,14 @@ func interact(player: PlayerController, object: Variant) -> void:
 				var transitionIN:Tween = get_tree().create_tween()
 				transitionIN.tween_property(progress,"value",0,worktime)
 				
+				audioStream.play()
 				await get_tree().create_timer(worktime).timeout
 				transitionIN.kill()
 				progress.visible = false
 				progress.value = 100
 				
 				sprite.stop()
+				audioStream.stop()
 				sprite.frame = 5
 				juice = true
 				
@@ -66,6 +69,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 				transitionIN.kill()
 				progress.visible = false
 				progress.value = 100
+				
 				
 				var p = object.get_child(1)
 				p.texture = preload("res://assets/Objects/CoffeCan-juice-banana.png")

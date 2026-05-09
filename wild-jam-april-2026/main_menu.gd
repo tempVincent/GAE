@@ -2,6 +2,8 @@ extends Node2D
 
 @onready var settings= $"/root/GlobalVars"
 @onready var musicplayer = $AudioStreamPlayer2
+@onready var master_bus_index = AudioServer.get_bus_index("Master")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -21,7 +23,8 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func changeVol() -> void:
-	musicplayer.volume_db = -80 + (15*pow(settings.musicVol,0.37))
+	#musicplayer.volume_db = -80 + (15*pow(settings.musicVol,0.37))
+	AudioServer.set_bus_volume_db(master_bus_index,-80 + (15*pow(settings.musicVol,0.37)))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

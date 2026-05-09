@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cpvstxaumxa6k"
-path="res://.godot/imported/mouse_right_outline.png-c9bc892e907378231cab19c966110013.ctex"
+path="res://.godot/imported/mouse_right_outline.png-86dc6ac009f8489b07ea9c712b1f5944.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/KeyboardUI/mouse_right_outline.png"
-dest_files=["res://.godot/imported/mouse_right_outline.png-c9bc892e907378231cab19c966110013.ctex"]
+source_file="res://assets/UI/KeyboardUI/mouse_right_outline.png"
+dest_files=["res://.godot/imported/mouse_right_outline.png-86dc6ac009f8489b07ea9c712b1f5944.ctex"]
 
 [params]
 

@@ -1,6 +1,7 @@
 class_name CoffeeMachine extends Processor
 
 var worktime = 3
+@onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,8 @@ func interact(player: PlayerController, object: Variant) -> void:
 		object.global_position = Vector2(400,600)
 		var transitionIN:Tween = get_tree().create_tween()
 		transitionIN.tween_property(progress,"value",0,worktime)
+		audioStream.play()
+		
 		
 		sprite.frame = 1
 		##Make Can invisible
@@ -38,6 +41,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 		transitionIN.kill()
 		progress.visible = false
 		progress.value = 100
+		audioStream.stop()
 		
 		#player.canMove = true
 		object.visible = true

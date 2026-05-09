@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cmg5elsmu2crm"
-path="res://.godot/imported/soldier_tilesheet.png-91c80116ead76cdeb40a7cc0b05a442a.ctex"
+path="res://.godot/imported/soldier_tilesheet.png-da3bb7d09df167ccda4ba3eb5a5fb153.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/player/soldier_tilesheet.png"
-dest_files=["res://.godot/imported/soldier_tilesheet.png-91c80116ead76cdeb40a7cc0b05a442a.ctex"]
+source_file="res://assets/player/soldier_tilesheet.png"
+dest_files=["res://.godot/imported/soldier_tilesheet.png-da3bb7d09df167ccda4ba3eb5a5fb153.ctex"]
 
 [params]
 

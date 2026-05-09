@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c851qirpo3ec4"
-path="res://.godot/imported/uglybranch-unedited.png-d86a5849b770cd029aff192424caa532.ctex"
+path="res://.godot/imported/uglybranch-unedited.png-b3f4faecb514b1daffd1f795c46f4fb0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/uglybranch-unedited.png"
-dest_files=["res://.godot/imported/uglybranch-unedited.png-d86a5849b770cd029aff192424caa532.ctex"]
+source_file="res://assets/uglybranch-unedited.png"
+dest_files=["res://.godot/imported/uglybranch-unedited.png-b3f4faecb514b1daffd1f795c46f4fb0.ctex"]
 
 [params]
 

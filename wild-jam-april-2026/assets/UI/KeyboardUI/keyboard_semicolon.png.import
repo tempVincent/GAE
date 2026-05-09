@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxeikx4f8efb6"
-path="res://.godot/imported/keyboard_semicolon.png-4260532ff579be80c4bd54b4634fbaf1.ctex"
+path="res://.godot/imported/keyboard_semicolon.png-ff2c5546888635853991d1a8d03e1f5d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/KeyboardUI/keyboard_semicolon.png"
-dest_files=["res://.godot/imported/keyboard_semicolon.png-4260532ff579be80c4bd54b4634fbaf1.ctex"]
+source_file="res://assets/UI/KeyboardUI/keyboard_semicolon.png"
+dest_files=["res://.godot/imported/keyboard_semicolon.png-ff2c5546888635853991d1a8d03e1f5d.ctex"]
 
 [params]
 

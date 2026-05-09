@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2dnurd86u58d"
-path="res://.godot/imported/keyboard_bracket_open_outline.png-a8f72c1996ee49531151c11808d825fc.ctex"
+path="res://.godot/imported/keyboard_bracket_open_outline.png-19e24a33e17f66b1b702a8a0807972c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/KeyboardUI/keyboard_bracket_open_outline.png"
-dest_files=["res://.godot/imported/keyboard_bracket_open_outline.png-a8f72c1996ee49531151c11808d825fc.ctex"]
+source_file="res://assets/UI/KeyboardUI/keyboard_bracket_open_outline.png"
+dest_files=["res://.godot/imported/keyboard_bracket_open_outline.png-19e24a33e17f66b1b702a8a0807972c1.ctex"]
 
 [params]
 
