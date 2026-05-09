@@ -1,25 +1,22 @@
 class_name Sink extends Processor
 
-@onready var idle:CompressedTexture2D = preload("res://assets/Objects/Water/idle.png")
-@onready var active:CompressedTexture2D = preload("res://assets/Objects/Water/active.png")
-@onready var filling:CompressedTexture2D = preload("res://assets/Objects/Water/filling.png")
-
 var worktime = 3
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	finished = false
 	progress.value = 100
+	sprite.frame = 0
 
 func interact(player: PlayerController, object: Variant) -> void:
-	if sprite.texture == idle:
-		sprite.texture = active
+	if sprite.frame == 0:
+		sprite.frame = 1
 	
 		if object != null:
 			##POSITION
 			var p = object.get_child(1)
 			if p.texture == preload("res://assets/objects/EmptyWaterCan.png"):
-				sprite.texture = filling
+				sprite.frame = 2
 			object.visible = false
 			var items = get_tree().current_scene.get_node("Objects")
 			object.reparent(items)
@@ -32,7 +29,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			player.Hand.remove_child(object)
 			##Make Can invisible
 			##Disable movement of player
-			##Create new SPrite with Can and water and show it
+			##Create new Sprite with Can and water and show it
 			progress.visible = true
 			var transitionIN:Tween = get_tree().create_tween()
 			transitionIN.tween_property(progress,"value",0,worktime)
@@ -61,5 +58,5 @@ func interact(player: PlayerController, object: Variant) -> void:
 			transitionIN.kill()
 			progress.visible = false
 			progress.value = 100
-		sprite.texture = idle
+		sprite.frame = 0
 	pass

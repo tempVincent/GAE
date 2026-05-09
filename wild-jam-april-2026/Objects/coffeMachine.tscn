@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://bh0imours8hxl" path="res://Assets/Objects/CoffeMachine beans NoCan.png" id="1_p2hp1"]
 [ext_resource type="Texture2D" uid="uid://c0em33b0vaty2" path="res://Assets/ui/KeyboardUI/keyboard_s_outline.png" id="2_cxdce"]
+[ext_resource type="Texture2D" uid="uid://ii0nwcch4ksk" path="res://Assets/Objects/CoffeMachine beans.png" id="2_twp8o"]
+[ext_resource type="Texture2D" uid="uid://bv2ybgl5usq0o" path="res://Assets/Objects/CoffeMachine beans_filled.png" id="3_yuc3y"]
+[ext_resource type="Texture2D" uid="uid://cyl2s6u1ilg84" path="res://Assets/Objects/CoffeMachine NoCan.png" id="4_yuc3y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p2hp1"]
 size = Vector2(112, 106)
@@ -11,6 +14,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_p2hp1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_twp8o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yuc3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yuc3y")
 }],
 "loop": true,
 "name": &"default",
@@ -22,7 +34,6 @@ collision_layer = 2
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1014370906]
-position = Vector2(20, -31)
 shape = SubResource("RectangleShape2D_p2hp1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236021555]

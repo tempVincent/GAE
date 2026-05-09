@@ -26,14 +26,14 @@ func interact(player: PlayerController, object: Variant) -> void:
 		var transitionIN:Tween = get_tree().create_tween()
 		transitionIN.tween_property(progress,"value",0,worktime)
 		
-		sprite.texture = preload("res://assets/Objects/CoffeMachine beans.png")
+		sprite.frame = 1
 		##Make Can invisible
 		await get_tree().create_timer(float(worktime)/2).timeout
-		sprite.texture = preload("res://assets/Objects/CoffeMachine beans_filled.png")
+		sprite.frame = 2
 		##Disable movement of player
-		##Create new SPrite with Can and water and show it
+		##Create new Sprite and show it
 		await get_tree().create_timer(float(worktime)/2).timeout
-		sprite.texture = preload("res://assets/Objects/CoffeMachine beans NoCan.png")
+		sprite.frame = 0
 		
 		transitionIN.kill()
 		progress.visible = false
