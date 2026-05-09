@@ -62,8 +62,6 @@ func animation(direction) -> void:
 		
 		if animationStatePlayer == animationState.jump:
 			await AnimationController.animation_finished
-	
-	#print(AnimationController.animation)
 
 func getItemInHand() -> Node2D:
 	return InteractiveArea.hand.get_child(0)

@@ -10,27 +10,35 @@ extends Area2D
 @onready var collisionShape: CollisionShape2D = $"CollisionShape2D"
 @onready var interactionUI = preload("res://assets/UI/KeyboardUI/keyboard_s_outline.png")
 
-var interactiveObjects: Array = ["res://Objects/coffee_can.tscn","res://Objects/coffeMachine.tscn",
-								"res://Objects/water.tscn","res://Objects/Fruit.tscn","res://Objects/mixer.tscn"]
+var interactiveMachines: Array[String] = ["res://Objects/coffeMachine.tscn", "res://Objects/water.tscn", "res://Objects/mixer.tscn"]
+# this array is supposed to be ordered in order of priority of interaction descending
+var interactiveCarriables: Array[String] = ["res://Objects/Fruit.tscn", "res://Objects/coffee_can.tscn"]
+var interactiveObjects: Array[String] = []
 var inRangeObjects: Array[Node2D]
 
+func _ready() -> void:
+	interactiveObjects.append_array(interactiveMachines)
+	interactiveObjects.append_array(interactiveCarriables)
+
 func _on_body_entered(body: Node2D) -> void:
-	if  interactiveObjects.find(body.scene_file_path) != -1:
+	if  interactiveObjects.has(body.scene_file_path):
 		inRangeObjects.append(body)
 		
 		#UI for Interaction
-		var uiOverlay = body.get_node("Interact")
-		if uiOverlay != null:
-			uiOverlay.visible = true
+		if  interactiveMachines.has(body.scene_file_path):
+			var uiOverlay = body.get_node("Interact")
+			if uiOverlay != null:
+				uiOverlay.visible = true
 
 func _on_body_exited(body: Node2D) -> void:
 	if inRangeObjects.has(body):
 		inRangeObjects.erase(body)
 		
 		#UI for Interaction
-		var uiOverlay = body.get_node("Interact")
-		if uiOverlay != null:
-			uiOverlay.visible = false
+		if  interactiveMachines.has(body.scene_file_path):
+			var uiOverlay = body.get_node("Interact")
+			if uiOverlay != null:
+				uiOverlay.visible = false
 
 func _get_interactiveObject():
 	var itemJustPickedUp = false
@@ -39,21 +47,15 @@ func _get_interactiveObject():
 		## prioritize interacting
 		if character.itemInHand == null:
 			## prioritize interacting with a pickable object
-			var pickables = inRangeObjects.filter(func(obj): return obj.is_in_group("pickable"))
-			if not pickables.is_empty():
-				## prioritize interacting with the coffee can
-				var item = pickables.filter(func(obj): return obj.scene_file_path == "res://Objects/coffee_can.tscn").front()
-				## prioritize interacting with another pickable item
-				if item == null:
-					item = pickables.front()
-				
-				print("picking up an item")
-				character.itemInHand = item
-				item.get_parent().remove_child(item)
-				character.get_node("AnimatedSprite2D/Hand").add_child(item)
+			var carriables = inRangeObjects.filter(func(obj): return obj.is_in_group("pickable"))
+			if not carriables.is_empty():
+				## sort carriables in priority order descending
+				assert(carriables.all(func(obj): return interactiveCarriables.has(obj.scene_file_path)), "not all carriables added to interactiveCarriables")
+				carriables.sort_custom(func(obj1, obj2): return (interactiveCarriables.find(obj1.scene_file_path) < interactiveCarriables.find(obj2.scene_file_path)))
+				var item = carriables.front()
+				print("picking up an item: ", item)
+				pickUpItem(item)
 				itemJustPickedUp = true
-				if item.scene_file_path == "res://objects/fruit.tscn":
-					item.set_collision_mask_value(2, true)
 			else:
 				## prioritize interacting with a producer
 				var producer = inRangeObjects.filter(func(obj): return obj.is_in_group("producer")).front()
@@ -63,7 +65,7 @@ func _get_interactiveObject():
 		else:
 			## prioritize interacting with a processor
 			var processors = inRangeObjects.filter(func(obj): return obj.is_in_group("processor"))
-			assert(processors.size() <= 1, "")
+			assert(processors.size() <= 1, "some processors are too close to each other")
 			var processor = processors.front()
 			if processor != null:
 				match character.getItemInHand().scene_file_path:
@@ -80,6 +82,13 @@ func _get_interactiveObject():
 		if character.itemInHand != null and !itemJustPickedUp:
 			print("dropping held item")
 			dropHeldItem()
+
+func pickUpItem(item: Node2D) -> void:
+	character.itemInHand = item
+	item.get_parent().remove_child(item)
+	character.get_node("AnimatedSprite2D/Hand").add_child(item)
+	if item.scene_file_path == "res://objects/fruit.tscn":
+		item.set_collision_mask_value(2, true)
 
 func dropHeldItem() -> void:
 	var obj: Node2D = hand.get_child(0)
