@@ -21,12 +21,51 @@ offset_bottom = 648.0
 
 [node name="TextureRect" type="ColorRect" parent="AspectRatioContainer" unique_id=1519955989]
 layout_mode = 2
-color = Color(0.078431375, 0.078431375, 0.078431375, 0.5294118)
+color = Color(0.08, 0.08, 0.08, 0.7411765)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer" unique_id=1547877799]
 layout_mode = 2
-text = "
+text = "HELP
+
+OBJECTIVES
+Johnny's requests are shown:
+- in the speech bubble above his head
+- in the upper left corner
+
+Bring him the correct item before time runs out.
 
 
-Tutorial Text goes hier
-To make juice collect a fruit, use S key to interact with the mixer and repeat twice. Then grab your cann and fill it with juice to bring it to Johnny...."
+JUICE
+1. Catch a falling fruit
+2. Use the mixer (S)
+3. Repeat twice
+4. Fill the can with juice
+5. Bring it to Johnny
+
+Be careful:
+Uncaught fruits disappear.
+
+
+COFFEE
+1. Grab the can
+2. Use the coffee machine
+3. Take the coffee to Johnny
+
+
+WATER
+Use the sink to:
+- fill the can with water
+- or empty the can
+
+
+CONTROLS
+A D or Arrow keys  -> Move
+SPACE -> Jump
+SHIFT    -> Run
+S        -> Interact
+
+
+WARNING
+If Johnny doesn't get what he wants...
+
+something terrible might happen."

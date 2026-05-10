@@ -14,6 +14,8 @@
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://dlgqllggohbnn" path="res://assets/UI/KeyboardUI/keyboard_shift.png" id="6_61cf8"]
 [ext_resource type="Script" uid="uid://bxnnp1rukjpbr" path="res://buttonHowToPlay.gd" id="8_qie43"]
+[ext_resource type="PackedScene" uid="uid://babu2yulbejt6" path="res://Scenen/TutorialScene.tscn" id="13_3fnrj"]
+[ext_resource type="Script" uid="uid://dqbrm2hnryie3" path="res://backToMenu.gd" id="14_m04lp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qie43"]
 shader = ExtResource("2_31qfy")
@@ -307,12 +309,51 @@ layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.25
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=150238281]
+[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=648488176]
 visible = false
-offset_left = 450.5
-offset_top = 443.3333
-offset_right = 490.5
-offset_bottom = 483.3333
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=1680903180]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 0.3
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=898335136]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.75
+ratio = 1.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer4/AspectRatioContainer" unique_id=1087083430]
+layout_mode = 2
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1019892536]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 1.22
+
+[node name="Control" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1213672650 instance=ExtResource("13_3fnrj")]
+visible = true
+layout_mode = 2
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=665814855]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 0
+ratio = 0.3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer4/AspectRatioContainer3" unique_id=2059061603]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button3" type="Button" parent="HBoxContainer4/AspectRatioContainer3/VBoxContainer" unique_id=455105560]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "BACK"
+script = ExtResource("14_m04lp")
+metadata/_edit_use_anchors_ = true
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
 modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
@@ -339,3 +380,4 @@ volume_db = -80.0
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
 [connection signal="drag_ended" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" method="_on_drag_ended"]
 [connection signal="button_down" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
+[connection signal="pressed" from="HBoxContainer4/AspectRatioContainer3/VBoxContainer/Button3" to="HBoxContainer4/AspectRatioContainer3/VBoxContainer/Button3" method="_on_pressed"]
