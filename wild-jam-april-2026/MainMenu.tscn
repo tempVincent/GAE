@@ -223,12 +223,18 @@ color = Color(0.08, 0.08, 0.08, 0.5294118)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/AspectRatioContainer3" unique_id=769024645]
 layout_mode = 2
-text = "sadas
-adsdasdas
+text = "
 
-HIER SCHREIBEN, was man im Spiel macht.
+Hey everyone, my name is Silvester.
+During my coffee breaks I help my coworker Johnny get the things he needs.
 
-ich bin silvester, bitte helf mir, dass Johnny die Dinge bekommt, die er sich immer wünscht. Er zeigt das durch symbol über seinem Kopf, aber achtung, die früchte fallen und du musst sie rechtzeitig fangen.. XYZ"
+Watch the labels carefully and bring him the correct items.
+
+But be careful — fruits keep falling from the tree.
+Catch them before they hit the ground or you won't get any juice...
+
+And if Johnny doesn't get what he needs...
+something terrible might happen."
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2111924631]
 visible = false
@@ -300,6 +306,13 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.25
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="." unique_id=150238281]
+visible = false
+offset_left = 450.5
+offset_top = 443.3333
+offset_right = 490.5
+offset_bottom = 483.3333
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
 modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
