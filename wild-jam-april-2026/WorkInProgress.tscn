@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffeeMachine.gd" id="7_rlha8"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
-[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/Objects/Tasse.png" id="9_qbaj0"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
@@ -26,6 +26,7 @@
 [ext_resource type="Script" uid="uid://c2adii1818b6r" path="res://Scripts/Administrative/FruitKillzone.gd" id="22_m085l"]
 [ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
 [ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/Blender.gd" id="25_m085l"]
+[ext_resource type="PackedScene" uid="uid://babu2yulbejt6" path="res://Scenen/TutorialScene.tscn" id="27_2bvyg"]
 [ext_resource type="Script" uid="uid://dqbrm2hnryie3" path="res://backToMenu.gd" id="27_ssoo6"]
 
 [sub_resource type="Curve" id="Curve_qbaj0"]
@@ -54,6 +55,7 @@ script = ExtResource("1_ykjyh")
 [node name="BaseComponents" type="Node2D" parent="." unique_id=1185134037]
 
 [node name="Parallax2D" type="Parallax2D" parent="BaseComponents" unique_id=958832936]
+show_behind_parent = true
 z_index = -4
 scale = Vector2(0.91, 0.91)
 repeat_size = Vector2(128, 64)
@@ -220,6 +222,8 @@ position = Vector2(503, -436)
 z_index = 4
 position = Vector2(14, -383)
 
+[node name="Control" parent="UI" unique_id=1213672650 instance=ExtResource("27_2bvyg")]
+
 [node name="Button" type="Button" parent="." unique_id=1209164206]
 offset_left = 1070.0
 offset_top = 38.0
@@ -229,6 +233,14 @@ text = "EXIT"
 script = ExtResource("27_ssoo6")
 metadata/_edit_use_anchors_ = true
 
+[node name="Button2" type="Button" parent="." unique_id=112808151]
+offset_left = 1043.0
+offset_top = 38.0
+offset_right = 1067.0
+offset_bottom = 69.0
+tooltip_text = "Help"
+text = "?"
+
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
@@ -236,3 +248,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_entered" from="Areas/Area2D" to="Areas" method="_on_body_entered" binds= [false]]
 [connection signal="body_exited" from="Areas/Area2D" to="Areas" method="_on_body_exited"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="UI/Control" method="_on_button_2_pressed"]

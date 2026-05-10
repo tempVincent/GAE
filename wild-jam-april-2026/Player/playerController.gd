@@ -8,20 +8,26 @@ var itemInHand: Node2D
 @onready var AnimationController =  $AnimatedSprite2D
 @onready var Hand = $AnimatedSprite2D/Hand
 @onready var InteractiveArea = $Area2D
-@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 signal interactSignal
 var canMove = true
 const step_sound = [preload("res://soundFX/footstep07.ogg"),preload("res://soundFX/footstep08.ogg"),preload("res://soundFX/footstep09.ogg"), preload("res://soundFX/footstep00.ogg")]
+@onready var foot_sound: AudioStreamPlayer2D = $AnimatedSprite2D/FootSound
 
 func _play_footstep():
-	audio_stream_player_2d.stream = step_sound.pick_random()
-	audio_stream_player_2d.play()
+	print("Setting audio stream")
+	foot_sound.stream = step_sound.pick_random()
+	print("Current stream: " + str(foot_sound.stream))
+	foot_sound.play()
 	
+func _ready() -> void:
+	if foot_sound.stream == null:
+		foot_sound.stream = step_sound.pick_random()
+
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	if canMove:
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_accept") and is_on_floor():
@@ -56,10 +62,10 @@ func animation(direction) -> void:
 	
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		animationStatePlayer = animationState.walk
-		if !audio_stream_player_2d.playing:
-			audio_stream_player_2d.play()
+		if !foot_sound.playing:
+			foot_sound.play()
 	else:
-		audio_stream_player_2d.stop()
+		foot_sound.stop()
 		animationStatePlayer = animationState.idle
 	
 	if Input.is_action_just_pressed("ui_accept"):
