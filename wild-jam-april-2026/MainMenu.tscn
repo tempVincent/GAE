@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://bcyi0dl6hj0ln" path="res://assets/UI/KeyboardUI/keyboard_s.png" id="4_afec1"]
 [ext_resource type="Script" uid="uid://bvlwll2weq8l" path="res://Skripts/option_button.gd" id="5_afec1"]
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
+[ext_resource type="Texture2D" uid="uid://dlgqllggohbnn" path="res://assets/UI/KeyboardUI/keyboard_shift.png" id="6_61cf8"]
+[ext_resource type="Script" uid="uid://bxnnp1rukjpbr" path="res://buttonHowToPlay.gd" id="8_qie43"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qie43"]
 shader = ExtResource("2_31qfy")
@@ -98,6 +100,17 @@ text = "Interact"
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=392429293]
+layout_mode = 2
+texture = ExtResource("6_61cf8")
+stretch_mode = 3
+
+[node name="Label2" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=1297075959]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "Run"
+
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=140280870]
 layout_mode = 2
 size_flags_vertical = 3
@@ -176,7 +189,15 @@ script = ExtResource("1_eiy7p")
 [node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=3309692]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.09
+size_flags_stretch_ratio = 0.9
+
+[node name="Button" type="Button" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5" unique_id=1064011318]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 20
+text = "How to Play"
+script = ExtResource("8_qie43")
 
 [node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=921335182]
 layout_mode = 2
@@ -195,7 +216,22 @@ layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.3
 
+[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/AspectRatioContainer3" unique_id=1528051051]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.08, 0.08, 0.08, 0.5294118)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/AspectRatioContainer3" unique_id=769024645]
+layout_mode = 2
+text = "sadas
+adsdasdas
+
+HIER SCHREIBEN, was man im Spiel macht.
+
+ich bin silvester, bitte helf mir, dass Johnny die Dinge bekommt, die er sich immer wünscht. Er zeigt das durch symbol über seinem Kopf, aber achtung, die früchte fallen und du musst sie rechtzeitig fangen.. XYZ"
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2111924631]
+visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
@@ -286,6 +322,7 @@ volume_db = -80.0
 [connection signal="item_selected" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" method="_on_item_selected"]
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_down"]
 [connection signal="button_up" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_up"]
+[connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" method="_on_button_down"]
 [connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
 [connection signal="drag_ended" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" method="_on_drag_ended"]
 [connection signal="button_down" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
