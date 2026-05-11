@@ -327,16 +327,76 @@ size_flags_stretch_ratio = 1.75
 ratio = 1.5
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer4/AspectRatioContainer" unique_id=1087083430]
+custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1019892536]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 1.22
+alignment_horizontal = 0
 
-[node name="Control" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1213672650 instance=ExtResource("13_3fnrj")]
-visible = true
+[node name="Control" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer/AspectRatioContainer3" unique_id=1213672650 instance=ExtResource("13_3fnrj")]
+visible = false
 layout_mode = 2
+
+[node name="TextureRect" type="ColorRect" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1801537988]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.08, 0.08, 0.08, 0.7411765)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer/TextureRect" unique_id=931644874]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+text = "HELP
+
+OBJECTIVES
+Johnny's requests are shown:
+- in the speech bubble above his head
+- in the upper left corner
+
+Bring him the correct item before time runs out.
+
+
+JUICE
+1. Catch a falling fruit
+2. Use the mixer (S)
+3. Repeat twice
+4. Fill the can with juice
+5. Bring it to Johnny
+
+Be careful:
+Uncaught fruits disappear.
+
+
+COFFEE
+1. Grab the can
+2. Use the coffee machine
+3. Take the coffee to Johnny
+
+
+WATER
+Use the sink to:
+- fill the can with water
+- or empty the can
+
+
+CONTROLS
+A D or Arrow keys  -> Move
+SPACE -> Jump
+SHIFT    -> Run
+S        -> Interact
+
+
+WARNING
+If Johnny doesn't get what he wants...
+
+something terrible might happen."
 
 [node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=665814855]
 layout_mode = 2
