@@ -20,7 +20,7 @@ func _enter_tree() -> void:
 		
 		##Set Params
 		freeze = true
-		position = Vector2(0, 0)
+		position = Vector2(0,0)
 		collision.disabled = true
 		scale = Vector2(0.5, 0.5)
 		rotation = 0

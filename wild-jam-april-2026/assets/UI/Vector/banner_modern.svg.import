@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fptv2s6uient"
-path="res://.godot/imported/banner_modern.svg-602f9fef815c51597d3525e97a52c174.ctex"
+path="res://.godot/imported/banner_modern.svg-d6cf7b88e6c25259e446f828e7441d98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/banner_modern.svg"
-dest_files=["res://.godot/imported/banner_modern.svg-602f9fef815c51597d3525e97a52c174.ctex"]
+source_file="res://assets/UI/Vector/banner_modern.svg"
+dest_files=["res://.godot/imported/banner_modern.svg-d6cf7b88e6c25259e446f828e7441d98.ctex"]
 
 [params]
 

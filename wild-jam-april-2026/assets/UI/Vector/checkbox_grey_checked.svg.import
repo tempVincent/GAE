@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ciotctey2k6ka"
-path="res://.godot/imported/checkbox_grey_checked.svg-93523e960b0cd5fb3abbc7a99cf48102.ctex"
+path="res://.godot/imported/checkbox_grey_checked.svg-13dd0a8ba444852c1b84ce774dee5ed9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/checkbox_grey_checked.svg"
-dest_files=["res://.godot/imported/checkbox_grey_checked.svg-93523e960b0cd5fb3abbc7a99cf48102.ctex"]
+source_file="res://assets/UI/Vector/checkbox_grey_checked.svg"
+dest_files=["res://.godot/imported/checkbox_grey_checked.svg-13dd0a8ba444852c1b84ce774dee5ed9.ctex"]
 
 [params]
 
