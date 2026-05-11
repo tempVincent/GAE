@@ -73,6 +73,15 @@ Coffee Break entstand als Beitrag zum Godot Wild Jam #92. Ziel war es, innerhalb
 
 ---
 
+## Script-Ordner
+
+Auflistung der Ordnder, in denen relevante GD-Scripts liegen:
+1. wild-jam-april-2026/Classes
+2. wild-jam-april-2026/Player
+3. wild-jam-april-2026/Skripts
+
+
+
 ## Verwendet
 
 - **[Godot 4](https://godotengine.org/)** — Game Engine
