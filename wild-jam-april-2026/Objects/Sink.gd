@@ -26,7 +26,6 @@ func interact(player: PlayerController, object: Variant) -> void:
 			var collision = object.get_node("CollisionPolygon2D")
 			collision.disabled = false
 			object.global_position = Vector2(50,450)
-			object.isInHand = false
 			player.Hand.remove_child(object)
 			##Make Can invisible
 			##Disable movement of player

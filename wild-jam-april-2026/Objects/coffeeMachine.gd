@@ -45,7 +45,6 @@ func interact(player: PlayerController, object: Variant) -> void:
 		
 		#player.canMove = true
 		object.visible = true
-		object.isInHand = false
 		player.Hand.remove_child(object)
 		##make can visible
 		

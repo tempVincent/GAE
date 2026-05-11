@@ -57,7 +57,6 @@ func interact(player: PlayerController, object: Variant) -> void:
 				var collision = object.get_node("CollisionPolygon2D")
 				collision.disabled = false
 				object.global_position = Vector2(400,600)
-				object.isInHand = false
 				player.Hand.remove_child(object)
 				sprite.frame = 0
 				
@@ -69,7 +68,6 @@ func interact(player: PlayerController, object: Variant) -> void:
 				transitionIN.kill()
 				progress.visible = false
 				progress.value = 100
-				
 				
 				var p = object.get_child(1)
 				p.texture = preload("res://assets/Objects/CoffeCan-juice-banana.png")
