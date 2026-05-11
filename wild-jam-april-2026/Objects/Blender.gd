@@ -1,19 +1,20 @@
 class_name Blender extends Processor
-@onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 var juice = false
 var worktime = 3
 var shortworktime = 1
 var fruitsCollected:int = 0
-@onready var label_fruitsCollected:Label = $Label
 var newFont = load("res://assets/Fonts/SuperMaples-2vR2w.ttf")
 
-# Called when the node enters the scene tree for the first time.
+@onready var label_fruitsCollected:Label = $Label
+@onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	finished = false
 	progress.value = 100
 	label_fruitsCollected.add_theme_font_override("myFont", newFont)
 
+## Called by the player's interactive area
 func interact(player: PlayerController, object: Variant) -> void:
 	if object != null:
 		print("Mixer wird ausgeführt mit: " + object.scene_file_path)

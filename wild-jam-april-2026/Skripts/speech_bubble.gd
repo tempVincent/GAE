@@ -1,26 +1,24 @@
 extends Node2D
-@onready var label = $Label
+
 var obj_text = ObjectivePool.get_objective_text(ObjectivePool.current_objective)
 
+@onready var label = $Label
 @onready var water = $Water
 @onready var juice = $Juice
 @onready var coffee = $Coffee
 @onready var banane = $Banane
 
-
-
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ObjectivePool.objectives_updated.connect(update_speech)
 	update_speech()
 
-
+## 
 func update_speech():
 	var transition:Tween = get_tree().create_tween()
-	transition.tween_property(self,"scale",Vector2(0,0),1).set_trans(Tween.TRANS_QUAD)
+	transition.tween_property(self, "scale", Vector2(0,0), 1).set_trans(Tween.TRANS_QUAD)
 	await transition.finished
 	transition.kill()
-	
 	
 	var obj_text = ObjectivePool.get_objective_text(ObjectivePool.current_objective)
 	#label.text = "I need " + obj_text
@@ -29,7 +27,6 @@ func update_speech():
 	juice.visible = false
 	coffee.visible = false
 	banane.visible = false
-	
 	
 	match obj_text:
 		"coffee":
@@ -41,10 +38,7 @@ func update_speech():
 		"water":
 			water.visible = true
 	
-	
-	var transitionIN:Tween = get_tree().create_tween()
-	transitionIN.tween_property(self,"scale",Vector2(1,1),1).set_trans(Tween.TRANS_QUAD)
+	var transitionIN: Tween = get_tree().create_tween()
+	transitionIN.tween_property(self, "scale", Vector2(1,1), 1).set_trans(Tween.TRANS_QUAD)
 	await transitionIN.finished
-	
 	transitionIN.kill()
-	

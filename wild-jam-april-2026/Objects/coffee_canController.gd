@@ -2,6 +2,11 @@ class_name Coffee_canController extends Carryable
 
 var item_type = "coffee_can"
 
+## 
+func _ready() -> void:
+	data = preload("res://Tools/CoffeeCan.tres")
+
+## 
 func _enter_tree() -> void:
 	var playerMaybe = get_parent().get_parent().get_parent()
 	if playerMaybe.scene_file_path == "res://Player/silvester.tscn":
@@ -16,6 +21,7 @@ func _enter_tree() -> void:
 		scale = Vector2(0.5,0.5)
 		rotation = 0
 
+## 
 func _exit_tree() -> void:
 	var playerMaybe = get_parent().get_parent().get_parent()
 	if playerMaybe.scene_file_path == "res://Player/silvester.tscn":

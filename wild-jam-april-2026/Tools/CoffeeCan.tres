@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Tool" format=3 uid="uid://bwx7tbda04ump"]
+
+[ext_resource type="Script" uid="uid://drl3ltmm0ye3p" path="res://Classes/Tool.gd" id="1_jjtmt"]
+[ext_resource type="Texture2D" uid="uid://bb45tthsun7oh" path="res://Assets/Objects/EmptyWaterCan.png" id="1_nwd25"]
+
+[resource]
+script = ExtResource("1_jjtmt")
+id = "res_too_can"
+displayName = "Coffee Can"
+displayTexture = ExtResource("1_nwd25")
+metadata/_custom_type_script = "uid://drl3ltmm0ye3p"

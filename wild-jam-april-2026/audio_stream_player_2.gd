@@ -1,6 +1,5 @@
 extends AudioStreamPlayer
 
-
 @onready var musicplayer = self
 @onready var settings= $"/root/GlobalVars"
 
@@ -16,9 +15,3 @@ func _ready() -> void:
 		increaseVol.tween_property(musicplayer,"volume_db",-10,1.5).set_trans(Tween.TRANS_QUAD)
 	await increaseVol.finished
 	increaseVol.kill()
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

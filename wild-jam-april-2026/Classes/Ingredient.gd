@@ -1,10 +1,8 @@
 class_name Ingredient extends Resource
 
 enum Flavour {
-	apple,
 	banana,
-	chilli,
-	pear
+	chilli
 }
 
 @export var id: String

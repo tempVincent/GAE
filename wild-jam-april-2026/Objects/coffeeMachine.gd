@@ -1,13 +1,14 @@
 class_name CoffeeMachine extends Processor
 
 var worktime = 3
+
 @onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	finished = false
 	progress.value = 100
 
+## Called by the player's interactive area
 func interact(player: PlayerController, object: Variant) -> void:
 	if object != null:
 		##POSITION

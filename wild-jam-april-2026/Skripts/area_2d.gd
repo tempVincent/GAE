@@ -4,6 +4,7 @@ var inRangeObjects:Array
 @onready var tasseFX = $"../../../Funiture/Tasse/CPUParticles2D"
 @onready var player = $"../../AudioStreamPlayer"
 
+## override base class listener called by the engine when another body moves into this area's detection mask
 func _on_body_entered(body: Node2D):
 	var path = body.get_path()
 	print(path)

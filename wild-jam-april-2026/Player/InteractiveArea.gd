@@ -1,5 +1,13 @@
 extends Area2D
 
+const pickupSound = preload("res://soundFX/571629__ugila__item-pickup.wav")
+const notificationSound = preload("res://soundFX/235911__yfjesse__notification-sound.wav")
+var interactiveMachines: Array[String] = ["res://Objects/coffeMachine.tscn", "res://Objects/water.tscn", "res://Objects/mixer.tscn"]
+## [interactiveCarriables] is supposed to be ordered in order of priority of interaction descending
+var interactiveCarriables: Array[String] = ["res://Objects/Fruit.tscn", "res://Objects/coffee_can.tscn"]
+var interactiveObjects: Array[String] = []
+var inRangeObjects: Array[Node2D]
+
 @onready var characterAnimation = $"../AnimatedSprite2D"
 @onready var character = $".."
 @onready var hand = $"../AnimatedSprite2D/Hand"
@@ -10,18 +18,13 @@ extends Area2D
 @onready var collisionShape: CollisionShape2D = $"CollisionShape2D"
 @onready var interactionUI = preload("res://assets/UI/KeyboardUI/keyboard_s_outline.png")
 @onready var interaction_sounds: AudioStreamPlayer2D = $InteractionSounds
-const pickupSound = preload("res://soundFX/571629__ugila__item-pickup.wav")
-const notificationSound = preload("res://soundFX/235911__yfjesse__notification-sound.wav")
-var interactiveMachines: Array[String] = ["res://Objects/coffeMachine.tscn", "res://Objects/water.tscn", "res://Objects/mixer.tscn"]
-# this array is supposed to be ordered in order of priority of interaction descending
-var interactiveCarriables: Array[String] = ["res://Objects/Fruit.tscn", "res://Objects/coffee_can.tscn"]
-var interactiveObjects: Array[String] = []
-var inRangeObjects: Array[Node2D]
 
+## 
 func _ready() -> void:
 	interactiveObjects.append_array(interactiveMachines)
 	interactiveObjects.append_array(interactiveCarriables)
 
+## 
 func _on_body_entered(body: Node2D) -> void:
 	if  interactiveObjects.has(body.scene_file_path):
 		inRangeObjects.append(body)
@@ -32,6 +35,7 @@ func _on_body_entered(body: Node2D) -> void:
 			if uiOverlay != null:
 				uiOverlay.visible = true
 
+## 
 func _on_body_exited(body: Node2D) -> void:
 	if inRangeObjects.has(body):
 		inRangeObjects.erase(body)
@@ -42,6 +46,7 @@ func _on_body_exited(body: Node2D) -> void:
 			if uiOverlay != null:
 				uiOverlay.visible = false
 
+## intitate interaction with a target if one is found
 func _get_interactiveObject():
 	var itemJustPickedUp = false
 	
@@ -92,6 +97,7 @@ func _get_interactiveObject():
 			print("dropping held item")
 			dropHeldItem()
 
+## pick a pickable item up
 func pickUpItem(item: Node2D) -> void:
 	interaction_sounds.stream = pickupSound
 	character.itemInHand = item
@@ -101,6 +107,7 @@ func pickUpItem(item: Node2D) -> void:
 	if item.scene_file_path == "res://objects/fruit.tscn":
 		item.set_collision_mask_value(2, true)
 
+## drop a pickable item
 func dropHeldItem() -> void:
 	interaction_sounds.stream = notificationSound
 	var obj: Node2D = hand.get_child(0)

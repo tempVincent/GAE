@@ -4,7 +4,7 @@ extends Node2D
 @onready var settings= $"/root/GlobalVars"
 @onready var master_bus_index = AudioServer.get_bus_index("Master")
 
-# Called when the node enters the scene tree for the first time.
+## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	musicplayer.playing = true
 	musicplayer.volume_db = 0
