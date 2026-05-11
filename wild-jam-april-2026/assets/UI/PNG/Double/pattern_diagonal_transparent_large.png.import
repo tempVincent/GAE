@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://00vvfyremcat"
-path="res://.godot/imported/pattern_diagonal_transparent_large.png-b7b1c00ad5f14aec380349ea84d03825.ctex"
+path="res://.godot/imported/pattern_diagonal_transparent_large.png-e543af01065dc62948dff904e4ff09f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/PNG/Double/pattern_diagonal_transparent_large.png"
-dest_files=["res://.godot/imported/pattern_diagonal_transparent_large.png-b7b1c00ad5f14aec380349ea84d03825.ctex"]
+source_file="res://Assets/ui/PNG/Double/pattern_diagonal_transparent_large.png"
+dest_files=["res://.godot/imported/pattern_diagonal_transparent_large.png-e543af01065dc62948dff904e4ff09f3.ctex"]
 
 [params]
 
