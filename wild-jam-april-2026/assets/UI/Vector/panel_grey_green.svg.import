@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bkakwk6j0bjdq"
-path="res://.godot/imported/panel_grey_green.svg-9defa9cfa83c58c25c874f19b9aa5163.ctex"
+path="res://.godot/imported/panel_grey_green.svg-361f6044344386908c7fcfaaed69f8d6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/panel_grey_green.svg"
-dest_files=["res://.godot/imported/panel_grey_green.svg-9defa9cfa83c58c25c874f19b9aa5163.ctex"]
+source_file="res://assets/UI/Vector/panel_grey_green.svg"
+dest_files=["res://.godot/imported/panel_grey_green.svg-361f6044344386908c7fcfaaed69f8d6.ctex"]
 
 [params]
 

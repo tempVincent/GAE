@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://qcm3kvjaunqe"
-path="res://.godot/imported/panel_grid_blueprint.svg-4bcd4dde088900aefd7c8e1aa1ea8374.ctex"
+path="res://.godot/imported/panel_grid_blueprint.svg-96494ba159b09a6a1975eb4449675058.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/panel_grid_blueprint.svg"
-dest_files=["res://.godot/imported/panel_grid_blueprint.svg-4bcd4dde088900aefd7c8e1aa1ea8374.ctex"]
+source_file="res://assets/UI/Vector/panel_grid_blueprint.svg"
+dest_files=["res://.godot/imported/panel_grid_blueprint.svg-96494ba159b09a6a1975eb4449675058.ctex"]
 
 [params]
 

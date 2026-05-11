@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://4uxrd7vcggek"
-path="res://.godot/imported/Mixer.png-b23c8c98d6cf3c43f3f3daf557d80d70.ctex"
+path="res://.godot/imported/Mixer.png-ffcc0f2a6b8e914c095a1a0d1a1f251c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Objects/Mixer/Mixer.png"
-dest_files=["res://.godot/imported/Mixer.png-b23c8c98d6cf3c43f3f3daf557d80d70.ctex"]
+source_file="res://assets/Objects/Mixer/Mixer.png"
+dest_files=["res://.godot/imported/Mixer.png-ffcc0f2a6b8e914c095a1a0d1a1f251c.ctex"]
 
 [params]
 

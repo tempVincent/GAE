@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cvxythck8shkp"
-path="res://.godot/imported/emote_swirl.png-f3816b84122d21d6b0bb6cd416fcb56b.ctex"
+path="res://.godot/imported/emote_swirl.png-31bca7f181296923418b0d1df069d158.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/emotes/PNG/Vector/Style 8/emote_swirl.png"
-dest_files=["res://.godot/imported/emote_swirl.png-f3816b84122d21d6b0bb6cd416fcb56b.ctex"]
+source_file="res://assets/emotes/PNG/Vector/Style 8/emote_swirl.png"
+dest_files=["res://.godot/imported/emote_swirl.png-31bca7f181296923418b0d1df069d158.ctex"]
 
 [params]
 

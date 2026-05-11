@@ -3,27 +3,30 @@
 [ext_resource type="Script" uid="uid://tw1bdytk1nj5" path="res://control.gd" id="1_kja7e"]
 
 [node name="Control" type="Control" unique_id=1213672650]
-visible = false
-top_level = true
 z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = -504.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kja7e")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=101228159]
 layout_mode = 0
-offset_right = 1152.0
+offset_left = -10.0
+offset_right = 1157.0
 offset_bottom = 648.0
 
 [node name="TextureRect" type="ColorRect" parent="AspectRatioContainer" unique_id=1519955989]
+z_index = 6
 layout_mode = 2
 color = Color(0.08, 0.08, 0.08, 0.7411765)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer" unique_id=1547877799]
+z_index = 6
 layout_mode = 2
 text = "HELP
 

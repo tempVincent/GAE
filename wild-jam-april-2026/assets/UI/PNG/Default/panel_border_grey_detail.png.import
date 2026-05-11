@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cuy4x0yb8b1p2"
-path="res://.godot/imported/panel_border_grey_detail.png-df4d2ba08bb3407f252fc7e98ba1ceaf.ctex"
+path="res://.godot/imported/panel_border_grey_detail.png-86fc3f0252532cee346487a9ebe2531d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Default/panel_border_grey_detail.png"
-dest_files=["res://.godot/imported/panel_border_grey_detail.png-df4d2ba08bb3407f252fc7e98ba1ceaf.ctex"]
+source_file="res://assets/UI/PNG/Default/panel_border_grey_detail.png"
+dest_files=["res://.godot/imported/panel_border_grey_detail.png-86fc3f0252532cee346487a9ebe2531d.ctex"]
 
 [params]
 

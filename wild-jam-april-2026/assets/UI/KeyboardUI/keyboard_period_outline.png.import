@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fh5lw40iii2y"
-path="res://.godot/imported/keyboard_period_outline.png-513ff1cc14c37f918ad1a3b05500ea88.ctex"
+path="res://.godot/imported/keyboard_period_outline.png-209832ad98e4a792b24f48cf2b135f7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/KeyboardUI/keyboard_period_outline.png"
-dest_files=["res://.godot/imported/keyboard_period_outline.png-513ff1cc14c37f918ad1a3b05500ea88.ctex"]
+source_file="res://assets/UI/KeyboardUI/keyboard_period_outline.png"
+dest_files=["res://.godot/imported/keyboard_period_outline.png-209832ad98e4a792b24f48cf2b135f7b.ctex"]
 
 [params]
 

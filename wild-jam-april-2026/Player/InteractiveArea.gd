@@ -104,6 +104,7 @@ func pickUpItem(item: Node2D) -> void:
 	item.get_parent().remove_child(item)
 	interaction_sounds.play()
 	character.get_node("AnimatedSprite2D/Hand").add_child(item)
+	
 	if item.scene_file_path == "res://objects/fruit.tscn":
 		item.set_collision_mask_value(2, true)
 

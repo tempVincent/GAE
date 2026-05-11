@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt1odalokn064"
-path="res://.godot/imported/round_brown.svg-d4f24ed5554466cb3098775779b9c8d5.ctex"
+path="res://.godot/imported/round_brown.svg-55f6b5f2d73e3e83e3137c19bd26179e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/Vector/round_brown.svg"
-dest_files=["res://.godot/imported/round_brown.svg-d4f24ed5554466cb3098775779b9c8d5.ctex"]
+source_file="res://assets/UI/Vector/round_brown.svg"
+dest_files=["res://.godot/imported/round_brown.svg-55f6b5f2d73e3e83e3137c19bd26179e.ctex"]
 
 [params]
 

@@ -44,5 +44,5 @@ func restartRandomTimer(timer: Timer) -> void:
 func spawn(obj: PackedScene, objData: Resource, parent: Node2D) -> void:
 	var instance = obj.instantiate()
 	instance.data = objData
-	instance.global_position = parent.global_position
 	Objects.add_child(instance)
+	instance.global_position = parent.global_position

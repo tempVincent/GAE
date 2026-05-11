@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cv4jwj07ddt4j"
-path="res://.godot/imported/pattern_diagonal_grey_large.png-758dc512c62433bbb548ec09c59cb69c.ctex"
+path="res://.godot/imported/pattern_diagonal_grey_large.png-b111a6de077da6f138425a67b30d25ec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Double/pattern_diagonal_grey_large.png"
-dest_files=["res://.godot/imported/pattern_diagonal_grey_large.png-758dc512c62433bbb548ec09c59cb69c.ctex"]
+source_file="res://assets/UI/PNG/Double/pattern_diagonal_grey_large.png"
+dest_files=["res://.godot/imported/pattern_diagonal_grey_large.png-b111a6de077da6f138425a67b30d25ec.ctex"]
 
 [params]
 

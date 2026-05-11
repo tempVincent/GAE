@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cj22gaw2npwhc"
-path="res://.godot/imported/SuperMaples-2vR2w.ttf-754b197ba75d20940b691aca335eaee7.fontdata"
+path="res://.godot/imported/SuperMaples-2vR2w.ttf-abfb96353f0fb652f6e3f524df6156b8.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/SuperMaples-2vR2w.ttf"
-dest_files=["res://.godot/imported/SuperMaples-2vR2w.ttf-754b197ba75d20940b691aca335eaee7.fontdata"]
+source_file="res://assets/Fonts/SuperMaples-2vR2w.ttf"
+dest_files=["res://.godot/imported/SuperMaples-2vR2w.ttf-abfb96353f0fb652f6e3f524df6156b8.fontdata"]
 
 [params]
 

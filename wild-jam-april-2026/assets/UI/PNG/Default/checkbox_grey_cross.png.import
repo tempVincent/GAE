@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ce0aty00c13si"
-path="res://.godot/imported/checkbox_grey_cross.png-7bc37c9e825e12de2bf70703a60b1764.ctex"
+path="res://.godot/imported/checkbox_grey_cross.png-c6a8e26980bff6f68384d4fe89ed47c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/ui/PNG/Default/checkbox_grey_cross.png"
-dest_files=["res://.godot/imported/checkbox_grey_cross.png-7bc37c9e825e12de2bf70703a60b1764.ctex"]
+source_file="res://assets/UI/PNG/Default/checkbox_grey_cross.png"
+dest_files=["res://.godot/imported/checkbox_grey_cross.png-c6a8e26980bff6f68384d4fe89ed47c8.ctex"]
 
 [params]
 
