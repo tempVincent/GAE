@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://dc2nst4h5pfau" path="res://Objects/coffeetable.tscn" id="5_jy8u0"]
 [ext_resource type="PackedScene" uid="uid://b340r1ya6cwhq" path="res://Objects/water.tscn" id="7_gaonw"]
 [ext_resource type="PackedScene" uid="uid://ce84hhal83xr3" path="res://Objects/coffeMachine.tscn" id="7_nerjk"]
-[ext_resource type="Script" uid="uid://rp7nqxoloqvt" path="res://Objects/coffeeMachine.gd" id="7_rlha8"]
+[ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffeeMachine.gd" id="7_rlha8"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
-[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/objects/Tasse.png" id="9_qbaj0"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/Objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
@@ -151,7 +151,7 @@ position = Vector2(2, 190)
 position = Vector2(108, 503)
 
 [node name="CoffeeCan" parent="Objects" unique_id=995889882 groups=["canBeFilled"] instance=ExtResource("4_muuf1")]
-position = Vector2(407.45, -22)
+position = Vector2(870.9, -22)
 collision_mask = 150
 input_pickable = true
 
@@ -170,13 +170,14 @@ script = ExtResource("10_2r8cf")
 
 [node name="GPUParticles2D2" type="GPUParticles2D" parent="Jhonny" unique_id=1057710172]
 top_level = true
-scale = Vector2(0.6666667, 0.6666667)
+scale = Vector2(0.175, 0.175)
 emitting = false
-amount = 500
+amount = 200
 texture = ExtResource("19_wy7o8")
-lifetime = 1.9000000000000001
+lifetime = 1.9
 one_shot = true
 explosiveness = 1.0
+visibility_rect = Rect2(-100, -100, 50, 200)
 process_material = SubResource("ParticleProcessMaterial_5ooxb")
 
 [node name="ExplosionSound2" type="AudioStreamPlayer2D" parent="Jhonny" unique_id=1105731361]
