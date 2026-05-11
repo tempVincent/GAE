@@ -105,7 +105,7 @@ func pickUpItem(item: Node2D) -> void:
 	interaction_sounds.play()
 	character.get_node("AnimatedSprite2D/Hand").add_child(item)
 	
-	if item.scene_file_path == "res://objects/fruit.tscn":
+	if item.scene_file_path == "res://Objects/Fruit.tscn":
 		item.set_collision_mask_value(2, true)
 
 ## drop a pickable item

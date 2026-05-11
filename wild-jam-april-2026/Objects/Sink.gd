@@ -24,7 +24,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 	
 		if object != null:
 			var p = object.get_child(1)
-			if p.texture == preload("res://assets/objects/EmptyWaterCan.png"):
+			if p.texture == preload("res://assets/Objects/EmptyWaterCan.png"):
 				sprite.frame = 2
 			
 			## Make Can in player hand invisible
@@ -53,7 +53,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			## Modify Can in player hand
 			if object.scene_file_path == "res://Objects/coffee_can.tscn":
 				if p.texture == preload("res://assets/Objects/WaterCan.png") or p.texture == preload("res://assets/Objects/CoffeCan.png") or  p.texture == preload("res://assets/Objects/CoffeCan-juice-banana.png")  :
-					p.texture = preload("res://assets/objects/EmptyWaterCan.png")
+					p.texture = preload("res://assets/Objects/EmptyWaterCan.png")
 				else:
 					p.texture = preload("res://assets/Objects/WaterCan.png")
 		
