@@ -1,7 +1,0 @@
-[gd_resource type="AtlasTexture" load_steps=2 format=3 uid="uid://bvkgpryigpdox"]
-
-[ext_resource type="Texture2D" uid="uid://bmddm53wjjfkq" path="res://UI/tiles/vector_style2.png" id="1_baacb"]
-
-[resource]
-atlas = ExtResource("1_baacb")
-region = Rect2(160, 76, 32, 38)
