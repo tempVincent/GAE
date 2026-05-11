@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://dwydtcbqxkhhm" path="res://Objects/coffeeMachine.gd" id="7_rlha8"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
-[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/Objects/Tasse.png" id="9_qbaj0"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
@@ -223,6 +223,11 @@ z_index = 4
 position = Vector2(14, -383)
 
 [node name="Control" parent="UI" unique_id=1213672650 instance=ExtResource("27_2bvyg")]
+top_level = true
+offset_left = 12.0
+offset_top = 31.0
+offset_right = 5.0
+offset_bottom = 36.0
 
 [node name="Button" type="Button" parent="." unique_id=1209164206]
 offset_left = 1070.0
