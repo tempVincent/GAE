@@ -10,13 +10,14 @@ var obj_text = ObjectivePool.get_objective_text(ObjectivePool.current_objective)
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	scale = Vector2(0,0)
 	ObjectivePool.objectives_updated.connect(update_speech)
 	update_speech()
 
 ## 
 func update_speech():
 	var transition:Tween = get_tree().create_tween()
-	transition.tween_property(self, "scale", Vector2(0,0), 1).set_trans(Tween.TRANS_QUAD)
+	transition.tween_property(self, "scale", Vector2(0,0), 0.25).set_trans(Tween.TRANS_QUAD)
 	await transition.finished
 	transition.kill()
 	
