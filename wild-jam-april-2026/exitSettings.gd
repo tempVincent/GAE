@@ -1,7 +1,7 @@
 extends Button
 
 @onready var settings:HBoxContainer = $"../../../.."
-@onready var menu:HBoxContainer = $"../../../../../HBoxContainer"
+@onready var menu:HBoxContainer = $"../../../../../MainMenu"
 @onready var title:TextureRect = $"../../../../../TextureRect"
 
 ## override base class listener

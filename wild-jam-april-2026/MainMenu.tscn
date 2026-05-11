@@ -14,8 +14,10 @@
 [ext_resource type="AudioStream" uid="uid://b1pf353l0ayxo" path="res://BeepBox-Song.wav" id="5_iwfq2"]
 [ext_resource type="Texture2D" uid="uid://dlgqllggohbnn" path="res://assets/UI/KeyboardUI/keyboard_shift.png" id="6_61cf8"]
 [ext_resource type="Script" uid="uid://bxnnp1rukjpbr" path="res://buttonHowToPlay.gd" id="8_qie43"]
+[ext_resource type="Script" uid="uid://ymweqmbvsv3x" path="res://openCredits.gd" id="11_1thib"]
 [ext_resource type="PackedScene" uid="uid://babu2yulbejt6" path="res://Scenen/TutorialScene.tscn" id="13_3fnrj"]
 [ext_resource type="Script" uid="uid://dqbrm2hnryie3" path="res://backToMenu.gd" id="14_m04lp"]
+[ext_resource type="FontFile" uid="uid://cj22gaw2npwhc" path="res://assets/Fonts/SuperMaples-2vR2w.ttf" id="15_m04lp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qie43"]
 shader = ExtResource("2_31qfy")
@@ -46,100 +48,104 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 texture = ExtResource("2_e2xy7")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1585539027]
+[node name="MainMenu" type="HBoxContainer" parent="." unique_id=1585539027]
 offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer" unique_id=323585735]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainMenu" unique_id=323585735]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.3
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer2" unique_id=1447411214]
+[node name="ColorRect" type="ColorRect" parent="MainMenu/AspectRatioContainer2" unique_id=1447411214]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.08, 0.08, 0.08, 0.5294118)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer2" unique_id=1571946527]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/AspectRatioContainer2" unique_id=1571946527]
 layout_mode = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1540049554]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1999872400]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer2/VBoxContainer" unique_id=1540049554]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=133645788]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer2/VBoxContainer" unique_id=1999872400]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=133645788]
 layout_mode = 2
 texture = ExtResource("3_u7cqb")
 stretch_mode = 4
 
-[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=377629449]
+[node name="Label" type="Label" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer3" unique_id=377629449]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Movement"
 
-[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=8844563]
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer2/VBoxContainer" unique_id=8844563]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=1169419996]
+[node name="TextureRect" type="TextureRect" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=1169419996]
 layout_mode = 2
 texture = ExtResource("4_afec1")
 stretch_mode = 3
 
-[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=165764809]
+[node name="Label" type="Label" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer6" unique_id=165764809]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Interact"
 
-[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=1763644645]
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer2/VBoxContainer" unique_id=1763644645]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=392429293]
+[node name="TextureRect2" type="TextureRect" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=392429293]
 layout_mode = 2
 texture = ExtResource("6_61cf8")
 stretch_mode = 3
 
-[node name="Label2" type="Label" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=1297075959]
+[node name="Label2" type="Label" parent="MainMenu/AspectRatioContainer2/VBoxContainer/AspectRatioContainer5" unique_id=1297075959]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "Run"
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer2/VBoxContainer" unique_id=140280870]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer2/VBoxContainer" unique_id=140280870]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer" unique_id=1034861613]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu" unique_id=1034861613]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.75
-ratio = 1.5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/AspectRatioContainer" unique_id=461313659]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/AspectRatioContainer" unique_id=461313659]
 layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 7
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1600647587]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=1600647587]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.22
 
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1866224912]
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=1866224912]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 1.75
 
-[node name="Control" type="Control" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4" unique_id=548015309]
+[node name="Control" type="Control" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4" unique_id=548015309]
+custom_minimum_size = Vector2(123.57, 103.71)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=899287433]
+[node name="ColorRect" type="ColorRect" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=899287433]
 self_modulate = Color(0.21, 0.21, 0.21, 1)
 layout_mode = 1
 offset_left = -62.0
@@ -149,7 +155,7 @@ offset_bottom = 102.52167
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="OptionButton" type="OptionButton" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=491592461]
+[node name="OptionButton" type="OptionButton" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=491592461]
 modulate = Color(6.0763073, 3.387432, 0.6985572, 0.8117647)
 layout_mode = 0
 offset_left = 62.0
@@ -166,7 +172,7 @@ popup/item_2/text = "Hard"
 popup/item_2/id = 2
 script = ExtResource("5_afec1")
 
-[node name="Label" type="Label" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=1482703626]
+[node name="Label" type="Label" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control" unique_id=1482703626]
 layout_mode = 0
 offset_left = -23.0
 offset_top = 60.66667
@@ -175,11 +181,11 @@ offset_bottom = 83.66667
 size_flags_horizontal = 4
 text = "Difficulty:"
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=1939456140]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=1939456140]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=550096747]
+[node name="Button" type="Button" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=550096747]
 clip_contents = true
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
@@ -188,12 +194,12 @@ theme_override_font_sizes/font_size = 20
 text = "START"
 script = ExtResource("1_eiy7p")
 
-[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=3309692]
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=3309692]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.9
 
-[node name="Button" type="Button" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5" unique_id=1064011318]
+[node name="Button" type="Button" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer5" unique_id=1064011318]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 8
@@ -201,11 +207,11 @@ theme_override_font_sizes/font_size = 20
 text = "How to Play"
 script = ExtResource("8_qie43")
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer/AspectRatioContainer/VBoxContainer" unique_id=921335182]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=921335182]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button" type="Button" parent="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=1834916901]
+[node name="Button" type="Button" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=1834916901]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 8
@@ -213,17 +219,33 @@ theme_override_font_sizes/font_size = 20
 text = "SETTINGS"
 script = ExtResource("3_cqjrg")
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer" unique_id=2106999447]
+[node name="AspectRatioContainer6" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=513417334]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer7" type="AspectRatioContainer" parent="MainMenu/AspectRatioContainer/VBoxContainer" unique_id=650696884]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer7" unique_id=35540494]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 20
+text = "Credits"
+script = ExtResource("11_1thib")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="MainMenu" unique_id=2106999447]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.3
 
-[node name="ColorRect2" type="ColorRect" parent="HBoxContainer/AspectRatioContainer3" unique_id=1528051051]
+[node name="ColorRect2" type="ColorRect" parent="MainMenu/AspectRatioContainer3" unique_id=1528051051]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.08, 0.08, 0.08, 0.5294118)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/AspectRatioContainer3" unique_id=769024645]
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/AspectRatioContainer3" unique_id=769024645]
 layout_mode = 2
 text = "
 
@@ -238,44 +260,44 @@ Catch them before they hit the ground or you won't get any juice...
 And if Johnny doesn't get what he needs...
 something terrible might happen."
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=2111924631]
+[node name="Settings" type="HBoxContainer" parent="." unique_id=2111924631]
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=880907250]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Settings" unique_id=880907250]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.25
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=1421831460]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings" unique_id=1421831460]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.99
 ratio = 1.5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2/AspectRatioContainer" unique_id=1540810189]
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/AspectRatioContainer" unique_id=1540810189]
 layout_mode = 2
 
-[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1285634631]
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Settings/AspectRatioContainer/VBoxContainer" unique_id=1285634631]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=385058472]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Settings/AspectRatioContainer/VBoxContainer" unique_id=385058472]
 layout_mode = 2
 size_flags_vertical = 3
 ratio = 4.6413
 
-[node name="GridContainer" type="GridContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=872668856]
+[node name="GridContainer" type="GridContainer" parent="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=872668856]
 layout_mode = 2
 columns = 2
 
-[node name="Label" type="Label" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=1301909261]
+[node name="Label" type="Label" parent="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=1301909261]
 layout_mode = 2
 text = "SOUND VOLUME     "
 
-[node name="HSlider" type="HSlider" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=755856970]
+[node name="HSlider" type="HSlider" parent="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer" unique_id=755856970]
 custom_minimum_size = Vector2(124.25, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -284,68 +306,68 @@ value = 100.0
 rounded = true
 script = ExtResource("3_qoqlk")
 
-[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1661337764]
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="Settings/AspectRatioContainer/VBoxContainer" unique_id=1661337764]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.09
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=1577582994]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Settings/AspectRatioContainer/VBoxContainer" unique_id=1577582994]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.65
 
-[node name="Button" type="Button" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=1084217131]
+[node name="Button" type="Button" parent="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=1084217131]
 custom_minimum_size = Vector2(252.54, 0)
 layout_mode = 2
 text = "back"
 script = ExtResource("4_7r1g0")
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer2/AspectRatioContainer/VBoxContainer" unique_id=638277375]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Settings/AspectRatioContainer/VBoxContainer" unique_id=638277375]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer2" unique_id=1400610261]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Settings" unique_id=1400610261]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.25
 
-[node name="HBoxContainer4" type="HBoxContainer" parent="." unique_id=648488176]
+[node name="HowToPlay" type="HBoxContainer" parent="." unique_id=648488176]
 visible = false
 offset_right = 1152.0
 offset_bottom = 648.0
 alignment = 1
 
-[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=1680903180]
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="HowToPlay" unique_id=1680903180]
 layout_mode = 2
 size_flags_horizontal = 3
 ratio = 0.3
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=898335136]
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HowToPlay" unique_id=898335136]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 1.75
 ratio = 1.5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer4/AspectRatioContainer" unique_id=1087083430]
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay/AspectRatioContainer" unique_id=1087083430]
 custom_minimum_size = Vector2(0, 550)
 layout_mode = 2
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1019892536]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HowToPlay/AspectRatioContainer/VBoxContainer" unique_id=1019892536]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
 alignment_horizontal = 0
 
-[node name="Control" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer/AspectRatioContainer3" unique_id=1213672650 instance=ExtResource("13_3fnrj")]
+[node name="Control" parent="HowToPlay/AspectRatioContainer/VBoxContainer/AspectRatioContainer3" unique_id=1213672650 instance=ExtResource("13_3fnrj")]
 visible = false
 layout_mode = 2
 
-[node name="TextureRect" type="ColorRect" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer" unique_id=1801537988]
+[node name="TextureRect" type="ColorRect" parent="HowToPlay/AspectRatioContainer/VBoxContainer" unique_id=1801537988]
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.08, 0.08, 0.08, 0.7411765)
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer4/AspectRatioContainer/VBoxContainer/TextureRect" unique_id=931644874]
+[node name="RichTextLabel" type="RichTextLabel" parent="HowToPlay/AspectRatioContainer/VBoxContainer/TextureRect" unique_id=931644874]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -398,22 +420,98 @@ If Johnny doesn't get what he wants...
 
 something terrible might happen."
 
-[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HBoxContainer4" unique_id=665814855]
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="HowToPlay" unique_id=665814855]
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 0
 ratio = 0.3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer4/AspectRatioContainer3" unique_id=2059061603]
+[node name="VBoxContainer" type="VBoxContainer" parent="HowToPlay/AspectRatioContainer3" unique_id=2059061603]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Button3" type="Button" parent="HBoxContainer4/AspectRatioContainer3/VBoxContainer" unique_id=455105560]
+[node name="Button3" type="Button" parent="HowToPlay/AspectRatioContainer3/VBoxContainer" unique_id=455105560]
 layout_mode = 2
 size_flags_horizontal = 8
 text = "BACK"
 script = ExtResource("14_m04lp")
 metadata/_edit_use_anchors_ = true
+
+[node name="Credits" type="HBoxContainer" parent="." unique_id=2119201412]
+visible = false
+offset_right = 1152.0
+offset_bottom = 648.0
+alignment = 1
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Credits" unique_id=167130894]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 0.25
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Credits" unique_id=494841510]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.99
+ratio = 1.5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits/AspectRatioContainer" unique_id=1849373947]
+layout_mode = 2
+
+[node name="AspectRatioContainer4" type="AspectRatioContainer" parent="Credits/AspectRatioContainer/VBoxContainer" unique_id=1494923064]
+custom_minimum_size = Vector2(0, 132.57)
+layout_mode = 2
+size_flags_vertical = 3
+stretch_mode = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Credits/AspectRatioContainer/VBoxContainer" unique_id=1921505049]
+layout_mode = 2
+size_flags_vertical = 3
+ratio = 4.7613
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits/AspectRatioContainer/VBoxContainer/AspectRatioContainer" unique_id=261858209]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("15_m04lp")
+text = "Code:
+Luise Münchgesang
+Vincent Knapp
+Benedek Kovacs
+
+Art:
+Luise Münchgesang
+Vincent Knapp
+Benedek Kovacs
+
+Audio:
+Luise Münchgesang
+Vincent Knapp"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="AspectRatioContainer5" type="AspectRatioContainer" parent="Credits/AspectRatioContainer/VBoxContainer" unique_id=1111644556]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.09
+
+[node name="AspectRatioContainer2" type="AspectRatioContainer" parent="Credits/AspectRatioContainer/VBoxContainer" unique_id=58361180]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.65
+
+[node name="Button" type="Button" parent="Credits/AspectRatioContainer/VBoxContainer/AspectRatioContainer2" unique_id=644158181]
+custom_minimum_size = Vector2(252.54, 0)
+layout_mode = 2
+text = "back"
+script = ExtResource("4_7r1g0")
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Credits/AspectRatioContainer/VBoxContainer" unique_id=350959451]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="AspectRatioContainer3" type="AspectRatioContainer" parent="Credits" unique_id=811958318]
+layout_mode = 2
+size_flags_horizontal = 3
+ratio = 0.25
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1773308720]
 modulate = Color(0.8151441, 0.8151441, 0.8151441, 1)
@@ -433,11 +531,13 @@ texture = ExtResource("1_i26rj")
 stream = ExtResource("5_iwfq2")
 volume_db = -80.0
 
-[connection signal="item_selected" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" method="_on_item_selected"]
-[connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_down"]
-[connection signal="button_up" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_up"]
-[connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" method="_on_button_down"]
-[connection signal="button_down" from="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
-[connection signal="drag_ended" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" method="_on_drag_ended"]
-[connection signal="button_down" from="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
-[connection signal="pressed" from="HBoxContainer4/AspectRatioContainer3/VBoxContainer/Button3" to="HBoxContainer4/AspectRatioContainer3/VBoxContainer/Button3" method="_on_pressed"]
+[connection signal="item_selected" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer4/Control/OptionButton" method="_on_item_selected"]
+[connection signal="button_down" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_down"]
+[connection signal="button_up" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer/Button" method="_on_button_up"]
+[connection signal="button_down" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer5/Button" method="_on_button_down"]
+[connection signal="button_down" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
+[connection signal="button_down" from="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer7/Button" to="MainMenu/AspectRatioContainer/VBoxContainer/AspectRatioContainer7/Button" method="_on_button_down"]
+[connection signal="drag_ended" from="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" to="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider" method="_on_drag_ended"]
+[connection signal="button_down" from="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]
+[connection signal="pressed" from="HowToPlay/AspectRatioContainer3/VBoxContainer/Button3" to="HowToPlay/AspectRatioContainer3/VBoxContainer/Button3" method="_on_pressed"]
+[connection signal="button_down" from="Credits/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" to="Credits/AspectRatioContainer/VBoxContainer/AspectRatioContainer2/Button" method="_on_button_down"]

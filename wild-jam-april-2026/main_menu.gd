@@ -15,7 +15,7 @@ func _ready() -> void:
 	increaseVol.kill()
 	print("done")
 	print(musicplayer.volume_db)
-	$HBoxContainer2/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider.volChanged.connect(changeVol.bind())
+	$Settings/AspectRatioContainer/VBoxContainer/AspectRatioContainer/GridContainer/HSlider.volChanged.connect(changeVol.bind())
 
 ## 
 func changeVol() -> void:
