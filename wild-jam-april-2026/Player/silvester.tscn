@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
-[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://Assets/player/player_tilesheet.png" id="2_j052w"]
+[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
 [ext_resource type="AudioStream" uid="uid://5jla8hgilhbi" path="res://soundFX/footstep08.ogg" id="4_jyj5e"]
 [ext_resource type="AudioStream" uid="uid://c330r5sbnjbsb" path="res://soundFX/571629__ugila__item-pickup.wav" id="4_vve37"]
@@ -172,6 +172,8 @@ position = Vector2(40, 30)
 [node name="FootSound" type="AudioStreamPlayer2D" parent="AnimatedSprite2D" unique_id=1540278390]
 stream = ExtResource("4_jyj5e")
 volume_db = 1.142
+max_polyphony = 4
+panning_strength = 0.3
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1364209751]
 collision_mask = 3
