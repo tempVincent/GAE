@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cg7ri5gq1rtn3"
-path="res://.godot/imported/emote_circle.png-03252ab1cc5642d59dad7396b7fa3be9.ctex"
+path="res://.godot/imported/emote_circle.png-29f6e6ea8ffab9eafb20e4f289fa8889.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/emotes/PNG/Vector/Style 7/emote_circle.png"
-dest_files=["res://.godot/imported/emote_circle.png-03252ab1cc5642d59dad7396b7fa3be9.ctex"]
+source_file="res://Assets/emotes/PNG/Vector/Style 7/emote_circle.png"
+dest_files=["res://.godot/imported/emote_circle.png-29f6e6ea8ffab9eafb20e4f289fa8889.ctex"]
 
 [params]
 

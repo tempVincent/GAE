@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cfbx44lbq6jpa"
-path="res://.godot/imported/keyboard_comma_outline.png-0e61b44ccaf757dafcd08acb5ddcb332.ctex"
+path="res://.godot/imported/keyboard_comma_outline.png-48c8bfb96cffa9cd5aeabc4c5c30fa4a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/KeyboardUI/keyboard_comma_outline.png"
-dest_files=["res://.godot/imported/keyboard_comma_outline.png-0e61b44ccaf757dafcd08acb5ddcb332.ctex"]
+source_file="res://Assets/ui/KeyboardUI/keyboard_comma_outline.png"
+dest_files=["res://.godot/imported/keyboard_comma_outline.png-48c8bfb96cffa9cd5aeabc4c5c30fa4a.ctex"]
 
 [params]
 

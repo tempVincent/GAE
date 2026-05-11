@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://pqsp7dicr0qb"
-path="res://.godot/imported/mouse_scroll_outline.png-a5a6c742ec409af403dcc2db260ee1d6.ctex"
+path="res://.godot/imported/mouse_scroll_outline.png-962edccd8bd121da15f0d118bc26ae27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/UI/KeyboardUI/mouse_scroll_outline.png"
-dest_files=["res://.godot/imported/mouse_scroll_outline.png-a5a6c742ec409af403dcc2db260ee1d6.ctex"]
+source_file="res://Assets/ui/KeyboardUI/mouse_scroll_outline.png"
+dest_files=["res://.godot/imported/mouse_scroll_outline.png-962edccd8bd121da15f0d118bc26ae27.ctex"]
 
 [params]
 
