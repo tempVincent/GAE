@@ -223,6 +223,7 @@ z_index = 4
 position = Vector2(14, -383)
 
 [node name="Control" parent="UI" unique_id=1213672650 instance=ExtResource("27_2bvyg")]
+visible = false
 
 [node name="Button" type="Button" parent="." unique_id=1209164206]
 offset_left = 1070.0
