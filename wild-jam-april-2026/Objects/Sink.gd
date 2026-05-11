@@ -32,7 +32,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			player.itemInHand = null
 			object.freeze = false
 			object.get_node("CollisionPolygon2D").disabled = false
-			object.global_position = Vector2(50,450)
+			object.global_position = Vector2(100,530)
 			player.Hand.remove_child(object)
 			
 			## Create new Sprite with Can and water and show it
