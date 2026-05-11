@@ -24,7 +24,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 
 		var collision = object.get_node("CollisionPolygon2D")
 		collision.disabled = false
-		object.global_position = Vector2(400,600)
+		object.global_position = Vector2(505,530)
 		var transitionIN:Tween = get_tree().create_tween()
 		transitionIN.tween_property(progress,"value",0,worktime)
 		audioStream.play()
