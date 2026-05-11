@@ -17,19 +17,23 @@ func StartSpawning() -> void:
 		var timer = branch.get_node("Timer")
 		assert(timer.is_class("Timer"), "Timer is not a Timer")
 		timer.timeout.connect(spawn.bind(fruit, fruitsData[randi_range(0,fruitsData.size()-1)], branch.get_node("spawnpoint")))
-		timer.timeout.connect(startRandomTimer.bind(timer))
-		startRandomTimer(timer)
+		timer.timeout.connect(restartRandomTimer.bind(timer))
+		restartRandomTimer(timer)
 
 func StopSpawning() -> void:
 	for branch in spawnBranches:
 		var timer = branch.get_node("Timer")
 		assert(timer.is_class("Timer"), "Timer is not a Timer")
 		timer.timeout.disconnect(spawn)
-		timer.timeout.disconnect(timer.start)
+		timer.timeout.disconnect(restartRandomTimer)
 		timer.stop()
 
-func startRandomTimer(timer: Timer) -> void:
+func restartRandomTimer(timer: Timer) -> void:
+	timer.timeout.disconnect(spawn)
+	timer.timeout.disconnect(restartRandomTimer)
 	randomize()
+	timer.timeout.connect(spawn.bind(fruit, fruitsData[randi_range(0,fruitsData.size()-1)], timer.get_parent().get_node("spawnpoint")))
+	timer.timeout.connect(restartRandomTimer.bind(timer))
 	timer.start(randf_range(spawnCooldownMin,spawnCooldownMax))
 
 func spawn(obj: PackedScene, objData: Resource, parent: Node2D) -> void:
