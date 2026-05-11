@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d4kraustakfpo"]
 
 [ext_resource type="Script" uid="uid://erbpyjl38ghe" path="res://Player/playerController.gd" id="1_j052w"]
-[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://Assets/player/player_tilesheet.png" id="2_j052w"]
+[ext_resource type="Texture2D" uid="uid://ccqjbiobukg4" path="res://assets/player/player_tilesheet.png" id="2_j052w"]
 [ext_resource type="Script" uid="uid://qmru5ebtwryv" path="res://Player/InteractiveArea.gd" id="3_3dvcf"]
 [ext_resource type="AudioStream" uid="uid://5jla8hgilhbi" path="res://soundFX/footstep08.ogg" id="4_jyj5e"]
 [ext_resource type="AudioStream" uid="uid://c330r5sbnjbsb" path="res://soundFX/571629__ugila__item-pickup.wav" id="4_vve37"]
@@ -137,7 +137,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
-size = Vector2(83.416664, 85.16666)
+size = Vector2(83.416664, 103.83333)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dvcf"]
 
@@ -178,7 +178,7 @@ collision_mask = 3
 script = ExtResource("3_3dvcf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327376693]
-position = Vector2(22.291668, -1.249995)
+position = Vector2(22.291668, 8.08334)
 shape = SubResource("RectangleShape2D_j052w")
 
 [node name="InteractionSounds" type="AudioStreamPlayer2D" parent="Area2D" unique_id=509145973]
