@@ -2,6 +2,7 @@ class_name Sink extends Processor
 
 var worktime = 3
 
+
 @onready var audioStream: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 ## Called when the node enters the scene tree for the first time.
@@ -33,7 +34,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 			object.freeze = false
 			object.get_node("CollisionPolygon2D").disabled = false
 			object.global_position = Vector2(100,530)
-			player.Hand.remove_child(object)
+			#player.Hand.remove_child(object)
 			
 			## Create new Sprite with Can and water and show it
 			progress.visible = true

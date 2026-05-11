@@ -58,7 +58,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 				var collision = object.get_node("CollisionPolygon2D")
 				collision.disabled = false
 				object.global_position = Vector2(450,530)
-				player.Hand.remove_child(object)
+				#player.Hand.remove_child(object)
 				sprite.frame = 0
 				
 				progress.visible = true

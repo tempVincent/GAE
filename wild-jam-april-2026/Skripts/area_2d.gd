@@ -3,7 +3,7 @@ var coffee_can
 var inRangeObjects:Array
 @onready var player = $"../../AudioStreamPlayer"
 @onready var animated_sprite_2d: AnimatedSprite2D = $".."
-@onready var gpu_particles_2d: GPUParticles2D = $"../GPUParticles2D"
+@onready var gpu_particles_2d: GPUParticles2D = $"../../GPUParticles2D2"
 	
 ## override base class listener called by the engine when another body moves into this area's detection mask
 func _on_body_entered(body: Node2D):

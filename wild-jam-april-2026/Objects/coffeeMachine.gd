@@ -46,7 +46,7 @@ func interact(player: PlayerController, object: Variant) -> void:
 		
 		#player.canMove = true
 		object.visible = true
-		player.Hand.remove_child(object)
+		#player.Hand.remove_child(object)
 		##make can visible
 		
 		print("Kanne pos: ", object.global_position)

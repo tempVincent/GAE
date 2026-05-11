@@ -12,8 +12,8 @@ var inRangeObjects: Array[Node2D]
 @onready var character = $".."
 @onready var hand = $"../AnimatedSprite2D/Hand"
 @onready var Objects: Node2D = $"../../Objects"
-@onready var table: StaticBody2D = $"../../Funiture/Table"
-@onready var coffetable: StaticBody2D = $"../../Funiture/CoffeeTable"
+@onready var table: StaticBody2D = $"../../Furniture/Table"
+@onready var coffetable: StaticBody2D = $"../../Furniture/CoffeeTable"
 @onready var interactionareas: Node2D = $"../../Areas"
 @onready var collisionShape: CollisionShape2D = $"CollisionShape2D"
 @onready var interactionUI = preload("res://assets/UI/KeyboardUI/keyboard_s_outline.png")
@@ -72,7 +72,7 @@ func _get_interactiveObject():
 		else:
 			## prioritize interacting with a processor
 			var processors = inRangeObjects.filter(func(obj): return obj.is_in_group("processor"))
-			assert(processors.size() <= 1, "some processors are too close to each other")
+			#assert(processors.size() <= 1, "some processors are too close to each other")
 			var processor = processors.front()
 			if processor != null:
 				match character.getItemInHand().scene_file_path:
