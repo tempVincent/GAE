@@ -137,7 +137,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j052w"]
-size = Vector2(83.416664, 85.16666)
+size = Vector2(83.416664, 103.83333)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3dvcf"]
 
@@ -180,7 +180,7 @@ collision_mask = 3
 script = ExtResource("3_3dvcf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=327376693]
-position = Vector2(22.291668, -1.249995)
+position = Vector2(22.291668, 8.08334)
 shape = SubResource("RectangleShape2D_j052w")
 
 [node name="InteractionSounds" type="AudioStreamPlayer2D" parent="Area2D" unique_id=509145973]

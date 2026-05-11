@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var label: Label = $Label
 @onready var timer: Timer = $Timer
-
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	ObjectivePool.difficulty_updated.connect(_updated_time)
@@ -26,8 +25,10 @@ func _updated_time():
 
 ## 
 func _on_timer_timeout() -> void:
-	get_tree().change_scene_to_file("res://gameEndMenu.tscn")
-	if(ObjectivePool.completed_obj >= 10):
+	timer.stop()
+	if(ObjectivePool.completed_obj >= ObjectivePool.objs_toComplete):
+		get_tree().change_scene_to_file("res://gameEndMenu.tscn")
 		print ("Player won")
 	else:
 		print("Player lost")
+		ObjectivePool.player_lost.emit()

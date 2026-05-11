@@ -9,6 +9,7 @@ enum objectives{
 
 signal objectives_updated
 signal difficulty_updated
+signal player_lost
 const objs:Array[objectives] = [objectives.coffee, objectives.water, objectives.banana, objectives.juice]
 var objectives_difficulty:Array[int] = [3,5,10] 
 var current_objective:objectives = _get_random_Task()
@@ -16,6 +17,7 @@ var next_objective: objectives = _get_random_Task()
 var difficulty: int = 0
 var completed_obj = 0
 var objs_toComplete = objectives_difficulty[difficulty]
+
 
 ## Called when the node enters the scene tree for the first time.
 func _ready() -> void:

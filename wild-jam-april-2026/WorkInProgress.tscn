@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://brn222scas0yr"]
 
-[ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://Assets/Wallpaper.png" id="1_maox2"]
+[ext_resource type="Texture2D" uid="uid://cc0ak385ar5hf" path="res://assets/Wallpaper.png" id="1_maox2"]
 [ext_resource type="Script" uid="uid://mivjpaam64ej" path="res://GameController.gd" id="1_ykjyh"]
 [ext_resource type="PackedScene" uid="uid://d4kraustakfpo" path="res://Player/silvester.tscn" id="2_maox2"]
 [ext_resource type="PackedScene" uid="uid://ddtbi0r0c6m68" path="res://Scenen/WorldBorders.tscn" id="3_maox2"]
@@ -14,7 +14,7 @@
 [ext_resource type="Script" uid="uid://rp7nqxoloqvt" path="res://Objects/coffeeMachine.gd" id="7_rlha8"]
 [ext_resource type="PackedScene" uid="uid://c4l1xkbhegajo" path="res://Objects/FruitBranch.tscn" id="8_dypuf"]
 [ext_resource type="PackedScene" uid="uid://devexx4rv0xp5" path="res://Scenen/johnny.tscn" id="9_csgbm"]
-[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://Assets/Objects/Tasse.png" id="9_qbaj0"]
+[ext_resource type="Texture2D" uid="uid://4i3axhg0rqdd" path="res://assets/objects/Tasse.png" id="9_qbaj0"]
 [ext_resource type="Script" uid="uid://bq7scpwi2c774" path="res://Skripts/johnny.gd" id="10_2r8cf"]
 [ext_resource type="PackedScene" uid="uid://bqap78axkai6t" path="res://Scenen/time_button.tscn" id="11_dbv7r"]
 [ext_resource type="PackedScene" uid="uid://b58d0x1lor2lc" path="res://Scenen/Objective_display.tscn" id="12_dbv7r"]
@@ -22,7 +22,9 @@
 [ext_resource type="PackedScene" uid="uid://danlit8f33mtv" path="res://Scenen/speech_bubble.tscn" id="14_dow5r"]
 [ext_resource type="Script" uid="uid://b8rh5mn2m3brh" path="res://Areas/areaInformations.gd" id="15_hlgq8"]
 [ext_resource type="PackedScene" uid="uid://ya7usg5dq5m0" path="res://Scenen/menu.tscn" id="18_pogpk"]
+[ext_resource type="AudioStream" uid="uid://cinfnlup6haks" path="res://soundFX/explosion_sound.mp3" id="19_5ooxb"]
 [ext_resource type="PackedScene" uid="uid://2dhs3muob4h6" path="res://Scenen/PassedObjectives.tscn" id="19_rlha8"]
+[ext_resource type="Texture2D" uid="uid://xydybgortrr5" path="res://assets/explosion/explosion06.png" id="19_wy7o8"]
 [ext_resource type="Script" uid="uid://c2adii1818b6r" path="res://Scripts/Administrative/FruitKillzone.gd" id="22_m085l"]
 [ext_resource type="PackedScene" uid="uid://p77csd3oujq4" path="res://Objects/mixer.tscn" id="24_l0i0s"]
 [ext_resource type="Script" uid="uid://d2x2tk8nibn68" path="res://Objects/Blender.gd" id="25_m085l"]
@@ -36,6 +38,11 @@ point_count = 2
 [sub_resource type="Curve" id="Curve_40drc"]
 _data = [Vector2(0.8730769, 1), 0.0, 0.0, 0, 0]
 point_count = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5ooxb"]
+particle_flag_damping_as_friction = true
+gravity = Vector3(0, 98, 0)
+damping_max = 48.476
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dow5r"]
 size = Vector2(592, 666)
@@ -161,6 +168,21 @@ texture_filter = 1
 position = Vector2(1100, 545)
 script = ExtResource("10_2r8cf")
 
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Jhonny" unique_id=1057710172]
+top_level = true
+scale = Vector2(0.6666667, 0.6666667)
+emitting = false
+amount = 500
+texture = ExtResource("19_wy7o8")
+lifetime = 1.9000000000000001
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_5ooxb")
+
+[node name="ExplosionSound2" type="AudioStreamPlayer2D" parent="Jhonny" unique_id=1105731361]
+stream = ExtResource("19_5ooxb")
+volume_db = 19.299
+
 [node name="Areas" type="Node2D" parent="." unique_id=1058248669]
 position = Vector2(108, 503)
 script = ExtResource("15_hlgq8")
@@ -248,6 +270,7 @@ offset_bottom = 69.0
 tooltip_text = "Help"
 text = "?"
 
+[connection signal="finished" from="Jhonny/ExplosionSound2" to="." method="_on_explosion_sound_2_finished"]
 [connection signal="body_entered" from="Areas/table" to="Areas" method="_on_body_entered" binds= [true]]
 [connection signal="body_exited" from="Areas/table" to="Areas" method="_on_body_exited"]
 [connection signal="body_entered" from="Areas/Coffeetable" to="Areas" method="_on_body_entered" binds= [true]]
