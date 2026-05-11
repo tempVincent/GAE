@@ -1,9 +1,10 @@
 extends Area2D
 var coffee_can
 var inRangeObjects:Array
-@onready var tasseFX = $"../../../Funiture/Tasse/CPUParticles2D"
 @onready var player = $"../../AudioStreamPlayer"
-
+@onready var animated_sprite_2d: AnimatedSprite2D = $".."
+@onready var gpu_particles_2d: GPUParticles2D = $"../GPUParticles2D"
+	
 ## override base class listener called by the engine when another body moves into this area's detection mask
 func _on_body_entered(body: Node2D):
 	var path = body.get_path()

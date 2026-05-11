@@ -8,3 +8,8 @@ extends Node2D
 func _ready() -> void:
 	musicplayer.playing = true
 	musicplayer.volume_db = 0
+
+
+func _on_explosion_sound_2_finished() -> void:
+	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	pass # Replace with function body.
